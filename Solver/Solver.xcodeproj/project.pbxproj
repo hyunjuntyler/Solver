@@ -26,6 +26,10 @@
 		29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9252BDA75CB0034F600 /* BadgeEntity.swift */; };
 		29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9272BDA75E20034F600 /* ProblemEntity.swift */; };
 		29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9292BDA761D0034F600 /* Top100Entity.swift */; };
+		29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */; };
+		29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9302BDA7C5D0034F600 /* NetworkError.swift */; };
+		29F7B9332BDA7C6D0034F600 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */; };
+		29F7B9352BDA7C880034F600 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9342BDA7C880034F600 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		29F7B9252BDA75CB0034F600 /* BadgeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeEntity.swift; sourceTree = "<group>"; };
 		29F7B9272BDA75E20034F600 /* ProblemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemEntity.swift; sourceTree = "<group>"; };
 		29F7B9292BDA761D0034F600 /* Top100Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100Entity.swift; sourceTree = "<group>"; };
+		29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		29F7B9302BDA7C5D0034F600 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
+		29F7B9342BDA7C880034F600 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,7 @@
 		29F7B90F2BDA68A60034F600 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				29F7B92B2BDA7B900034F600 /* Network */,
 				29F7B9102BDA6A940034F600 /* DTO */,
 			);
 			path = Data;
@@ -193,6 +202,17 @@
 				29F7B9292BDA761D0034F600 /* Top100Entity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		29F7B92B2BDA7B900034F600 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */,
+				29F7B9342BDA7C880034F600 /* APIClient.swift */,
+				29F7B9302BDA7C5D0034F600 /* NetworkError.swift */,
+				29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,12 +346,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F7B9332BDA7C6D0034F600 /* ImageDataLoader.swift in Sources */,
+				29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */,
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
+				29F7B9352BDA7C880034F600 /* APIClient.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
+				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
 				29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
