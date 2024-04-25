@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State private var store = MainTabStore()
+    
     var body: some View {
         TabView {
-            SummaryView()
+            SummaryView(store: store)
                 .tabItem {
                     Label("내 정보", systemImage: "list.clipboard")
                 }
-            AccountView()
+            AccountView(store: store)
                 .tabItem {
                     Label("계정", systemImage: "person.crop.circle")
                 }
