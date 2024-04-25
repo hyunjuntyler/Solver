@@ -32,6 +32,8 @@
 		29F7B9352BDA7C880034F600 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9342BDA7C880034F600 /* APIClient.swift */; };
 		29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9382BDA811A0034F600 /* CheckRepository.swift */; };
 		29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93A2BDA81330034F600 /* FetchRepository.swift */; };
+		29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93D2BDA81E70034F600 /* CheckUseCase.swift */; };
+		29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		29F7B9342BDA7C880034F600 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		29F7B9382BDA811A0034F600 /* CheckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRepository.swift; sourceTree = "<group>"; };
 		29F7B93A2BDA81330034F600 /* FetchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRepository.swift; sourceTree = "<group>"; };
+		29F7B93D2BDA81E70034F600 /* CheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUseCase.swift; sourceTree = "<group>"; };
+		29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 		29F7B91D2BDA74D80034F600 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				29F7B93C2BDA81B00034F600 /* UseCase */,
 				29F7B91E2BDA74E60034F600 /* Entity */,
 			);
 			path = Domain;
@@ -227,6 +232,15 @@
 				29F7B93A2BDA81330034F600 /* FetchRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		29F7B93C2BDA81B00034F600 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B93D2BDA81E70034F600 /* CheckUseCase.swift */,
+				29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +378,7 @@
 				29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */,
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
+				29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */,
 				29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
@@ -380,6 +395,7 @@
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
+				29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
