@@ -34,6 +34,12 @@
 		29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93A2BDA81330034F600 /* FetchRepository.swift */; };
 		29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93D2BDA81E70034F600 /* CheckUseCase.swift */; };
 		29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */; };
+		29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9442BDA87AF0034F600 /* OnboardingView.swift */; };
+		29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9462BDA87C00034F600 /* GreetingView.swift */; };
+		29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9482BDA87FD0034F600 /* SignUpView.swift */; };
+		29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94B2BDA881F0034F600 /* MainTabView.swift */; };
+		29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94D2BDA882B0034F600 /* SummaryView.swift */; };
+		29F7B9502BDA88320034F600 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94F2BDA88320034F600 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,12 @@
 		29F7B93A2BDA81330034F600 /* FetchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRepository.swift; sourceTree = "<group>"; };
 		29F7B93D2BDA81E70034F600 /* CheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUseCase.swift; sourceTree = "<group>"; };
 		29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUseCase.swift; sourceTree = "<group>"; };
+		29F7B9442BDA87AF0034F600 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		29F7B9462BDA87C00034F600 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
+		29F7B9482BDA87FD0034F600 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		29F7B94B2BDA881F0034F600 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		29F7B94D2BDA882B0034F600 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		29F7B94F2BDA88320034F600 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				29552FB62BDA647300F8A33C /* SolverApp.swift */,
-				29552FB82BDA647300F8A33C /* ContentView.swift */,
+				29F7B9412BDA869B0034F600 /* Presentation */,
 				29552FBA2BDA647500F8A33C /* Assets.xcassets */,
 				29F7B91D2BDA74D80034F600 /* Domain */,
 				29F7B90F2BDA68A60034F600 /* Data */,
@@ -241,6 +253,44 @@
 				29F7B93F2BDA81F70034F600 /* FetchUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		29F7B9412BDA869B0034F600 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9422BDA870B0034F600 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		29F7B9422BDA870B0034F600 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29552FB82BDA647300F8A33C /* ContentView.swift */,
+				29F7B9432BDA87A20034F600 /* Onboarding */,
+				29F7B94A2BDA88090034F600 /* MainTab */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29F7B9432BDA87A20034F600 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9442BDA87AF0034F600 /* OnboardingView.swift */,
+				29F7B9462BDA87C00034F600 /* GreetingView.swift */,
+				29F7B9482BDA87FD0034F600 /* SignUpView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		29F7B94A2BDA88090034F600 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
+				29F7B94D2BDA882B0034F600 /* SummaryView.swift */,
+				29F7B94F2BDA88320034F600 /* AccountView.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,23 +428,29 @@
 				29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */,
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
+				29F7B9502BDA88320034F600 /* AccountView.swift in Sources */,
 				29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */,
 				29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
+				29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
 				29F7B9352BDA7C880034F600 /* APIClient.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
 				29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */,
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
+				29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
 				29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */,
+				29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */,
+				29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
+				29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */,
 				29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
