@@ -41,6 +41,8 @@
 		29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94D2BDA882B0034F600 /* SummaryView.swift */; };
 		29F7B9502BDA88320034F600 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94F2BDA88320034F600 /* AccountView.swift */; };
 		29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9522BDA891D0034F600 /* OnboardingStore.swift */; };
+		29F7B9572BDA8CAA0034F600 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */; };
+		29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9582BDA8CC20034F600 /* Font+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,9 @@
 		29F7B94D2BDA882B0034F600 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		29F7B94F2BDA88320034F600 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		29F7B9522BDA891D0034F600 /* OnboardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStore.swift; sourceTree = "<group>"; };
+		29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
+		29F7B9582BDA8CC20034F600 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		29F7B95A2BDA8D8C0034F600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +154,11 @@
 			isa = PBXGroup;
 			children = (
 				29552FB62BDA647300F8A33C /* SolverApp.swift */,
+				29F7B95A2BDA8D8C0034F600 /* Info.plist */,
 				29F7B9412BDA869B0034F600 /* Presentation */,
-				29552FBA2BDA647500F8A33C /* Assets.xcassets */,
 				29F7B91D2BDA74D80034F600 /* Domain */,
 				29F7B90F2BDA68A60034F600 /* Data */,
+				29F7B9542BDA8C660034F600 /* Resource */,
 				29552FBC2BDA647500F8A33C /* Preview Content */,
 			);
 			path = Solver;
@@ -304,6 +310,24 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		29F7B9542BDA8C660034F600 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9552BDA8C910034F600 /* Font */,
+				29552FBA2BDA647500F8A33C /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		29F7B9552BDA8C910034F600 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */,
+				29F7B9582BDA8CC20034F600 /* Font+Extension.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -410,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29552FBE2BDA647500F8A33C /* Preview Assets.xcassets in Resources */,
+				29F7B9572BDA8CAA0034F600 /* TossFaceFontMac.ttf in Resources */,
 				29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +486,7 @@
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */,
+				29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
 				29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */,
 				29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */,
@@ -630,6 +656,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Solver/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -659,6 +686,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Solver/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
