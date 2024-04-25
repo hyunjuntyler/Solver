@@ -14,6 +14,11 @@
 		29552FC82BDA647500F8A33C /* SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FC72BDA647500F8A33C /* SolverTests.swift */; };
 		29552FD22BDA647500F8A33C /* SolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD12BDA647500F8A33C /* SolverUITests.swift */; };
 		29552FD42BDA647500F8A33C /* SolverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */; };
+		29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */; };
+		29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9132BDA6D570034F600 /* Top100DTO.swift */; };
+		29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9152BDA6EFA0034F600 /* UserDTO.swift */; };
+		29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9172BDA70530034F600 /* BadgeDTO.swift */; };
+		29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9192BDA72A40034F600 /* SiteDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		29552FCD2BDA647500F8A33C /* SolverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FD12BDA647500F8A33C /* SolverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITests.swift; sourceTree = "<group>"; };
 		29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDTO.swift; sourceTree = "<group>"; };
+		29F7B9132BDA6D570034F600 /* Top100DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100DTO.swift; sourceTree = "<group>"; };
+		29F7B9152BDA6EFA0034F600 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		29F7B9172BDA70530034F600 /* BadgeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDTO.swift; sourceTree = "<group>"; };
+		29F7B9192BDA72A40034F600 /* SiteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 				29552FB62BDA647300F8A33C /* SolverApp.swift */,
 				29552FB82BDA647300F8A33C /* ContentView.swift */,
 				29552FBA2BDA647500F8A33C /* Assets.xcassets */,
+				29F7B90F2BDA68A60034F600 /* Data */,
 				29552FBC2BDA647500F8A33C /* Preview Content */,
 			);
 			path = Solver;
@@ -125,6 +136,26 @@
 				29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */,
 			);
 			path = SolverUITests;
+			sourceTree = "<group>";
+		};
+		29F7B90F2BDA68A60034F600 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9102BDA6A940034F600 /* DTO */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		29F7B9102BDA6A940034F600 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9192BDA72A40034F600 /* SiteDTO.swift */,
+				29F7B9152BDA6EFA0034F600 /* UserDTO.swift */,
+				29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */,
+				29F7B9132BDA6D570034F600 /* Top100DTO.swift */,
+				29F7B9172BDA70530034F600 /* BadgeDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
+				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
+				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
+				29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */,
+				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
+				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
