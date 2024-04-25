@@ -40,6 +40,7 @@
 		29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94B2BDA881F0034F600 /* MainTabView.swift */; };
 		29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94D2BDA882B0034F600 /* SummaryView.swift */; };
 		29F7B9502BDA88320034F600 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94F2BDA88320034F600 /* AccountView.swift */; };
+		29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9522BDA891D0034F600 /* OnboardingStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		29F7B94B2BDA881F0034F600 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		29F7B94D2BDA882B0034F600 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		29F7B94F2BDA88320034F600 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		29F7B9522BDA891D0034F600 /* OnboardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				29552FB82BDA647300F8A33C /* ContentView.swift */,
 				29F7B9432BDA87A20034F600 /* Onboarding */,
 				29F7B94A2BDA88090034F600 /* MainTab */,
+				29F7B9512BDA890F0034F600 /* Store */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,14 @@
 				29F7B94F2BDA88320034F600 /* AccountView.swift */,
 			);
 			path = MainTab;
+			sourceTree = "<group>";
+		};
+		29F7B9512BDA890F0034F600 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B9522BDA891D0034F600 /* OnboardingStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +460,7 @@
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
+				29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
 				29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */,
 				29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */,

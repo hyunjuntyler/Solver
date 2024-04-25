@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var store = OnboardingStore()
+    
     var body: some View {
-        Text("Onboarding")
+        switch store.viewPhase {
+        case .greeting:
+            GreetingView()
+        case .signUp:
+            SignUpView()
+        }
     }
 }
 
