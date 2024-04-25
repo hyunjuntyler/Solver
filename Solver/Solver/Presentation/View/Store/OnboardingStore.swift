@@ -9,10 +9,6 @@ import SwiftUI
 
 @Observable
 final class OnboardingStore {
-    private let useCase = CheckUseCase()
-
-    var userId = ""
-    var showAlert = false
     var viewPhase: ViewPhase = .greeting
     
     enum ViewPhase {
@@ -22,18 +18,6 @@ final class OnboardingStore {
     
     init() {
         changePhase()
-    }
-    
-    func checkUserId() {
-        Task {
-            do {
-                try await useCase.check(id: userId)
-                UserDefaults.standard.set(userId, forKey: "userId")
-                UserDefaults.standard.set(false, forKey: "onboarding")
-            } catch {
-                showAlert = true
-            }
-        }
     }
     
     private func changePhase() {
