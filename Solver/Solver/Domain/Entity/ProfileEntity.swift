@@ -8,6 +8,6 @@
 import SwiftUI
 
 struct ProfileEntity {
-    var imageURL: String
+    var imageUrl: String
     var image: Data?
 }

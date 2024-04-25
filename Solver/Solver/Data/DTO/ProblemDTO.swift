@@ -7,10 +7,19 @@
 
 import Foundation
 
-struct ProblemDTO: Decodable {
+struct ProblemDTO: Decodable, DTO {
     var level: Int
     var total: Int
     var solved: Int
     var partial: Int
     var tried: Int
+    
+    func toDomain() -> ProblemEntity {
+        ProblemEntity(
+            level: level,
+            total: total,
+            solved: solved,
+            tried: tried
+        )
+    }
 }

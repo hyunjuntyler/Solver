@@ -11,6 +11,7 @@ struct BadgeEntity {
     var id: String
     var name: String
     var tier: String
-    var imageURL: String
+    var description: String
+    var imageUrl: String
     var image: Data?
 }

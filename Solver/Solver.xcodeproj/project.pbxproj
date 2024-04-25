@@ -167,9 +167,9 @@
 				29F7B91B2BDA74190034F600 /* DTO.swift */,
 				29F7B9192BDA72A40034F600 /* SiteDTO.swift */,
 				29F7B9152BDA6EFA0034F600 /* UserDTO.swift */,
+				29F7B9172BDA70530034F600 /* BadgeDTO.swift */,
 				29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */,
 				29F7B9132BDA6D570034F600 /* Top100DTO.swift */,
-				29F7B9172BDA70530034F600 /* BadgeDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";

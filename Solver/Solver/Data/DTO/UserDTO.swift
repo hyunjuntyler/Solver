@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserDTO: Decodable {
+class UserDTO: Decodable, DTO {
     var handle: String
     var bio: String
     var badgeId: String?
@@ -19,4 +19,19 @@ class UserDTO: Decodable {
     var classDecoration: String
     var maxStreak: Int
     var rank: Int
+    
+    func toDomain() -> UserEntity {
+        UserEntity(
+            id: handle,
+            badgeId: badgeId,
+            profileImageUrl: profileImageUrl,
+            solvedCount: solvedCount,
+            tier: tier,
+            rating: rating,
+            userClass: `class`,
+            classDecoration: classDecoration,
+            maxStreak: maxStreak,
+            rank: rank
+        )
+    }
 }

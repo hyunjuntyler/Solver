@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct SiteDTO: Decodable {
+struct SiteDTO: Decodable, DTO {
     var userCount: Int
+    
+    func toDomain() -> SiteEntity {
+        SiteEntity(
+            userCount: userCount
+        )
+    }
 }
