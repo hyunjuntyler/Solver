@@ -27,6 +27,13 @@ extension Int {
         }
     }
     
+    var classBadgeColor: (in1: Color, in2: Color, out1: Color, out2: Color) {
+        if self == 0 {
+            return (Color(.systemGray6), Color(.systemGray5), Color(.systemGray4), Color(.systemGray3))
+        }
+        return (Color("Class\(self)In1"), Color("Class\(self)In2"), Color("Class\(self)Out1"), Color("Class\(self)Out2"))
+    }
+    
     func toPercentile(by: Int) -> Text {
         let percentile = Double(self) / Double(by)
         return Text(percentile, format: .number.rounded(increment: 0.01))
