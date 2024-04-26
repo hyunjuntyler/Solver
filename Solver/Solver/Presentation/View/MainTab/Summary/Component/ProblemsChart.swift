@@ -13,21 +13,11 @@ struct ProblemsChart: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Title
-            
             HStack {
                 PieChart
                 Legend
             }
             .frame(height: 122)
-        }
-    }
-    
-    var Title: some View {
-        HStack(spacing: 0) {
-            Text("\(store.solvedCount)")
-                .fontWeight(.bold)
-            Text("문제 해결")
         }
     }
     

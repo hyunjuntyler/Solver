@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
 		29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29552FBA2BDA647500F8A33C /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		29552FB82BDA647300F8A33C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */,
+				2945B3E62BDC4D18004BC324 /* View+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
+				2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */,
 				29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */,
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
 				29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */,

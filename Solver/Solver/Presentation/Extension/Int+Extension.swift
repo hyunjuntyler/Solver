@@ -41,7 +41,8 @@ extension Int {
     }
     
     var tierName: String {
-        self.tier + " " + self.romanNumeral
+        if self == 31 { return self.tier }
+        return self.tier + " " + self.romanNumeral
     }
     
     var tierBadgeColor: LinearGradient {
@@ -65,8 +66,8 @@ extension Int {
     }
     
     func toPercentile(by: Int) -> Text {
-        let percentile = Double(self) / Double(by)
-        return Text(percentile, format: .number.rounded(increment: 0.1))
+        let percentile = Double(self) / Double(by) * 100
+        return Text(percentile, format: .number.rounded(rule: .up, increment: 0.1))
     }
     
     private var romanNumeral: String {
