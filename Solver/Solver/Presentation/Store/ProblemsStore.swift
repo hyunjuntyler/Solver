@@ -22,7 +22,7 @@ final class ProblemsStore {
         
         Task {
             do {
-                problems = try await useCase.fetchProblem(id: userId)
+                problems = try await useCase.fetchProblem(userId: userId)
                 isLoading = false
             } catch {
                 isLoading = true

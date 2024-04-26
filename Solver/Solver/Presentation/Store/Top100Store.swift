@@ -22,7 +22,7 @@ final class Top100Store {
         
         Task {
             do {
-                top100 = try await useCase.fetchTop100(id: userId)
+                top100 = try await useCase.fetchTop100(userId: userId)
                 isLoading = false
             } catch {
                 isLoading = true

@@ -16,5 +16,5 @@ struct SummaryView: View {
 }
 
 #Preview {
-    SummaryView(store: MainTabStore())
+    SummaryView()
 }

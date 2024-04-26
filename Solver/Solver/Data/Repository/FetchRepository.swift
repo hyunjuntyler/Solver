@@ -17,22 +17,22 @@ class FetchRepository {
         return siteDTO.toDomain()
     }
     
-    func fetchUser(id: String) async throws -> UserEntity {
-        let userEndpoint = APIEndpoint.fetchUser(userId: id)
+    func fetchUser(userId: String) async throws -> UserEntity {
+        let userEndpoint = APIEndpoint.fetchUser(userId: userId)
         let userDTO: UserDTO = try await networkClient.request(endpoint: userEndpoint)
         
         return userDTO.toDomain()
     }
     
-    func fetchProblems(id: String) async throws -> [ProblemEntity] {
-        let problemEndpoint = APIEndpoint.fetchProblems(userId: id)
+    func fetchProblems(userId: String) async throws -> [ProblemEntity] {
+        let problemEndpoint = APIEndpoint.fetchProblems(userId: userId)
         let problemsDTO: [ProblemDTO] = try await networkClient.request(endpoint: problemEndpoint)
         
         return problemsDTO.map { $0.toDomain() }
     }
     
-    func fetchTop100(id: String) async throws -> Top100Entity {
-        let top100Endpoint = APIEndpoint.fetchTop100(userId: id)
+    func fetchTop100(userId: String) async throws -> Top100Entity {
+        let top100Endpoint = APIEndpoint.fetchTop100(userId: userId)
         let top100DTO: Top100DTO = try await networkClient.request(endpoint: top100Endpoint)
 
         return top100DTO.toDomain()

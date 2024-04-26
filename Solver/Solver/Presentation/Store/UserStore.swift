@@ -26,14 +26,14 @@ final class UserStore {
             
             do {
                 userCount = try await useCase.fetchSite()
-                user = try await useCase.fetchUser(id: userId)
+                user = try await useCase.fetchUser(userId: userId)
                 
                 if let url = user?.profileImageUrl {
-                    profile = try await useCase.fetchProfile(cache: "", url: url)
+                    profile = try await useCase.fetchProfile(url: url)
                 }
                 
                 if let badgeId = user?.badgeId {
-                    badge = try await useCase.fetchBadge(cache: "", badgeId: badgeId)
+                    badge = try await useCase.fetchBadge(badgeId: badgeId)
                 }
                 
                 isLoading = false
