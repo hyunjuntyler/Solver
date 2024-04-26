@@ -1,5 +1,5 @@
 //
-//  APIClient.swift
+//  NetworkClient.swift
 //  Solver
 //
 //  Created by hyunjun on 4/25/24.
@@ -11,7 +11,7 @@ protocol Client {
     func request<T: Decodable>(endpoint: Endpoint) async throws -> T
 }
 
-class APIClient: Client {
+class NetworkClient: Client {
     func request(endpoint: Endpoint) async throws {
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
             throw NetworkError.invalidURL

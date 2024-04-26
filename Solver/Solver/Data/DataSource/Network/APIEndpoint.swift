@@ -18,7 +18,7 @@ enum APIEndpoint: Endpoint {
     case fetchProblems(userId: String)
     case fetchTop100(userId: String)
     case fetchBadge(badgeId: String)
-    case fetchSite
+    case fetchSiteStats
     
     var baseURL: String { "https://solved.ac/api/v3" }
     var path: String {
@@ -27,7 +27,7 @@ enum APIEndpoint: Endpoint {
         case .fetchProblems(let userId): return "/user/problem_stats?handle=\(userId)"
         case .fetchTop100(let userId): return "/user/top_100?handle=\(userId)"
         case .fetchBadge(let badgeId): return "/badge/show?badgeId=\(badgeId)"
-        case .fetchSite: return "/site/stats"
+        case .fetchSiteStats: return "/site/stats"
         }
     }
 }
