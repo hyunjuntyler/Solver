@@ -14,6 +14,10 @@ extension Int {
         return number == 6 ? "1" : "\(number)"
     }
     
+    var tierName: String {
+        self.tier + " " + self.romanNumeral
+    }
+    
     var tierBadgeColor: LinearGradient {
         switch self {
         case 1...5: return LinearGradient(colors: [.bronze], startPoint: .bottom, endPoint: .top)
@@ -37,5 +41,31 @@ extension Int {
     func toPercentile(by: Int) -> Text {
         let percentile = Double(self) / Double(by)
         return Text(percentile, format: .number.rounded(increment: 0.01))
+    }
+    
+    private var romanNumeral: String {
+        var num = self
+        let romanNumerals = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+        var result = ""
+        for (value, numeral) in romanNumerals {
+            while num >= value {
+                result += numeral
+                num -= value
+            }
+        }
+        return result
+    }
+    
+    private var tier: String {
+        switch self {
+        case 1...5: return "Bronze"
+        case 6...10: return "Silver"
+        case 11...15: return "Gold"
+        case 16...20: return "Platinum"
+        case 21...25: return "Diamond"
+        case 26...30: return "Ruby"
+        case 31...: return "Master"
+        default: return "None"
+        }
     }
 }
