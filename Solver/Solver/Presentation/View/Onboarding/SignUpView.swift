@@ -25,7 +25,7 @@ struct SignUpView: View {
                 }
                 .padding(.horizontal)
                 .onChange(of: store.userId) {
-                    store.checkIsValid()
+                    store.validateUserId()
                 }
             
             Text("아이디는 알파벳, 숫자와 밑줄(_)만 가능해요")

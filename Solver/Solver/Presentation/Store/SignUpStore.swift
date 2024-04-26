@@ -15,7 +15,7 @@ final class SignUpStore {
     var showAlert = false
     var isValid = true
     
-    func checkIsValid() {
+    func validateUserId() {
         let pattern = "^[a-zA-Z0-9_]*$"
         
         if userId.range(of: pattern, options: .regularExpression) != nil {
