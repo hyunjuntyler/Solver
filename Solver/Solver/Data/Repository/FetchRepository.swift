@@ -43,14 +43,14 @@ class FetchRepository {
         let badgeDTO: BadgeDTO = try await apiClient.request(endpoint: badgeEndpoint)
         
         var fetchedBadge = badgeDTO.toDomain()
-        fetchedBadge.image = try await ImageDataLoader().loadImageData(fetchedBadge.imageUrl)
+        fetchedBadge.image = try await ImageDownloader().execute(fetchedBadge.imageUrl)
         
         return fetchedBadge
     }
     
     func fetchProfile(url: String) async throws -> ProfileEntity {
         var fetchedProfile = ProfileEntity(imageUrl: url)
-        fetchedProfile.image = try await ImageDataLoader().loadImageData(url)
+        fetchedProfile.image = try await ImageDownloader().execute(url)
         
         return fetchedProfile
     }

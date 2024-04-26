@@ -1,5 +1,5 @@
 //
-//  ImageDataLoader.swift
+//  ImageDownloader.swift
 //  Solver
 //
 //  Created by hyunjun on 4/25/24.
@@ -7,8 +7,12 @@
 
 import Foundation
 
-class ImageDataLoader {
-    func loadImageData(_ url: String) async throws -> Data {
+protocol Downloader {
+    func execute(_ url: String) async throws -> Data
+}
+
+class ImageDownloader: Downloader {
+    func execute(_ url: String) async throws -> Data {
         guard let url = URL(string: url) else {
             throw NetworkError.invalidURL
         }

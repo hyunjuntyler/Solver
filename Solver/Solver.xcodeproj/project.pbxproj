@@ -28,7 +28,7 @@
 		29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9292BDA761D0034F600 /* Top100Entity.swift */; };
 		29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */; };
 		29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9302BDA7C5D0034F600 /* NetworkError.swift */; };
-		29F7B9332BDA7C6D0034F600 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */; };
+		29F7B9332BDA7C6D0034F600 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9322BDA7C6D0034F600 /* ImageDownloader.swift */; };
 		29F7B9352BDA7C880034F600 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9342BDA7C880034F600 /* APIClient.swift */; };
 		29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9382BDA811A0034F600 /* CheckRepository.swift */; };
 		29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B93A2BDA81330034F600 /* FetchRepository.swift */; };
@@ -89,7 +89,7 @@
 		29F7B9292BDA761D0034F600 /* Top100Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100Entity.swift; sourceTree = "<group>"; };
 		29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		29F7B9302BDA7C5D0034F600 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
+		29F7B9322BDA7C6D0034F600 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		29F7B9342BDA7C880034F600 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		29F7B9382BDA811A0034F600 /* CheckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRepository.swift; sourceTree = "<group>"; };
 		29F7B93A2BDA81330034F600 /* FetchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRepository.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */,
 				29F7B9342BDA7C880034F600 /* APIClient.swift */,
 				29F7B9302BDA7C5D0034F600 /* NetworkError.swift */,
-				29F7B9322BDA7C6D0034F600 /* ImageDataLoader.swift */,
+				29F7B9322BDA7C6D0034F600 /* ImageDownloader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F7B9332BDA7C6D0034F600 /* ImageDataLoader.swift in Sources */,
+				29F7B9332BDA7C6D0034F600 /* ImageDownloader.swift in Sources */,
 				29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */,
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
