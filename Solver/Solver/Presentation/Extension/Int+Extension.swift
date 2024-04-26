@@ -26,4 +26,9 @@ extension Int {
         default: return LinearGradient(colors: [.black], startPoint: .bottom, endPoint: .top)
         }
     }
+    
+    func toPercentile(by: Int) -> Text {
+        let percentile = Double(self) / Double(by)
+        return Text(percentile, format: .number.rounded(increment: 0.01))
+    }
 }
