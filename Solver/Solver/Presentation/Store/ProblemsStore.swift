@@ -42,6 +42,7 @@ final class ProblemsStore {
     
     func update(_ problems: [ProblemEntity]) {
         for problem in problems {
+            if problem.level == 0 { continue }
             solvedCount += problem.solved
             triedCount += problem.tried
             

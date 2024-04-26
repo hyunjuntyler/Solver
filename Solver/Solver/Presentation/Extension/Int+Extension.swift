@@ -17,7 +17,7 @@ extension Int {
         case 21...25: return "Diamond"
         case 26...30: return "Ruby"
         case 31...: return "Master"
-        default: return "None"
+        default: return "Unrated"
         }
     }
     
@@ -66,7 +66,7 @@ extension Int {
     
     func toPercentile(by: Int) -> Text {
         let percentile = Double(self) / Double(by)
-        return Text(percentile, format: .number.rounded(increment: 0.01))
+        return Text(percentile, format: .number.rounded(increment: 0.1))
     }
     
     private var romanNumeral: String {
