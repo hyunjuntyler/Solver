@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct AccountView: View {
-    var store: MainTabStore
-
     var body: some View {
         Text("Account")
     }

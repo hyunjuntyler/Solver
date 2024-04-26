@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct SummaryView: View {
-    var store: MainTabStore
-    
+struct SummaryView: View {    
     var body: some View {
         VStack {
-            
+            Text("Summary")
         }
     }
 }
