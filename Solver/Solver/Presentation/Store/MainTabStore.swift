@@ -11,32 +11,16 @@ import SwiftUI
 final class MainTabStore {
     let useCase = FetchUseCase()
     
-    var userId = UserDefaults.standard.string(forKey: "userId") ?? ""
-    var profileImage: UIImage?
-    var badgeImage: UIImage?
-    var tier: Int?
-    var solvedCount: Int?
-    var maxStreak: Int?
-    var rank: Int?
-    var rankRatio: Int?
-    var userClass: Int?
-    var problemCount: Int?
-    var top100Count: Int?
+    var userId = UserDefaults.standard.string(forKey: "userId")
+    var user: UserEntity?
+    var profile: ProfileEntity?
+    var badge: BadgeEntity?
+    var top100: Top100Entity?
+    var problems: [ProblemEntity]?
+    var userCount: Int?
     
     init() {
         fetch()
-    }
-    
-    init(preview: Bool) {
-        userId = "hello"
-        tier = 7
-        solvedCount = 100
-        maxStreak = 20
-        rank = 100
-        rankRatio = 20
-        userClass = 2
-        problemCount = 50
-        top100Count = 100
     }
     
     func fetch() {
@@ -46,29 +30,19 @@ final class MainTabStore {
     }
     
     func fetchUser() {
+        guard let id = userId else { return }
+
         Task {
             do {
-                let userCount = try await useCase.fetchSite()
-                let user = try await useCase.fetchUser(id: userId)
-                tier = user.tier
-                solvedCount = user.solvedCount
-                maxStreak = user.maxStreak
-                rank = user.rank
-                rankRatio = Int(Double(user.rank) / Double(userCount) * 100)
-                userClass = user.userClass
+                userCount = try await useCase.fetchSite()
+                user = try await useCase.fetchUser(id: id)
                 
-                if let url = user.profileImageUrl {
-                    let profile = try await useCase.fetchProfile(cache: "", url: url)
-                    if let data = profile.image {
-                        profileImage = UIImage(data: data)
-                    }
+                if let url = user?.profileImageUrl {
+                    profile = try await useCase.fetchProfile(cache: "", url: url)
                 }
                 
-                if let badgeId = user.badgeId {
-                    let badge = try await useCase.fetchBadge(cache: "", badgeId: badgeId)
-                    if let data = badge.image {
-                        badgeImage = UIImage(data: data)
-                    }
+                if let badgeId = user?.badgeId {
+                    badge = try await useCase.fetchBadge(cache: "", badgeId: badgeId)
                 }
             } catch {
                 print("error to load user")
@@ -77,10 +51,11 @@ final class MainTabStore {
     }
     
     func fetchProblem() {
+        guard let id = userId else { return }
+
         Task {
             do {
-                let problems = try await useCase.fetchProblem(id: userId)
-                problemCount = problems.count
+                problems = try await useCase.fetchProblem(id: id)
             } catch {
                 print("error to load problem")
             }
@@ -88,10 +63,11 @@ final class MainTabStore {
     }
     
     func fetchTop100() {
+        guard let id = userId else { return }
+        
         Task {
             do {
-                let top100 = try await useCase.fetchTop100(id: userId)
-                top100Count = top100.count
+                top100 = try await useCase.fetchTop100(id: id)
             } catch {
                 print("error to load top100")
             }

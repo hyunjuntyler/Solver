@@ -16,5 +16,5 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView(store: MainTabStore(preview: true))
+    AccountView(store: MainTabStore())
 }

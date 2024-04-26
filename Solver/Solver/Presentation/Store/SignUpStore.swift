@@ -10,7 +10,7 @@ import SwiftUI
 @Observable
 final class SignUpStore {
     private let useCase = CheckUseCase()
-
+    
     var userId = ""
     var showAlert = false
     var isValid = true
