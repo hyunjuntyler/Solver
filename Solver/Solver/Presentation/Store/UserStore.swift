@@ -20,6 +20,13 @@ final class UserStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
+    init(user: UserEntity, profile: ProfileEntity, badge: BadgeEntity) {
+        self.user = user
+        self.profile = profile
+        self.badge = badge
+        self.userCount = 135279
+    }
+    
     func fetch() {
         Task {
             isLoading = true

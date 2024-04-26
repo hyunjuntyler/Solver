@@ -17,6 +17,10 @@ final class Top100Store {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
+    init(top100: Top100Entity) {
+        self.top100 = top100
+    }
+    
     func fetch() {
         isLoading = true
         

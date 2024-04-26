@@ -17,6 +17,10 @@ final class ProblemsStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
+    init(problems: [ProblemEntity]) {
+        self.problems = problems
+    }
+    
     func fetch() {
         isLoading = true
         
