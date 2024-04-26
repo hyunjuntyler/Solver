@@ -197,8 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				29F7B9372BDA810A0034F600 /* Repository */,
-				29F7B92B2BDA7B900034F600 /* Network */,
-				29F7B9102BDA6A940034F600 /* DTO */,
+				29F7B9632BDB27BB0034F600 /* DataSource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -241,6 +240,7 @@
 		29F7B92B2BDA7B900034F600 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				29F7B9102BDA6A940034F600 /* DTO */,
 				29F7B92E2BDA7C370034F600 /* APIEndpoint.swift */,
 				29F7B9342BDA7C880034F600 /* APIClient.swift */,
 				29F7B9302BDA7C5D0034F600 /* NetworkError.swift */,
@@ -332,6 +332,14 @@
 				29F7B9582BDA8CC20034F600 /* Font+Extension.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		29F7B9632BDB27BB0034F600 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B92B2BDA7B900034F600 /* Network */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
