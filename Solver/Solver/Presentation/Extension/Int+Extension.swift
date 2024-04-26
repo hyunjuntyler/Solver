@@ -8,11 +8,36 @@
 import SwiftUI
 
 extension Int {
-    var tierBadgeNumber: String {
+    var tier: String {
+        switch self {
+        case 1...5: return "Bronze"
+        case 6...10: return "Silver"
+        case 11...15: return "Gold"
+        case 16...20: return "Platinum"
+        case 21...25: return "Diamond"
+        case 26...30: return "Ruby"
+        case 31...: return "Master"
+        default: return "None"
+        }
+    }
+    
+    var tierNumber: String {
         if self == 31 { return "M" }
         if self == 0 { return "?" }
         let number = 5 - (self - 1) % 5
         return "\(number)"
+    }
+    
+    var tierColor: Color {
+        switch self {
+        case 1...5: return .bronze
+        case 6...10: return .silver
+        case 11...15: return .gold
+        case 16...20: return .platinum
+        case 21...25: return .diamond
+        case 26...30: return .ruby
+        default: return .unrated
+        }
     }
     
     var tierName: String {
@@ -55,18 +80,5 @@ extension Int {
             }
         }
         return result
-    }
-    
-    private var tier: String {
-        switch self {
-        case 1...5: return "Bronze"
-        case 6...10: return "Silver"
-        case 11...15: return "Gold"
-        case 16...20: return "Platinum"
-        case 21...25: return "Diamond"
-        case 26...30: return "Ruby"
-        case 31...: return "Master"
-        default: return "None"
-        }
     }
 }
