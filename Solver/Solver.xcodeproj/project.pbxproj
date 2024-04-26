@@ -17,6 +17,8 @@
 		29F488522BDB540B006B0EA2 /* ProblemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488512BDB540B006B0EA2 /* ProblemsStore.swift */; };
 		29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488532BDB5537006B0EA2 /* Top100Store.swift */; };
 		29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488592BDB8295006B0EA2 /* PreviewData.swift */; };
+		29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */; };
+		29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */; };
 		29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */; };
 		29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9132BDA6D570034F600 /* Top100DTO.swift */; };
 		29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9152BDA6EFA0034F600 /* UserDTO.swift */; };
@@ -80,6 +82,8 @@
 		29F488512BDB540B006B0EA2 /* ProblemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsStore.swift; sourceTree = "<group>"; };
 		29F488532BDB5537006B0EA2 /* Top100Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100Store.swift; sourceTree = "<group>"; };
 		29F488592BDB8295006B0EA2 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierBadge.swift; sourceTree = "<group>"; };
+		29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDTO.swift; sourceTree = "<group>"; };
 		29F7B9132BDA6D570034F600 /* Top100DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100DTO.swift; sourceTree = "<group>"; };
 		29F7B9152BDA6EFA0034F600 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
@@ -197,6 +201,31 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
+		29F4885C2BDBD09A006B0EA2 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B94D2BDA882B0034F600 /* SummaryView.swift */,
+				29F4885D2BDBD0AE006B0EA2 /* Component */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		29F4885D2BDBD0AE006B0EA2 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		29F488602BDBD9D7006B0EA2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		29F7B90F2BDA68A60034F600 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +303,7 @@
 		29F7B9412BDA869B0034F600 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				29F488602BDBD9D7006B0EA2 /* Extension */,
 				29F7B9422BDA870B0034F600 /* View */,
 				29F7B9512BDA890F0034F600 /* Store */,
 			);
@@ -304,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
-				29F7B94D2BDA882B0034F600 /* SummaryView.swift */,
+				29F4885C2BDBD09A006B0EA2 /* Summary */,
 				29F7B94F2BDA88320034F600 /* AccountView.swift */,
 			);
 			path = MainTab;
@@ -486,6 +516,7 @@
 				29F7B9502BDA88320034F600 /* AccountView.swift in Sources */,
 				29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */,
 				29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */,
+				29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
 				29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
@@ -496,6 +527,7 @@
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
 				29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */,
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
+				29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */,
 				29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */,
 				29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
