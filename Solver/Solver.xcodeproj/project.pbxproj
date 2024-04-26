@@ -20,6 +20,7 @@
 		29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */; };
 		29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */; };
 		29F488662BDBDFDE006B0EA2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */; };
+		29F488682BDBE45C006B0EA2 /* BadgeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488672BDBE45C006B0EA2 /* BadgeImage.swift */; };
 		29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */; };
 		29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9132BDA6D570034F600 /* Top100DTO.swift */; };
 		29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9152BDA6EFA0034F600 /* UserDTO.swift */; };
@@ -86,6 +87,7 @@
 		29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierBadge.swift; sourceTree = "<group>"; };
 		29F488612BDBD9FD006B0EA2 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		29F488672BDBE45C006B0EA2 /* BadgeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeImage.swift; sourceTree = "<group>"; };
 		29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDTO.swift; sourceTree = "<group>"; };
 		29F7B9132BDA6D570034F600 /* Top100DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100DTO.swift; sourceTree = "<group>"; };
 		29F7B9152BDA6EFA0034F600 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */,
 				29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */,
+				29F488672BDBE45C006B0EA2 /* BadgeImage.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */,
 				29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
+				29F488682BDBE45C006B0EA2 /* BadgeImage.swift in Sources */,
 				29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
 				29F488662BDBDFDE006B0EA2 /* ProfileImage.swift in Sources */,
