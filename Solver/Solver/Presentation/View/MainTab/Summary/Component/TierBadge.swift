@@ -14,14 +14,14 @@ struct TierBadge: View {
     var body: some View {
         ZStack {
             TierBadgeShape()
-                .frame(width: size * 7, height: size * 10)
+                .frame(width: size * 0.7, height: size)
                 .foregroundStyle(tier.tierBadgeColor)
             Text(tier.tierBadgeNumber)
                 .foregroundStyle(.white)
                 .fontWeight(.heavy)
                 .fontDesign(.monospaced)
-                .font(.system(size: size * 7))
-                .offset(y: -size)
+                .font(.system(size: size * 0.7))
+                .offset(y: -size * 0.1)
         }
     }
 }
@@ -51,5 +51,5 @@ fileprivate struct TierBadgeShape: Shape {
 }
 
 #Preview {
-    TierBadge(tier: 30, size: 3)
+    TierBadge(tier: 31, size: 30)
 }

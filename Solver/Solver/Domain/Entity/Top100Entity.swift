@@ -12,7 +12,7 @@ struct Top100Entity {
     var items: [ItemEntity]
 }
 
-struct ItemEntity {
+struct ItemEntity: Identifiable {
     var id: Int
     var title: String
     var level: Int

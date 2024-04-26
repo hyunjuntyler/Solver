@@ -10,8 +10,9 @@ import SwiftUI
 extension Int {
     var tierBadgeNumber: String {
         if self == 31 { return "M" }
-        let number = 6 - self % 5
-        return number == 6 ? "1" : "\(number)"
+        if self == 0 { return "?" }
+        let number = 5 - (self - 1) % 5
+        return "\(number)"
     }
     
     var tierName: String {
@@ -27,7 +28,7 @@ extension Int {
         case 21...25: return LinearGradient(colors: [.diamond], startPoint: .bottom, endPoint: .top)
         case 26...30: return LinearGradient(colors: [.ruby], startPoint: .bottom, endPoint: .top)
         case 31...: return LinearGradient(colors: [.master1, .master2, .master3], startPoint: .bottom, endPoint: .top)
-        default: return LinearGradient(colors: [.black], startPoint: .bottom, endPoint: .top)
+        default: return LinearGradient(colors: [.unrated], startPoint: .bottom, endPoint: .top)
         }
     }
     
@@ -44,7 +45,7 @@ extension Int {
     }
     
     private var romanNumeral: String {
-        var num = self
+        var num = 5 - (self - 1) % 5
         let romanNumerals = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
         var result = ""
         for (value, numeral) in romanNumerals {

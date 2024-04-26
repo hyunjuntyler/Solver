@@ -17,6 +17,8 @@ final class ProblemsStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
+    init() { }
+    
     init(problems: [ProblemEntity]) {
         self.problems = problems
     }
