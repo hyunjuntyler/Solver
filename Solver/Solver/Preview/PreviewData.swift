@@ -33,6 +33,6 @@ class PreviewData {
     lazy var top100 = Top100Entity(count: 3, items: items)
     
     let problems: [ProblemEntity] = (0...30).map { level in
-        ProblemEntity(level: level, total: 1000 - level * 30, solved: level % 5, tried: 0)
+        ProblemEntity(level: level, total: 1000 - level * 30, solved: level % 8, tried: 0)
     }
 }

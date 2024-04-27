@@ -67,9 +67,11 @@ struct SummaryView: View {
                     .padding(.bottom, -30)
                 
                 HStack {
+                    let count = min(problemsStore.solvedCount, 50)
+                    
                     Text("🚀")
                         .font(.tossBody)
-                    Text("상위 30문제")
+                    Text("상위 \(count)문제")
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .frame(height: 40)
@@ -82,7 +84,7 @@ struct SummaryView: View {
                 .padding(.top)
                 .sticky(frames)
                 
-                Top30(store: top100Store)
+                Top50(store: top100Store)
                     .padding(.top, 20)
                     .padding()
                     .background {
