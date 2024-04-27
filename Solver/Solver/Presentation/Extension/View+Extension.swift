@@ -12,7 +12,7 @@ extension View {
         modifier(ShimmerEffect(color: color, opacity: opacity, duration: duration))
     }
     
-    func sticky(_ stickyHeaders: [CGRect], isMainHeader: Bool = false) -> some View {
-        modifier(StickyHeader(stickyHeaders: stickyHeaders, isMainHeader: isMainHeader))
+    func sticky(_ stickyHeaders: [CGRect], isMainHeader: Bool = false, isEmptyHeader: Bool = false) -> some View {
+        modifier(StickyHeader(stickyHeaders: stickyHeaders, isMainHeader: isMainHeader, isEmptyHeader: isEmptyHeader))
     }
 }

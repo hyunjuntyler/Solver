@@ -55,43 +55,77 @@ struct SummaryView: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity)
+                    .background(Color(.systemBackground))
                     .sticky(frames, isMainHeader: true)
                 }
                 
                 Rectangle()
-                    .frame(height: 40)
-                    .padding(.horizontal)
-                    .foregroundStyle(.ultraThinMaterial)
-                    .padding(.top)
+                    .frame(height: 30)
+                    .foregroundStyle(.background)
                     .sticky(frames)
+                    .padding(.bottom, -30)
+                
+                HStack {
+                    Text("🚀")
+                        .font(.tossBody)
+                    Text("상위 30문제")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: 40)
+                .padding(.horizontal)
+                .background {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .foregroundStyle(.ultraThinMaterial)
+                }
+                .padding(.horizontal)
+                .padding(.top)
+                .sticky(frames)
                 
                 Top30(store: top100Store)
+                    .padding(.top, 20)
                     .padding()
                     .background {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
                             .foregroundStyle(.ultraThinMaterial)
                     }
                     .padding(.horizontal)
+                    .padding(.top, -20)
                 
-                Rectangle()
-                    .frame(height: 40)
-                    .padding(.horizontal)
-                    .foregroundStyle(.ultraThinMaterial)
-                    .padding(.top)
-                    .sticky(frames)
+                HStack {
+                    Text("📊")
+                        .font(.tossBody)
+                    Text("난이도 분포")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: 40)
+                .padding(.horizontal)
+                .background {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .foregroundStyle(.ultraThinMaterial)
+                }
+                .padding(.horizontal)
+                .padding(.top)
+                .sticky(frames)
                 
                 ProblemsChart(store: problemsStore)
+                    .padding(.top, 20)
                     .padding()
                     .background {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
                             .foregroundStyle(.ultraThinMaterial)
                     }
                     .padding(.horizontal)
+                    .padding(.top, -20)
                 
                 Rectangle()
                     .frame(height: 40)
                     .foregroundStyle(.clear)
                     .sticky(frames)
+                
+                Rectangle()
+                    .frame(height: 500)
+                    .foregroundStyle(.ultraThinMaterial)
             }
         }
         .coordinateSpace(name: "container")
@@ -102,6 +136,16 @@ struct SummaryView: View {
             userStore.fetch()
             top100Store.fetch()
             problemsStore.fetch()
+        }
+        .overlay {
+            let str = frames.map { "\(Int($0.minY)) - \(Int($0.height))" }.joined(separator: "\n")
+                Text(str)
+                    .background(Color.red)
+        }
+        .overlay(alignment: .top) {
+            Color(.systemBackground)
+                .ignoresSafeArea()
+                .frame(height: 0)
         }
     }
 }
