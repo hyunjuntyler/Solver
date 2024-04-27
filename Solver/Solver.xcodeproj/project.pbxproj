@@ -14,6 +14,9 @@
 		29552FC82BDA647500F8A33C /* SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FC72BDA647500F8A33C /* SolverTests.swift */; };
 		29552FD22BDA647500F8A33C /* SolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD12BDA647500F8A33C /* SolverUITests.swift */; };
 		29552FD42BDA647500F8A33C /* SolverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */; };
+		298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */; };
+		298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */; };
+		298D5F012BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */; };
 		29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4884F2BDB4F1E006B0EA2 /* UserStore.swift */; };
 		29F488522BDB540B006B0EA2 /* ProblemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488512BDB540B006B0EA2 /* ProblemsStore.swift */; };
 		29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488532BDB5537006B0EA2 /* Top100Store.swift */; };
@@ -85,6 +88,9 @@
 		29552FCD2BDA647500F8A33C /* SolverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FD12BDA647500F8A33C /* SolverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITests.swift; sourceTree = "<group>"; };
 		29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
+		298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
+		298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderPreferenceKey.swift; sourceTree = "<group>"; };
 		29F4884F2BDB4F1E006B0EA2 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		29F488512BDB540B006B0EA2 /* ProblemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsStore.swift; sourceTree = "<group>"; };
 		29F488532BDB5537006B0EA2 /* Top100Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100Store.swift; sourceTree = "<group>"; };
@@ -205,6 +211,23 @@
 			path = SolverUITests;
 			sourceTree = "<group>";
 		};
+		298D5EFA2BDD1E2B003CB0EE /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */,
+				298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		298D5EFF2BDD1FEE003CB0EE /* PreferenceKey */ = {
+			isa = PBXGroup;
+			children = (
+				298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */,
+			);
+			path = PreferenceKey;
+			sourceTree = "<group>";
+		};
 		29F488582BDB823E006B0EA2 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +344,8 @@
 		29F7B9412BDA869B0034F600 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				298D5EFF2BDD1FEE003CB0EE /* PreferenceKey */,
+				298D5EFA2BDD1E2B003CB0EE /* ViewModifier */,
 				29F488602BDBD9D7006B0EA2 /* Extension */,
 				29F7B9422BDA870B0034F600 /* View */,
 				29F7B9512BDA890F0034F600 /* Store */,
@@ -545,6 +570,7 @@
 				29F7B9352BDA7C880034F600 /* NetworkClient.swift in Sources */,
 				29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
+				298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
 				2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */,
 				29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */,
@@ -554,6 +580,7 @@
 				29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
 				29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */,
+				298D5F012BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift in Sources */,
 				29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */,
 				29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */,
 				29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */,
@@ -563,6 +590,7 @@
 				29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */,
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
+				298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */,
 				29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */,
