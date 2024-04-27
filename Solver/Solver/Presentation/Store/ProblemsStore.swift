@@ -62,7 +62,7 @@ final class ProblemsStore {
     }
 }
 
-struct ProblemStats {
+struct ProblemStats: Equatable {
     var tier: String
     var count: Int
     var color: Color
