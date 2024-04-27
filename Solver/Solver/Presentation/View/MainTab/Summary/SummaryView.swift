@@ -50,12 +50,15 @@ struct SummaryView: View {
                             if let count = userStore.userCount {
                                 HStack {
                                     Text("랭킹 \(user.rank)위")
+                                        .fontWeight(.semibold)
                                     Text("(상위 \(user.rank.toPercentile(by: count))%)")
                                 }
+                                .font(.footnote)
                             }
                         }
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.vertical)
                     .background(Color(.systemBackground))
                     .sticky(frames, isMainHeader: true)
                 }

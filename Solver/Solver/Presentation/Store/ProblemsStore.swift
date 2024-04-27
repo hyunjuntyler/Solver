@@ -44,21 +44,29 @@ final class ProblemsStore {
     }
     
     func update(_ problems: [ProblemEntity]) {
+        var newProblemStats: [ProblemStats] = []
+        var newSolvedCount = 0
+        var newTriedCount = 0
+        
         for problem in problems {
             if problem.level == 0 { continue }
-            solvedCount += problem.solved
-            triedCount += problem.tried
+            newSolvedCount += problem.solved
+            newTriedCount += problem.tried
             
             let level = problem.level
             let solved = problem.solved
             
-            if let index = problemsStats.firstIndex(where: { $0.tier == level.tier }) {
-                problemsStats[index].count += problem.solved
+            if let index = newProblemStats.firstIndex(where: { $0.tier == level.tier }) {
+                newProblemStats[index].count += problem.solved
             } else {
                 let problemStats = ProblemStats(tier: level.tier, count: solved, color: level.tierColor)
-                problemsStats.append(problemStats)
+                newProblemStats.append(problemStats)
             }
         }
+        
+        solvedCount = newSolvedCount
+        triedCount = newTriedCount
+        problemsStats = newProblemStats
     }
 }
 
