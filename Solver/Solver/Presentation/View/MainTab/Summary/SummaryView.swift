@@ -63,7 +63,7 @@ struct SummaryView: View {
                 Rectangle()
                     .frame(height: 30)
                     .foregroundStyle(.background)
-                    .sticky(frames)
+                    .sticky(frames, isEmptyHeader: true)
                     .padding(.bottom, -30)
                 
                 HStack {
@@ -122,10 +122,6 @@ struct SummaryView: View {
                     .frame(height: 40)
                     .foregroundStyle(.clear)
                     .sticky(frames)
-                
-                Rectangle()
-                    .frame(height: 500)
-                    .foregroundStyle(.ultraThinMaterial)
             }
         }
         .coordinateSpace(name: "container")
@@ -136,11 +132,6 @@ struct SummaryView: View {
             userStore.fetch()
             top100Store.fetch()
             problemsStore.fetch()
-        }
-        .overlay {
-            let str = frames.map { "\(Int($0.minY)) - \(Int($0.height))" }.joined(separator: "\n")
-                Text(str)
-                    .background(Color.red)
         }
         .overlay(alignment: .top) {
             Color(.systemBackground)
