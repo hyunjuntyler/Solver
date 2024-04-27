@@ -29,15 +29,19 @@ struct SummaryView: View {
                         BadgeImage(data: userStore.badge?.image, size: 24)
                         ClassBadge(userClass: user.userClass, size: 24)
                     }
-                    
+
                     VStack {
                         HStack {
-                            Image(systemName: "checkmark.circle.fill")
+                            Text("✍️")
+                                .font(.tossBody)
                             Text("\(user.solvedCount)")
-                            Image(systemName: "leaf.fill")
+                            Text("🌱")
+                                .font(.tossBody)
                             Text("\(user.maxStreak)")
                         }
+                        
                         TierBadge(tier: user.tier, size: 100)
+                            .shimmer()
                         
                         HStack {
                             Text(user.tier.tierName)
