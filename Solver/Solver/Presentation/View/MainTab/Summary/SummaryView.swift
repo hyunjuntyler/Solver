@@ -21,44 +21,42 @@ struct SummaryView: View {
                         HStack {
                             ProfileImage(data: userStore.profile?.image, size: 40)
                             Text(user.id)
-                                .font(.title3)
-                            BadgeImage(data: userStore.badge?.image, size: 24)
-                            ClassBadge(userClass: user.userClass, size: 24)
+                                .font(.title2)
+                            BadgeImage(data: userStore.badge?.image, size: 30)
+                            ClassBadge(userClass: user.userClass, size: 30)
                         }
                         
-                        VStack {
+                        HStack {
+                            Text("✍️")
+                                .font(.tossBody)
+                            Text("\(user.solvedCount)")
+                            Text("🌱")
+                                .font(.tossBody)
+                            Text("\(user.maxStreak)")
+                        }
+                        
+                        TierBadge(tier: user.tier, size: 120)
+                            .shimmer()
+                        
+                        HStack {
+                            Text(user.tier.tierName)
+                            Text("\(user.rating)")
+                        }
+                        .foregroundStyle(user.tier.tierBadgeColor)
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .shimmer()
+                        
+                        if let count = userStore.userCount {
                             HStack {
-                                Text("✍️")
-                                    .font(.tossBody)
-                                Text("\(user.solvedCount)")
-                                Text("🌱")
-                                    .font(.tossBody)
-                                Text("\(user.maxStreak)")
-                            }
-                            
-                            TierBadge(tier: user.tier, size: 100)
-                                .shimmer()
-                            
-                            HStack {
-                                Text(user.tier.tierName)
-                                Text("\(user.rating)")
-                            }
-                            .foregroundStyle(user.tier.tierBadgeColor)
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            
-                            if let count = userStore.userCount {
-                                HStack {
-                                    Text("랭킹 \(user.rank)위")
-                                        .fontWeight(.semibold)
-                                    Text("(상위 \(user.rank.toPercentile(by: count))%)")
-                                }
-                                .font(.footnote)
+                                Text("랭킹 \(user.rank)위")
+                                    .fontWeight(.semibold)
+                                Text("(상위 \(user.rank.toPercentile(by: count))%)")
                             }
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical)
+                    .padding(.top, 20)
                     .background(Color(.systemBackground))
                     .sticky(frames, isMainHeader: true)
                 }
@@ -86,6 +84,7 @@ struct SummaryView: View {
                 .padding(.horizontal)
                 .padding(.top)
                 .sticky(frames)
+                .padding(.top)
                 
                 Top50(store: top100Store)
                     .padding(.top, 20)
@@ -148,7 +147,7 @@ struct SummaryView: View {
 
 #Preview {
     let previewData = PreviewData()
-    let userStore = UserStore(user: previewData.users[0], profile: previewData.profile, badge: previewData.badge)
+    let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
     let problemsStore = ProblemsStore(problems: previewData.problems)
     let top100Store = Top100Store(top100: previewData.top100)
     return SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store)
