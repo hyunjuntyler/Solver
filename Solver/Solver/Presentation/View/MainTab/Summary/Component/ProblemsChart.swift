@@ -49,6 +49,7 @@ struct ProblemsChart: View {
                     Text("\(stats.count) 문제")
                         .fontWeight(.bold)
                         .font(.title3)
+                        .contentTransition(.numericText())
                 }
                 .transition(.scale)
             } else {

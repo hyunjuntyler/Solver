@@ -10,6 +10,8 @@ import SwiftUI
 struct Top50: View {
     var store: Top100Store
     
+    @State private var selectedItem: ItemEntity?
+    
     private let columns = Array(repeating: GridItem(.flexible()), count: 10)
     private let spacing: CGFloat = 16
     private let size: CGFloat = 24
@@ -19,6 +21,49 @@ struct Top50: View {
             LazyVGrid(columns: columns, spacing: spacing) {
                 ForEach(top100.items.prefix(50)) { item in
                     TierBadge(tier: item.level, size: size)
+                        .onTapGesture {
+                            withAnimation(.smooth) {
+                                if selectedItem?.id == item.id {
+                                    selectedItem = nil
+                                } else {
+                                    selectedItem = item
+                                }
+                            }
+                        }
+                        .padding(5)
+                        .background {
+                            if selectedItem?.id == item.id {
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .foregroundStyle(item.level.tierColor.opacity(0.2))
+                            }
+                        }
+                }
+            }
+            .overlay {
+                if let item = selectedItem {
+                    VStack {
+                        HStack {
+                            TierBadge(tier: item.level, size: 18)
+                                .offset(y: 1)
+                            Text(String(item.id))
+                                .fontWeight(.semibold)
+                                .fontDesign(.monospaced)
+                                .contentTransition(.numericText())
+                        }
+                        Text("\(item.title)")
+                            .font(.caption)
+                    }
+                    .padding(12)
+                    .background {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .foregroundStyle(.ultraThinMaterial)
+                    }
+                    .transition(.opacity)
+                    .onTapGesture {
+                        withAnimation(.smooth) {
+                            selectedItem = nil
+                        }
+                    }
                 }
             }
         }
