@@ -17,7 +17,9 @@ final class Top100Store {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { }
+    init() { 
+        fetch()
+    }
     
     init(top100: Top100Entity) {
         self.top100 = top100

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SummaryView: View {
+struct SummaryView: View {    
     var userStore: UserStore
     var problemsStore: ProblemsStore
     var top100Store: Top100Store
@@ -23,7 +23,7 @@ struct SummaryView: View {
             if let user = userStore.user {
                 VStack {
                     HStack {
-                        ProfileImage(data: userStore.profile?.image, size: 56)
+                        ProfileImage(data: userStore.profile?.image, size: 40)
                         Text(user.id)
                             .font(.title3)
                         BadgeImage(data: userStore.badge?.image, size: 24)
@@ -82,7 +82,9 @@ struct SummaryView: View {
             Text("\(offset.y)")
         }
         .refreshable {
-            
+            userStore.fetch()
+            top100Store.fetch()
+            problemsStore.fetch()
         }
     }
 }

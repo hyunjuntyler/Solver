@@ -20,7 +20,9 @@ final class UserStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { }
+    init() { 
+        fetch()
+    }
     
     init(user: UserEntity, profile: ProfileEntity, badge: BadgeEntity) {
         self.user = user

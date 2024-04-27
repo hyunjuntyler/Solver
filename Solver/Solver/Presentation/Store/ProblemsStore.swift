@@ -20,7 +20,9 @@ final class ProblemsStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { }
+    init() { 
+        fetch()
+    }
     
     init(problems: [ProblemEntity]) {
         self.problems = problems
@@ -33,6 +35,7 @@ final class ProblemsStore {
         Task {
             do {
                 problems = try await useCase.fetchProblem(userId: userId)
+                update(problems)
                 isLoading = false
             } catch {
                 isLoading = true
