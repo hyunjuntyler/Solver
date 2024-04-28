@@ -20,7 +20,7 @@ final class UserStore {
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { 
+    init() {
         fetch()
     }
     
@@ -32,6 +32,9 @@ final class UserStore {
     }
     
     func fetch() {
+        let storedProfileImageUrl = profile?.imageUrl
+        let storedBadgeId = badge?.id
+        
         Task {
             isLoading = true
             
@@ -39,11 +42,11 @@ final class UserStore {
                 userCount = try await useCase.fetchSite()
                 user = try await useCase.fetchUser(userId: userId)
                 
-                if let url = user?.profileImageUrl {
+                if let url = user?.profileImageUrl, storedProfileImageUrl != url {
                     profile = try await useCase.fetchProfile(url: url)
                 }
                 
-                if let badgeId = user?.badgeId {
+                if let badgeId = user?.badgeId, storedBadgeId != badgeId {
                     badge = try await useCase.fetchBadge(badgeId: badgeId)
                 }
                 
