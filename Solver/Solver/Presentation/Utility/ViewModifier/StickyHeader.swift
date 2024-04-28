@@ -54,9 +54,7 @@ struct StickyHeader: ViewModifier {
         if let nextHeader = stickyHeaders.first(where: { $0.minY > frame.minY && $0.minY < 40 + mainHeader.height }) {
             withAnimation {
                 if nextHeader.minY - mainHeader.height >= 0 {
-                    withAnimation {
-                        scale -= (40 - nextHeader.minY + mainHeader.height) * 0.001
-                    }
+                    scale -= (40 - nextHeader.minY + mainHeader.height) * 0.001
                 }
             }
         }
