@@ -19,7 +19,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("내 정보", systemImage: "list.clipboard")
                 }
-            AccountView()
+            AccountView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store)
                 .tabItem {
                     Label("계정", systemImage: "person.crop.circle")
                 }

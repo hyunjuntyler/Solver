@@ -39,6 +39,9 @@ struct Top50: View {
                         }
                 }
             }
+            .onChange(of: store.userId) {
+                selectedItem = nil
+            }
             .overlay {
                 if let item = selectedItem {
                     VStack {

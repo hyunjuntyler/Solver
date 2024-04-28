@@ -37,23 +37,3 @@ final class SignUpStore {
         }
     }
 }
-
-struct signUpButtonStyle: ButtonStyle {
-    var disable: Bool
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundStyle(disable ? .gray : .white)
-            .bold()
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .foregroundStyle(disable ? Color(.systemGray5) : .accentColor)
-            }
-            .padding(.horizontal)
-            .scaleEffect(configuration.isPressed ? 0.98 : 1)
-            .animation(.bouncy, value: configuration.isPressed)
-            .animation(.bouncy, value: disable)
-    }
-}

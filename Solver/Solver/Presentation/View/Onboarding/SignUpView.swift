@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @AppStorage("userId") private var userId = ""
     @State private var store = SignUpStore()
+    
+    private var disable: Bool {
+        !store.isValid || store.userId == "" || userId == store.userId
+    }
     
     var body: some View {
         VStack {
@@ -27,19 +32,24 @@ struct SignUpView: View {
                 .onChange(of: store.userId) {
                     store.validateUserId()
                 }
-            
-            Text("아이디는 알파벳, 숫자와 밑줄(_)만 가능해요")
-                .font(.footnote)
-                .foregroundStyle(.red)
-                .opacity(!store.isValid ? 1 : 0)
-                .animation(.bouncy, value: store.isValid)
-                .padding(.bottom)
+            ZStack {
+                Text("아이디는 알파벳, 숫자와 밑줄(_)만 가능해요")
+                    .foregroundStyle(.red)
+                    .opacity(!store.isValid ? 1 : 0)
+                    .animation(.bouncy, value: store.isValid)
+                Text("동일한 아이디예요")
+                    .foregroundStyle(.blue)
+                    .opacity(store.userId != "" && userId == store.userId ? 1 : 0)
+                    .animation(.bouncy, value: userId == store.userId)
+            }
+            .font(.footnote)
+            .padding(.bottom)
             
             Button("확인") {
                 store.checkUserId()
             }
-            .buttonStyle(signUpButtonStyle(disable: !store.isValid || store.userId == ""))
-            .disabled(!store.isValid || store.userId == "")
+            .buttonStyle(CustomButtonStyle(style: .singUp, disable: disable))
+            .disabled(disable)
             .padding(.bottom, 40)
             
             VStack(spacing: 8) {

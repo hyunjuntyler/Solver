@@ -10,6 +10,8 @@
 		2905AFFD2BDE49AB00B08967 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905AFFC2BDE49AB00B08967 /* User.swift */; };
 		2905AFFF2BDE56FC00B08967 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905AFFE2BDE56FC00B08967 /* Profile.swift */; };
 		2905B0012BDE570100B08967 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0002BDE570100B08967 /* Badge.swift */; };
+		2905B0052BDE674600B08967 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0042BDE674600B08967 /* ButtonType.swift */; };
+		2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */; };
 		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
@@ -84,6 +86,8 @@
 		2905AFFC2BDE49AB00B08967 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2905AFFE2BDE56FC00B08967 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2905B0002BDE570100B08967 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		2905B0042BDE674600B08967 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
@@ -184,6 +188,23 @@
 			path = SwiftData;
 			sourceTree = "<group>";
 		};
+		2905B0032BDE672C00B08967 /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				2905B0042BDE674600B08967 /* ButtonType.swift */,
+				2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		2905B0092BDE76B300B08967 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				29F7B94F2BDA88320034F600 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		29552FAA2BDA647300F8A33C = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +277,7 @@
 		298D5F022BDDF026003CB0EE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				2905B0032BDE672C00B08967 /* ButtonStyle */,
 				298D5EFF2BDD1FEE003CB0EE /* PreferenceKey */,
 				298D5EFA2BDD1E2B003CB0EE /* ViewModifier */,
 				29F488602BDBD9D7006B0EA2 /* Extension */,
@@ -411,7 +433,7 @@
 			children = (
 				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
 				29F4885C2BDBD09A006B0EA2 /* Summary */,
-				29F7B94F2BDA88320034F600 /* AccountView.swift */,
+				2905B0092BDE76B300B08967 /* Account */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -588,6 +610,7 @@
 				29F7B9332BDA7C6D0034F600 /* ImageDownloader.swift in Sources */,
 				29F7B9312BDA7C5D0034F600 /* NetworkError.swift in Sources */,
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
+				2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
 				29F7B9502BDA88320034F600 /* AccountView.swift in Sources */,
 				29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */,
@@ -610,6 +633,7 @@
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
 				29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */,
 				29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */,
+				2905B0052BDE674600B08967 /* ButtonType.swift in Sources */,
 				2905AFFF2BDE56FC00B08967 /* Profile.swift in Sources */,
 				29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
