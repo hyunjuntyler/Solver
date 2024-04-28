@@ -16,7 +16,20 @@ struct SummaryView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                if let user = userStore.user {
+                if let user = userStore.user, let headerFrame = frames.first {
+                    let offset = headerFrame.minY
+                    var topPadding: CGFloat {
+                        return max(min(20 + offset, 20), 0)
+                    }
+                    
+                    var tierBadgeSize: CGFloat {
+                        return max(min(140 + offset, 180), 60)
+                    }
+                    
+                    var tierFontSize: CGFloat {
+                        return max(min(28 + offset/10, 32), 20)
+                    }
+                    
                     VStack {
                         HStack {
                             ProfileImage(data: userStore.profile?.image, size: 40)
@@ -35,7 +48,7 @@ struct SummaryView: View {
                             Text("\(user.maxStreak)")
                         }
                         
-                        TierBadge(tier: user.tier, size: 120)
+                        TierBadge(tier: user.tier, size: tierBadgeSize)
                             .shimmer()
                         
                         HStack {
@@ -43,7 +56,7 @@ struct SummaryView: View {
                             Text("\(user.rating)")
                         }
                         .foregroundStyle(user.tier.tierBadgeColor)
-                        .font(.title)
+                        .font(.system(size: tierFontSize))
                         .fontWeight(.semibold)
                         .shimmer()
                         
@@ -56,9 +69,12 @@ struct SummaryView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.top, 20)
+                    .padding(.top, topPadding)
                     .background(Color(.systemBackground))
                     .sticky(frames, isMainHeader: true)
+//                    .overlay {
+//                        Text("\(offset)")
+//                    }
                 }
                 
                 Rectangle()
@@ -128,6 +144,7 @@ struct SummaryView: View {
                     .sticky(frames)
             }
         }
+        .scrollIndicators(.hidden)
         .coordinateSpace(name: "container")
         .onPreferenceChange(StickyHeaderPreferenceKey.self) {
             frames = $0.sorted(by: { $0.minY < $1.minY })
@@ -147,7 +164,7 @@ struct SummaryView: View {
 
 #Preview {
     let previewData = PreviewData()
-    let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
+    let userStore = UserStore(user: previewData.users[0], profile: previewData.profile, badge: previewData.badge)
     let problemsStore = ProblemsStore(problems: previewData.problems)
     let top100Store = Top100Store(top100: previewData.top100)
     return SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store)
