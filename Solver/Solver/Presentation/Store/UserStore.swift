@@ -63,7 +63,7 @@ final class UserStore {
                 }
                 
                 saveSwiftData()
-                updateTint()
+                updateTintColor()
                 isLoading = false
             } catch {
                 isLoading = true
@@ -71,7 +71,7 @@ final class UserStore {
         }
     }
     
-    private func updateTint() {
+    private func updateTintColor() {
         if let color = user?.tier.tierColor {
             tint = color
         }

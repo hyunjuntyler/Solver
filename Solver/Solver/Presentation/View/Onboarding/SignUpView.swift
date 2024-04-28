@@ -50,7 +50,7 @@ struct SignUpView: View {
             }
             .buttonStyle(CustomButtonStyle(style: .singUp, disable: disable))
             .disabled(disable)
-            .padding(.bottom, 40)
+            .padding(.bottom, 56)
             
             VStack(spacing: 8) {
                 Image(systemName: "network")
