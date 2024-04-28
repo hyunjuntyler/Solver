@@ -19,7 +19,7 @@ struct Top50: View {
     var body: some View {
         if let top100 = store.top100 {
             LazyVGrid(columns: columns, spacing: spacing) {
-                ForEach(top100.items.prefix(50)) { item in
+                ForEach(top100.items.prefix(50), id: \.id) { item in
                     TierBadge(tier: item.level, size: size)
                         .onTapGesture {
                             withAnimation(.smooth) {
