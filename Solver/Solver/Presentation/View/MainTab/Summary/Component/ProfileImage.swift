@@ -18,11 +18,13 @@ struct ProfileImage: View {
                 .scaledToFit()
                 .frame(width: size)
                 .clipShape(RoundedRectangle(cornerRadius: size/4, style: .continuous))
+                .shadow(radius: 2)
         } else {
             ZStack {
                 RoundedRectangle(cornerRadius: size/4, style: .continuous)
                     .frame(width: size, height: size)
                     .foregroundStyle(Color(.systemGray5))
+                    .shadow(radius: 2)
                 Image("Profile")
                     .resizable()
                     .scaledToFit()

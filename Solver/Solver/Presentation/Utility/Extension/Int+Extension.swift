@@ -36,7 +36,19 @@ extension Int {
         case 16...20: return .platinum
         case 21...25: return .diamond
         case 26...30: return .ruby
-        default: return .unrated
+        default: return .master2
+        }
+    }
+    
+    var tierBackgroundColor: Color {
+        switch self {
+        case 1...5: return .bronzeBackground
+        case 6...10: return .silverBackground
+        case 11...15: return .goldBackground
+        case 16...20: return .platinumBackground
+        case 21...25: return .diamondBackground
+        case 26...30: return .rubyBackground
+        default: return .masterBackground
         }
     }
     

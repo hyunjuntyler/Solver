@@ -24,6 +24,7 @@ struct MainTabView: View {
                     Label("계정", systemImage: "person.crop.circle")
                 }
         }
+        .tint(userStore.tint)
         .onAppear {
             userStore.modelContext = modelContext
             userStore.fetchSwiftData()
@@ -34,5 +35,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
-        .modelContainer(for: User.self)
+        .modelContainer(for: User.self, isAutosaveEnabled: false)
 }

@@ -12,6 +12,7 @@
 		2905B0012BDE570100B08967 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0002BDE570100B08967 /* Badge.swift */; };
 		2905B0052BDE674600B08967 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0042BDE674600B08967 /* ButtonType.swift */; };
 		2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */; };
+		2905B00B2BDE96D700B08967 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B00A2BDE96D700B08967 /* Header.swift */; };
 		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
@@ -88,6 +89,7 @@
 		2905B0002BDE570100B08967 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		2905B0042BDE674600B08967 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		2905B00A2BDE96D700B08967 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		29F4885D2BDBD0AE006B0EA2 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2905B00A2BDE96D700B08967 /* Header.swift */,
 				29F4886B2BDBFF20006B0EA2 /* Top50.swift */,
 				29F4886D2BDC1B4E006B0EA2 /* ProblemsChart.swift */,
 				29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */,
@@ -647,6 +650,7 @@
 				2905B0012BDE570100B08967 /* Badge.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
 				29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */,
+				2905B00B2BDE96D700B08967 /* Header.swift in Sources */,
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */,

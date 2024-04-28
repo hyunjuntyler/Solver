@@ -21,7 +21,6 @@ struct AccountView: View {
             VStack {
                 VStack {
                     ProfileImage(data: userStore.profile?.image, size: 120)
-                        .shadow(radius: 2)
                         .padding(.bottom, 8)
                     Text(user.id)
                         .font(.title2)
@@ -71,10 +70,11 @@ struct AccountView: View {
                 }
             }
             .overlay(alignment: .top) {
-                Color(.systemBackground)
+                Color(user.tier.tierBackgroundColor)
                     .ignoresSafeArea()
                     .frame(height: 0)
             }
+            .background(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.systemBackground), Color(.systemBackground), Color(.systemBackground)], startPoint: .top, endPoint: .bottom))
         }
     }
 }
