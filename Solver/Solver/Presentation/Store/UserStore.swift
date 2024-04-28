@@ -50,6 +50,14 @@ final class UserStore {
                     badge = try await useCase.fetchBadge(badgeId: badgeId)
                 }
                 
+                if user?.badgeId == nil {
+                    badge = nil
+                }
+                
+                if user?.profileImageUrl == nil {
+                    profile = nil
+                }
+                
                 isLoading = false
             } catch {
                 isLoading = true
