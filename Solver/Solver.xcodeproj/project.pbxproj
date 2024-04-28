@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2905AFFD2BDE49AB00B08967 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905AFFC2BDE49AB00B08967 /* User.swift */; };
+		2905AFFF2BDE56FC00B08967 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905AFFE2BDE56FC00B08967 /* Profile.swift */; };
+		2905B0012BDE570100B08967 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0002BDE570100B08967 /* Badge.swift */; };
 		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
@@ -78,6 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2905AFFC2BDE49AB00B08967 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2905AFFE2BDE56FC00B08967 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2905B0002BDE570100B08967 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
@@ -160,6 +166,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2905AFFB2BDE499100B08967 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2905B0022BDE574F00B08967 /* SwiftData */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		2905B0022BDE574F00B08967 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				2905AFFC2BDE49AB00B08967 /* User.swift */,
+				2905AFFE2BDE56FC00B08967 /* Profile.swift */,
+				2905B0002BDE570100B08967 /* Badge.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
 		29552FAA2BDA647300F8A33C = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +209,7 @@
 			children = (
 				29552FB62BDA647300F8A33C /* SolverApp.swift */,
 				29F7B95A2BDA8D8C0034F600 /* Info.plist */,
+				2905AFFB2BDE499100B08967 /* Persistence */,
 				29F7B9412BDA869B0034F600 /* Presentation */,
 				29F7B91D2BDA74D80034F600 /* Domain */,
 				29F7B90F2BDA68A60034F600 /* Data */,
@@ -585,6 +610,7 @@
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
 				29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */,
 				29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */,
+				2905AFFF2BDE56FC00B08967 /* Profile.swift in Sources */,
 				29F7B9472BDA87C00034F600 /* GreetingView.swift in Sources */,
 				29F7B9202BDA74FC0034F600 /* SiteEntity.swift in Sources */,
 				29F7B91A2BDA72A50034F600 /* SiteDTO.swift in Sources */,
@@ -594,6 +620,7 @@
 				29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
 				29F4886A2BDBEB36006B0EA2 /* ClassBadge.swift in Sources */,
+				2905B0012BDE570100B08967 /* Badge.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
 				29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */,
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
@@ -602,6 +629,7 @@
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */,
 				29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */,
+				2905AFFD2BDE49AB00B08967 /* User.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
 				29F488522BDB540B006B0EA2 /* ProblemsStore.swift in Sources */,
 				29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */,

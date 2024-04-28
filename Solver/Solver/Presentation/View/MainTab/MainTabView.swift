@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var userStore = UserStore()
     @State private var problemsStore = ProblemsStore()
     @State private var top100Store = Top100Store()
@@ -23,9 +24,15 @@ struct MainTabView: View {
                     Label("계정", systemImage: "person.crop.circle")
                 }
         }
+        .onAppear {
+            userStore.modelContext = modelContext
+            userStore.fetchSwiftData()
+            userStore.fetch()
+        }
     }
 }
 
 #Preview {
     MainTabView()
+        .modelContainer(for: User.self)
 }
