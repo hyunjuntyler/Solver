@@ -228,6 +228,16 @@
 			path = PreferenceKey;
 			sourceTree = "<group>";
 		};
+		298D5F022BDDF026003CB0EE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				298D5EFF2BDD1FEE003CB0EE /* PreferenceKey */,
+				298D5EFA2BDD1E2B003CB0EE /* ViewModifier */,
+				29F488602BDBD9D7006B0EA2 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		29F488582BDB823E006B0EA2 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,9 +354,7 @@
 		29F7B9412BDA869B0034F600 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				298D5EFF2BDD1FEE003CB0EE /* PreferenceKey */,
-				298D5EFA2BDD1E2B003CB0EE /* ViewModifier */,
-				29F488602BDBD9D7006B0EA2 /* Extension */,
+				298D5F022BDDF026003CB0EE /* Utility */,
 				29F7B9422BDA870B0034F600 /* View */,
 				29F7B9512BDA890F0034F600 /* Store */,
 			);
