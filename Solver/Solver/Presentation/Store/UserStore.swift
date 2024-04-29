@@ -125,12 +125,14 @@ extension UserStore {
             )
         }
         
-        let fetchDescriptor = FetchDescriptor<User>()
-        let persistanceUser = try? modelContext?.fetch(fetchDescriptor)
-                
-        if let storedUser = persistanceUser?.first {
-            modelContext?.delete(storedUser)
+        if let context = modelContext {
+            let fetchDescriptor = FetchDescriptor<User>()
+            let persistanceUser = try? context.fetch(fetchDescriptor)
+            
+            if let storedUser = persistanceUser?.first {
+                context.delete(storedUser)
+            }
+            context.insert(user)
         }
-        modelContext?.insert(user)
     }
 }
