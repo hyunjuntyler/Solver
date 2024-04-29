@@ -69,6 +69,10 @@ struct Top50Problems: View {
                     }
                 }
             }
+        } else {
+            ProgressView()
+                .frame(maxWidth: .infinity)
+                .frame(height: 160)
         }
     }
 }
@@ -77,4 +81,21 @@ struct Top50Problems: View {
     let previewData = PreviewData()
     let store = Top100Store(top100: previewData.top100)
     return Top50Problems(store: store)
+        .padding()
+        .background {
+            UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
+                .foregroundStyle(.ultraThinMaterial)
+        }
+        .padding(.horizontal)
+}
+
+#Preview("ContentUnavailable") {
+    let store = Top100Store()
+    return Top50Problems(store: store)
+        .padding()
+        .background {
+            UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
+                .foregroundStyle(.ultraThinMaterial)
+        }
+        .padding(.horizontal)
 }

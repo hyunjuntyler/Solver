@@ -15,16 +15,22 @@ struct ProblemsChart: View {
     @State private var selectedStats: ProblemStats?
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack {
-                PieChart
-                Legend
-            }
-            .onTapGesture {
-                withAnimation(.bouncy(duration: 0.8)) {
-                    selectedStats = nil
+        if !store.problemsStats.isEmpty {
+            VStack(alignment: .leading) {
+                VStack {
+                    PieChart
+                    Legend
+                }
+                .onTapGesture {
+                    withAnimation(.bouncy(duration: 0.8)) {
+                        selectedStats = nil
+                    }
                 }
             }
+        } else {
+            ProgressView()
+                .frame(maxWidth: .infinity)
+                .frame(height: 420)
         }
     }
     
@@ -108,6 +114,17 @@ struct ProblemsChart: View {
 #Preview {
     let previewData = PreviewData()
     let store = ProblemsStore(problems: previewData.problems)
+    return ProblemsChart(store: store)
+        .padding()
+        .background {
+            UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
+                .foregroundStyle(.ultraThinMaterial)
+        }
+        .padding(.horizontal)
+}
+
+#Preview("ContentUnavailable") {
+    let store = ProblemsStore()
     return ProblemsChart(store: store)
         .padding()
         .background {

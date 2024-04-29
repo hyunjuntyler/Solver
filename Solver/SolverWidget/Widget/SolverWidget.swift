@@ -47,11 +47,11 @@ struct SolverWidgetEntryView : View {
             default: Text("Not implemented")
             }
         } else {
-            Unavailable
+            ContentUnavailable
         }
     }
     
-    var Unavailable: some View {
+    var ContentUnavailable: some View {
         VStack {
             Text("🧑🏻‍💻👩🏻‍💻")
                 .font(.tossTitle3)
