@@ -71,6 +71,7 @@ struct ProfileHeader: View {
                     } label: {
                         VStack(spacing: 6) {
                             TierBadge(tier: user.tier, size: tierBadgeSize)
+                                .shadow(radius: 4)
                             HStack {
                                 Text(user.tier.tierName)
                                 Text("\(user.rating)")

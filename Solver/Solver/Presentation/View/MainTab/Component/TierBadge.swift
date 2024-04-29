@@ -16,7 +16,6 @@ struct TierBadge: View {
             TierBadgeShape()
                 .frame(width: size * 0.7, height: size)
                 .foregroundStyle(tier.tierBadgeColor)
-                .shadow(color: tier.tierColor, radius: 1)
             Text(tier.tierNumber)
                 .foregroundStyle(.white)
                 .fontWeight(.heavy)
