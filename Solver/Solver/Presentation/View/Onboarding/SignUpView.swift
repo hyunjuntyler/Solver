@@ -46,6 +46,7 @@ struct SignUpView: View {
             .padding(.bottom)
             
             Button("확인") {
+                Haptic.impact(style: .soft)
                 store.checkUserId()
             }
             .buttonStyle(CustomButtonStyle(style: .singUp, disable: disable))

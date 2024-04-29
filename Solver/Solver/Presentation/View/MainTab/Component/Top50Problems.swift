@@ -22,10 +22,11 @@ struct Top50Problems: View {
                 ForEach(top100.items.prefix(50), id: \.id) { item in
                     TierBadge(tier: item.level, size: size)
                         .onTapGesture {
-                            withAnimation(.smooth) {
+                            withAnimation {
                                 if selectedItem?.id == item.id {
                                     selectedItem = nil
                                 } else {
+                                    Haptic.impact(style: .soft)
                                     selectedItem = item
                                 }
                             }

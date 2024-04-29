@@ -30,6 +30,7 @@ struct AccountView: View {
                 
                 
                 Button("아이디 바꾸기") {
+                    Haptic.impact(style: .soft)
                     showInputSheet = true
                 }
                 .buttonStyle(CustomButtonStyle(style: .changeId))
@@ -67,6 +68,7 @@ struct AccountView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     showInputSheet = false
                     isLoading = false
+                    Haptic.notification(type: .success)
                 }
             }
             .overlay(alignment: .top) {

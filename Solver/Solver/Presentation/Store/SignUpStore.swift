@@ -32,6 +32,7 @@ final class SignUpStore {
                 UserDefaults.standard.set(userId, forKey: "userId")
                 UserDefaults.standard.set(false, forKey: "onboarding")
             } catch {
+                Haptic.notification(type: .error)
                 showAlert = true
             }
         }

@@ -39,11 +39,11 @@ struct ProblemsChart: View {
             SectorMark(
                 angle: .value("Solved count", stats.count),
                 innerRadius: .ratio(0.6),
-                outerRadius: selectedStats?.tier == stats.tier ? 145 : 120,
+                outerRadius: selectedStats?.tier == stats.tier ? 150 : 120,
                 angularInset: 1
             )
             .foregroundStyle(stats.color)
-            .cornerRadius(4)
+            .cornerRadius(6)
         }
         .chartAngleSelection(value: $selection)
         .chartBackground { proxy in
@@ -71,6 +71,7 @@ struct ProblemsChart: View {
         .onChange(of: selection) {
             if let value = $1 {
                 withAnimation(.bouncy(duration: 0.8)) {
+                    Haptic.impact(style: .soft)
                     getSelectedStats(value)
                 }
             }
