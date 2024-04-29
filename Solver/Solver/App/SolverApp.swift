@@ -12,8 +12,10 @@ import SwiftData
 struct SolverApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(for: User.self)
+            RootView {
+                ContentView()
+            }
+            .modelContainer(for: User.self)
         }
     }
 }

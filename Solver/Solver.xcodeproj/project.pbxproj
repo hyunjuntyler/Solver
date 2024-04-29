@@ -22,6 +22,7 @@
 		294D05D52BDFC379006F192E /* ProfileButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05D42BDFC379006F192E /* ProfileButtonStyle.swift */; };
 		294D05D72BDFCC3C006F192E /* ComponentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05D62BDFCC3C006F192E /* ComponentButtonStyle.swift */; };
 		294D05D92BDFCF6A006F192E /* ImageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05D82BDFCF6A006F192E /* ImageButtonStyle.swift */; };
+		294D05DB2BDFD689006F192E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05DA2BDFD689006F192E /* Toast.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
 		29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29552FBA2BDA647500F8A33C /* Assets.xcassets */; };
@@ -154,6 +155,7 @@
 		294D05D42BDFC379006F192E /* ProfileButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonStyle.swift; sourceTree = "<group>"; };
 		294D05D62BDFCC3C006F192E /* ComponentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentButtonStyle.swift; sourceTree = "<group>"; };
 		294D05D82BDFCF6A006F192E /* ImageButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonStyle.swift; sourceTree = "<group>"; };
+		294D05DA2BDFD689006F192E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		29552FB82BDA647300F8A33C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				294D05D22BDFC00B006F192E /* Haptic.swift */,
+				294D05DA2BDFD689006F192E /* Toast.swift */,
 			);
 			path = Interaction;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */,
 				29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */,
 				29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */,
+				294D05DB2BDFD689006F192E /* Toast.swift in Sources */,
 				294D05D02BDFBDFA006F192E /* SummaryBody.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
 				297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */,
