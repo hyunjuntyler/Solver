@@ -14,6 +14,8 @@
 		2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */; };
 		2905B00B2BDE96D700B08967 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B00A2BDE96D700B08967 /* Header.swift */; };
 		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
+		294D05C62BDFA77D006F192E /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C22BDFA6C7006F192E /* SmallWidget.swift */; };
+		294D05C72BDFA77F006F192E /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C42BDFA70C006F192E /* MediumWidget.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
 		29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29552FBA2BDA647500F8A33C /* Assets.xcassets */; };
@@ -138,6 +140,8 @@
 		2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		2905B00A2BDE96D700B08967 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		294D05C22BDFA6C7006F192E /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
+		294D05C42BDFA70C006F192E /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		29552FB82BDA647300F8A33C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -273,14 +277,31 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		294D05C12BDFA6BC006F192E /* WidgetFamily */ = {
+			isa = PBXGroup;
+			children = (
+				294D05C22BDFA6C7006F192E /* SmallWidget.swift */,
+				294D05C42BDFA70C006F192E /* MediumWidget.swift */,
+			);
+			path = WidgetFamily;
+			sourceTree = "<group>";
+		};
+		294D05C82BDFAC09006F192E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				297A4B272BDF61FA00987F24 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		29552FAA2BDA647300F8A33C = {
 			isa = PBXGroup;
 			children = (
 				297A4B3B2BDF664B00987F24 /* SolverWidgetExtension.entitlements */,
 				29552FB52BDA647300F8A33C /* Solver */,
+				297A4B222BDF61F900987F24 /* SolverWidget */,
 				29552FC62BDA647500F8A33C /* SolverTests */,
 				29552FD02BDA647500F8A33C /* SolverUITests */,
-				297A4B222BDF61F900987F24 /* SolverWidget */,
 				297A4B1D2BDF61F900987F24 /* Frameworks */,
 				29552FB42BDA647300F8A33C /* Products */,
 			);
@@ -343,9 +364,10 @@
 			isa = PBXGroup;
 			children = (
 				297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */,
-				297A4B252BDF61F900987F24 /* SolverWidget.swift */,
-				297A4B272BDF61FA00987F24 /* Assets.xcassets */,
 				297A4B292BDF61FA00987F24 /* Info.plist */,
+				297A4B252BDF61F900987F24 /* SolverWidget.swift */,
+				294D05C12BDFA6BC006F192E /* WidgetFamily */,
+				294D05C82BDFAC09006F192E /* Resource */,
 			);
 			path = SolverWidget;
 			sourceTree = "<group>";
@@ -817,6 +839,7 @@
 				297A4B342BDF653D00987F24 /* SiteEntity.swift in Sources */,
 				297A4B382BDF654500987F24 /* ProblemEntity.swift in Sources */,
 				297A4B332BDF652A00987F24 /* Profile.swift in Sources */,
+				294D05C62BDFA77D006F192E /* SmallWidget.swift in Sources */,
 				297A4B3F2BDF6B8700987F24 /* PreviewData.swift in Sources */,
 				297A4B322BDF652800987F24 /* Badge.swift in Sources */,
 				297A4B3C2BDF680600987F24 /* TierBadge.swift in Sources */,
@@ -829,6 +852,7 @@
 				297A4B552BDF937100987F24 /* TierProgress.swift in Sources */,
 				297A4B4D2BDF84C600987F24 /* Font+Extension.swift in Sources */,
 				297A4B312BDF652500987F24 /* User.swift in Sources */,
+				294D05C72BDFA77F006F192E /* MediumWidget.swift in Sources */,
 				297A4B4A2BDF7D5500987F24 /* ProfileImage.swift in Sources */,
 				297A4B392BDF654800987F24 /* Top100Entity.swift in Sources */,
 			);
