@@ -21,45 +21,31 @@ struct SummaryView: View {
         ScrollView {
             VStack(spacing: 0) {
                 ProfileHeader(userStore: userStore, frames: frames)
-                    .sticky(frames, isMainHeader: true)
+                    .stickyHeader(frames, isMainHeader: true)
                 
                 Rectangle()
                     .frame(height: 30)
                     .foregroundStyle(.background)
-                    .sticky(frames, isEmptyHeader: true)
+                    .stickyHeader(frames, isEmptyHeader: true)
                     .padding(.bottom, -30)
                 
                 SummaryHeader(emoji: "🚀", title: "상위 \(solvedCount)문제")
-                .sticky(frames)
-                .padding(.top)
+                    .stickyHeader(frames)
+                    .padding(.top)
                 
                 Top50Problems(store: top100Store)
-                    .padding(.top, 20)
-                    .padding()
-                    .background {
-                        UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
-                            .foregroundStyle(.ultraThinMaterial)
-                    }
-                    .padding(.horizontal)
-                    .padding(.top, -20)
+                    .summaryBody()
                 
                 SummaryHeader(emoji: "📊", title: "난이도 분포")
-                .sticky(frames)
+                    .stickyHeader(frames)
                 
                 ProblemsChart(store: problemsStore)
-                    .padding(.top, 20)
-                    .padding()
-                    .background {
-                        UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
-                            .foregroundStyle(.ultraThinMaterial)
-                    }
-                    .padding(.horizontal)
-                    .padding(.top, -20)
+                    .summaryBody()
                 
                 Rectangle()
                     .frame(height: 40)
                     .foregroundStyle(.clear)
-                    .sticky(frames)
+                    .stickyHeader(frames)
             }
         }
         .scrollIndicators(.hidden)

@@ -17,6 +17,7 @@
 		294D05C62BDFA77D006F192E /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C22BDFA6C7006F192E /* SmallWidget.swift */; };
 		294D05C72BDFA77F006F192E /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C42BDFA70C006F192E /* MediumWidget.swift */; };
 		294D05CC2BDFB414006F192E /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05CB2BDFB414006F192E /* SummaryHeader.swift */; };
+		294D05D02BDFBDFA006F192E /* SummaryBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05CF2BDFBDFA006F192E /* SummaryBody.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
 		29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29552FBA2BDA647500F8A33C /* Assets.xcassets */; };
@@ -144,6 +145,7 @@
 		294D05C22BDFA6C7006F192E /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
 		294D05C42BDFA70C006F192E /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
 		294D05CB2BDFB414006F192E /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
+		294D05CF2BDFBDFA006F192E /* SummaryBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryBody.swift; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		29552FB82BDA647300F8A33C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 			children = (
 				298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */,
 				298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */,
+				294D05CF2BDFBDFA006F192E /* SummaryBody.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */,
 				29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */,
 				29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */,
+				294D05D02BDFBDFA006F192E /* SummaryBody.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
 				297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */,
 				29F4886A2BDBEB36006B0EA2 /* ClassBadge.swift in Sources */,

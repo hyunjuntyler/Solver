@@ -55,7 +55,7 @@ struct ProfileHeader: View {
                     
                     TierBadge(tier: user.tier, size: tierBadgeSize)
                         .shadow(radius: 2)
-                        .shimmer()
+                        .shimmerEffect()
                     
                     HStack {
                         Text(user.tier.tierName)
@@ -64,7 +64,7 @@ struct ProfileHeader: View {
                     .foregroundStyle(user.tier.tierBadgeColor)
                     .font(.system(size: tierFontSize))
                     .fontWeight(.semibold)
-                    .shimmer()
+                    .shimmerEffect()
                     
                     if let count = userStore.userCount {
                         HStack {
