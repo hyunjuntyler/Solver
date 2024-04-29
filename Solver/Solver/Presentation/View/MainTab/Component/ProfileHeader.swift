@@ -15,32 +15,33 @@ struct ProfileHeader: View {
         VStack {
             if let user = userStore.user, let headerFrame = frames.first {
                 let offset = headerFrame.minY
+                
                 var topPadding: CGFloat {
-                    return max(min(20 + offset, 20), 5)
+                    max(min(20 + offset, 20), 5)
                 }
                 
                 var tierBadgeSize: CGFloat {
-                    return max(min(140 + offset / 100 * 60, 170), 80)
+                    max(min(140 + offset / 100 * 60, 170), 80)
                 }
                 
                 var tierFontSize: CGFloat {
-                    return max(min(28 + offset / 100 * 8, 32), 20)
+                    max(min(28 + offset / 100 * 8, 32), 20)
                 }
                 
                 var idFontSize: CGFloat {
-                    return max(min(22 + offset / 100 * 2, 24), 20)
+                    max(min(22 + offset / 100 * 2, 24), 20)
                 }
                 
                 var bodyFontSize: CGFloat {
-                    return max(min(17 + offset / 100 * 2, 19), 15)
+                    max(min(17 + offset / 100 * 2, 19), 15)
                 }
                 
                 var badgeSize: CGFloat {
-                    return max(min(30 + offset / 100 * 4, 32), 26)
+                    max(min(30 + offset / 100 * 4, 32), 26)
                 }
                 
                 var progressWidth: CGFloat {
-                    return max(min(200 + offset / 80 * 50, 225), 150)
+                    max(min(200 + offset / 80 * 50, 225), 150)
                 }
                 
                 VStack {
@@ -49,27 +50,38 @@ struct ProfileHeader: View {
                         Text(user.id)
                             .font(.system(size: idFontSize))
                             .fontWeight(.semibold)
-                        BadgeImage(data: userStore.badge?.image, size: badgeSize)
-                        ClassBadge(userClass: user.userClass, size: badgeSize)
+                        
+                        Button {
+                            Haptic.impact(style: .soft)
+                        } label: {
+                            BadgeImage(data: userStore.badge?.image, size: badgeSize)
+                        }
+                        .buttonStyle(ImageButtonStyle())
+                        
+                        Button {
+                            Haptic.impact(style: .soft)
+                        } label: {
+                            ClassBadge(userClass: user.userClass, size: badgeSize)
+                        }
+                        .buttonStyle(ImageButtonStyle())
                     }
                     
                     Button {
                         Haptic.impact(style: .soft)
                     } label: {
-                        TierBadge(tier: user.tier, size: tierBadgeSize)
-                            .shadow(radius: 2)
+                        VStack(spacing: 6) {
+                            TierBadge(tier: user.tier, size: tierBadgeSize)
+                            HStack {
+                                Text(user.tier.tierName)
+                                Text("\(user.rating)")
+                            }
+                            .foregroundStyle(user.tier.tierBadgeColor)
+                            .font(.system(size: tierFontSize))
+                            .fontWeight(.bold)
+                        }
                             .shimmerEffect()
                     }
                     .buttonStyle(ProfileButtonStyle(color: user.tier.tierColor))
-                    
-                    HStack {
-                        Text(user.tier.tierName)
-                        Text("\(user.rating)")
-                    }
-                    .foregroundStyle(user.tier.tierBadgeColor)
-                    .font(.system(size: tierFontSize))
-                    .fontWeight(.semibold)
-                    .shimmerEffect()
                     
                     if let count = userStore.userCount {
                         HStack {
@@ -85,18 +97,41 @@ struct ProfileHeader: View {
                         .frame(width: progressWidth)
                         .tint(user.tier.tierBadgeColor)
                     
-                    HStack {
+                    HStack(spacing: 12) {
                         if user.tier < 31 {
-                            Text("⛳️")
-                                .font(.tossBody)
-                            Text("\(Int(userStore.required[user.tier+1]) - user.rating)")
+                            Button {
+                                Haptic.impact(style: .soft)
+                            } label: {
+                                HStack {
+                                    Text("⛳️")
+                                        .font(.tossBody)
+                                    Text("\(Int(userStore.required[user.tier+1]) - user.rating)")
+                                }
+                            }
+                            .buttonStyle(ComponentButtonStyle())
                         }
-                        Text("✍️")
-                            .font(.tossBody)
-                        Text("\(user.solvedCount)")
-                        Text("🌱")
-                            .font(.tossBody)
-                        Text("\(user.maxStreak)")
+                        
+                        Button {
+                            Haptic.impact(style: .soft)
+                        } label: {
+                            HStack {
+                                Text("✍️")
+                                    .font(.tossBody)
+                                Text("\(user.solvedCount)")
+                            }
+                        }
+                        .buttonStyle(ComponentButtonStyle())
+                        
+                        Button {
+                            Haptic.impact(style: .soft)
+                        } label: {
+                            HStack {
+                                Text("🌱")
+                                    .font(.tossBody)
+                                Text("\(user.maxStreak)")
+                            }
+                        }
+                        .buttonStyle(ComponentButtonStyle())
                     }
                     .font(.system(size: bodyFontSize))
                 }
@@ -110,7 +145,7 @@ struct ProfileHeader: View {
 
 #Preview {
     let previewData = PreviewData()
-    let userStore = UserStore(user: previewData.users[0], profile: previewData.profile, badge: previewData.badge)
+    let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
     let problemsStore = ProblemsStore(problems: previewData.problems)
     let top100Store = Top100Store(top100: previewData.top100)
     return SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store)

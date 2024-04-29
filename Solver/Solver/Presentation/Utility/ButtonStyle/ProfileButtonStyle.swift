@@ -13,7 +13,7 @@ struct ProfileButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 1.05 : 1)
-            .shadow(color: color, radius: configuration.isPressed ? 12 : 0)
+            .shadow(color: color, radius: configuration.isPressed ? 1 : 0)
             .animation(.bouncy(duration: 1), value: configuration.isPressed)
     }
 }
