@@ -72,6 +72,7 @@ struct Top50Problems: View {
             }
         } else {
             ProgressView()
+                .controlSize(.large)
                 .frame(maxWidth: .infinity)
                 .frame(height: 160)
         }

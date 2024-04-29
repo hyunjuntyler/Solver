@@ -29,6 +29,7 @@ struct ProblemsChart: View {
             }
         } else {
             ProgressView()
+                .controlSize(.large)
                 .frame(maxWidth: .infinity)
                 .frame(height: 420)
         }
