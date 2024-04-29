@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 @Observable
 final class UserStore {
@@ -65,6 +66,7 @@ final class UserStore {
                 saveSwiftData()
                 updateTintColor()
                 isLoading = false
+                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 isLoading = true
             }
