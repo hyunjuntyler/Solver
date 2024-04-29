@@ -147,7 +147,6 @@ fileprivate struct ToastView: View {
                     let velocityY = value.velocity.height
                     
                     if endY + velocityY < -20 {
-                        print(endY, velocityY)
                         removeToast()
                     }
                 }
