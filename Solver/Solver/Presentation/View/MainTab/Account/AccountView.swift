@@ -59,6 +59,7 @@ struct AccountView: View {
                             }
                         }
                 }
+                .presentationCornerRadius(24)
             }
             .onChange(of: userId) {
                 isLoading = true

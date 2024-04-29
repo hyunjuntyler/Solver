@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     @AppStorage("userId") private var userId = ""
     @State private var store = SignUpStore()
+    @State private var animate = false
     
     private var disable: Bool {
         !store.isValid || store.userId == "" || userId == store.userId
@@ -19,8 +20,12 @@ struct SignUpView: View {
         VStack {
             Text("👩‍💻🧑‍💻")
                 .font(.tossLarge)
-                .padding(.bottom)
+                .scaleEffect(animate ? 1.03 : 1)
+                .padding(.bottom, 4)
             Text("백준 아이디를 입력해주세요")
+                .font(.title3)
+                .fontWeight(.medium)
+                .padding(.bottom)
             
             TextField("", text: $store.userId)
                 .padding()
@@ -51,7 +56,7 @@ struct SignUpView: View {
             }
             .buttonStyle(CustomButtonStyle(style: .singUp, disable: disable))
             .disabled(disable)
-            .padding(.bottom, 56)
+            .padding(.bottom, 48)
             
             VStack(spacing: 8) {
                 Image(systemName: "network")
@@ -64,12 +69,20 @@ struct SignUpView: View {
                     .padding(.horizontal, 24)
             }
         }
+        .padding(.bottom)
         .alert("아이디를 확인해주세요", isPresented: $store.showAlert) {
             Button("돌아가기") {
                 store.userId = ""
             }
         } message: {
             Text("Solved.ac에 등록되어 있지 않거나 유효하지 않는 아이디예요")
+        }
+        .opacity(animate ? 1 : 0)
+        .offset(y: animate ? 0 : 8)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1)) {
+                animate = true
+            }
         }
     }
 }
