@@ -70,11 +70,6 @@ struct SolverWidgetEntryView : View {
     
     @ViewBuilder
     private func MediumView(_ user: User) -> some View {
-        let required: [Double] = [0, 30, 60, 90, 120, 150, 200, 300, 400, 500, 650, 800, 950, 1100, 1250, 1400, 1600, 1750, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2850, 2900, 2950, 3000, 3000.1]
-        let next = required[user.tier+1]
-        let current = required[user.tier]
-        let value = (Double(user.rating) - current) / (next - current)
-        
         VStack {
             HStack {
                 ProfileImage(data: user.profile?.image, size: 24)
@@ -133,7 +128,7 @@ struct SolverWidgetEntryView : View {
             }
             .frame(height: 76)
             
-            ProgressView(value: min(value, 1))
+            TierProgress(tier: user.tier, rating: user.rating)
                 .tint(user.tier.tierBadgeColor)
                 .padding(.horizontal)
         }

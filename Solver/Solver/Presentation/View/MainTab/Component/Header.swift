@@ -76,12 +76,7 @@ struct Header: View {
                         .padding(.top, 2)
                     }
                     
-                    let required = userStore.required
-                    let next = required[user.tier+1]
-                    let current = required[user.tier]
-                    let value = (Double(user.rating) - current) / (next - current)
-                    
-                    ProgressView(value: min(value, 1))
+                    TierProgress(tier: user.tier, rating: user.rating)
                         .frame(width: progressWidth)
                         .tint(user.tier.tierBadgeColor)
                     
@@ -89,7 +84,7 @@ struct Header: View {
                         if user.tier < 31 {
                             Text("⛳️")
                                 .font(.tossBody)
-                            Text("\(Int(next) - user.rating)")
+                            Text("\(Int(userStore.required[user.tier+1]) - user.rating)")
                         }
                         Text("✍️")
                             .font(.tossBody)

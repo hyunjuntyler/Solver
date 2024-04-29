@@ -44,6 +44,8 @@
 		297A4B4C2BDF83B200987F24 /* ClassBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488692BDBEB36006B0EA2 /* ClassBadge.swift */; };
 		297A4B4D2BDF84C600987F24 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9582BDA8CC20034F600 /* Font+Extension.swift */; };
 		297A4B4E2BDF84C900987F24 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */; };
+		297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B532BDF8FE300987F24 /* TierProgress.swift */; };
+		297A4B552BDF937100987F24 /* TierProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B532BDF8FE300987F24 /* TierProgress.swift */; };
 		298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */; };
 		298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */; };
 		298D5F012BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */; };
@@ -154,6 +156,7 @@
 		297A4B292BDF61FA00987F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		297A4B3A2BDF662000987F24 /* Solver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solver.entitlements; sourceTree = "<group>"; };
 		297A4B3B2BDF664B00987F24 /* SolverWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SolverWidgetExtension.entitlements; sourceTree = "<group>"; };
+		297A4B532BDF8FE300987F24 /* TierProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierProgress.swift; sourceTree = "<group>"; };
 		298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
 		298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
 		298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderPreferenceKey.swift; sourceTree = "<group>"; };
@@ -387,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				29F7B94D2BDA882B0034F600 /* SummaryView.swift */,
-				29F4885D2BDBD0AE006B0EA2 /* Component */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -402,6 +404,7 @@
 				29F488692BDBEB36006B0EA2 /* ClassBadge.swift */,
 				29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */,
 				29F488672BDBE45C006B0EA2 /* BadgeImage.swift */,
+				297A4B532BDF8FE300987F24 /* TierProgress.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
 				29F4885C2BDBD09A006B0EA2 /* Summary */,
 				2905B0092BDE76B300B08967 /* Account */,
+				29F4885D2BDBD0AE006B0EA2 /* Component */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -767,6 +771,7 @@
 				29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */,
 				29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */,
 				29F7B92A2BDA761D0034F600 /* Top100Entity.swift in Sources */,
+				297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */,
 				29F4886A2BDBEB36006B0EA2 /* ClassBadge.swift in Sources */,
 				2905B0012BDE570100B08967 /* Badge.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
@@ -821,6 +826,7 @@
 				297A4B352BDF653F00987F24 /* UserEntity.swift in Sources */,
 				297A4B242BDF61F900987F24 /* SolverWidgetBundle.swift in Sources */,
 				297A4B4C2BDF83B200987F24 /* ClassBadge.swift in Sources */,
+				297A4B552BDF937100987F24 /* TierProgress.swift in Sources */,
 				297A4B4D2BDF84C600987F24 /* Font+Extension.swift in Sources */,
 				297A4B312BDF652500987F24 /* User.swift in Sources */,
 				297A4B4A2BDF7D5500987F24 /* ProfileImage.swift in Sources */,
