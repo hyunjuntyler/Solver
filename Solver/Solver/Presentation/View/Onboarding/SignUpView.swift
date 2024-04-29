@@ -84,6 +84,15 @@ struct SignUpView: View {
                 animate = true
             }
         }
+        .overlay {
+            if store.isLoading {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .frame(width: 120, height: 120)
+                    .foregroundStyle(.ultraThinMaterial)
+                ProgressView()
+                    .controlSize(.large)
+            }
+        }
     }
 }
 

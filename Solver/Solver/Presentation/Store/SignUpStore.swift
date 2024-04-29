@@ -14,6 +14,7 @@ final class SignUpStore {
     var userId = ""
     var showAlert = false
     var isValid = true
+    var isLoading = false
     
     func validateUserId() {
         let pattern = "^[a-zA-Z0-9_]*$"
@@ -28,11 +29,18 @@ final class SignUpStore {
     func checkUserId() {
         Task {
             do {
+                isLoading = true
                 try await useCase.check(id: userId)
                 UserDefaults.standard.set(userId, forKey: "userId")
-                UserDefaults.standard.set(false, forKey: "onboarding")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    withAnimation {
+                        UserDefaults.standard.set(false, forKey: "onboarding")
+                        self.isLoading = false
+                    }
+                }
             } catch {
                 Haptic.notification(type: .error)
+                isLoading = false
                 showAlert = true
             }
         }
