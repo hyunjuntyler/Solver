@@ -53,9 +53,14 @@ struct ProfileHeader: View {
                         ClassBadge(userClass: user.userClass, size: badgeSize)
                     }
                     
-                    TierBadge(tier: user.tier, size: tierBadgeSize)
-                        .shadow(radius: 2)
-                        .shimmerEffect()
+                    Button {
+                        Haptic.impact(style: .soft)
+                    } label: {
+                        TierBadge(tier: user.tier, size: tierBadgeSize)
+                            .shadow(radius: 2)
+                            .shimmerEffect()
+                    }
+                    .buttonStyle(ProfileButtonStyle(color: user.tier.tierColor))
                     
                     HStack {
                         Text(user.tier.tierName)
