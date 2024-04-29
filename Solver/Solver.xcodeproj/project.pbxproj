@@ -20,6 +20,12 @@
 		29552FC82BDA647500F8A33C /* SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FC72BDA647500F8A33C /* SolverTests.swift */; };
 		29552FD22BDA647500F8A33C /* SolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD12BDA647500F8A33C /* SolverUITests.swift */; };
 		29552FD42BDA647500F8A33C /* SolverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */; };
+		297A4B1F2BDF61F900987F24 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297A4B1E2BDF61F900987F24 /* WidgetKit.framework */; };
+		297A4B212BDF61F900987F24 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297A4B202BDF61F900987F24 /* SwiftUI.framework */; };
+		297A4B242BDF61F900987F24 /* SolverWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */; };
+		297A4B262BDF61F900987F24 /* SolverWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B252BDF61F900987F24 /* SolverWidget.swift */; };
+		297A4B282BDF61FA00987F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 297A4B272BDF61FA00987F24 /* Assets.xcassets */; };
+		297A4B2C2BDF61FA00987F24 /* SolverWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 297A4B1C2BDF61F900987F24 /* SolverWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */; };
 		298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */; };
 		298D5F012BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */; };
@@ -81,7 +87,28 @@
 			remoteGlobalIDString = 29552FB22BDA647300F8A33C;
 			remoteInfo = Solver;
 		};
+		297A4B2A2BDF61FA00987F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29552FAB2BDA647300F8A33C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 297A4B1B2BDF61F900987F24;
+			remoteInfo = SolverWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		297A4B2D2BDF61FA00987F24 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				297A4B2C2BDF61FA00987F24 /* SolverWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2905AFFC2BDE49AB00B08967 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -100,6 +127,13 @@
 		29552FCD2BDA647500F8A33C /* SolverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FD12BDA647500F8A33C /* SolverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITests.swift; sourceTree = "<group>"; };
 		29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		297A4B1C2BDF61F900987F24 /* SolverWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SolverWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		297A4B1E2BDF61F900987F24 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		297A4B202BDF61F900987F24 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverWidgetBundle.swift; sourceTree = "<group>"; };
+		297A4B252BDF61F900987F24 /* SolverWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverWidget.swift; sourceTree = "<group>"; };
+		297A4B272BDF61FA00987F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		297A4B292BDF61FA00987F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
 		298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
 		298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderPreferenceKey.swift; sourceTree = "<group>"; };
@@ -169,6 +203,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		297A4B192BDF61F900987F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297A4B212BDF61F900987F24 /* SwiftUI.framework in Frameworks */,
+				297A4B1F2BDF61F900987F24 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -213,6 +256,8 @@
 				29552FB52BDA647300F8A33C /* Solver */,
 				29552FC62BDA647500F8A33C /* SolverTests */,
 				29552FD02BDA647500F8A33C /* SolverUITests */,
+				297A4B222BDF61F900987F24 /* SolverWidget */,
+				297A4B1D2BDF61F900987F24 /* Frameworks */,
 				29552FB42BDA647300F8A33C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -223,6 +268,7 @@
 				29552FB32BDA647300F8A33C /* Solver.app */,
 				29552FC32BDA647500F8A33C /* SolverTests.xctest */,
 				29552FCD2BDA647500F8A33C /* SolverUITests.xctest */,
+				297A4B1C2BDF61F900987F24 /* SolverWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +303,26 @@
 				29552FD32BDA647500F8A33C /* SolverUITestsLaunchTests.swift */,
 			);
 			path = SolverUITests;
+			sourceTree = "<group>";
+		};
+		297A4B1D2BDF61F900987F24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				297A4B1E2BDF61F900987F24 /* WidgetKit.framework */,
+				297A4B202BDF61F900987F24 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		297A4B222BDF61F900987F24 /* SolverWidget */ = {
+			isa = PBXGroup;
+			children = (
+				297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */,
+				297A4B252BDF61F900987F24 /* SolverWidget.swift */,
+				297A4B272BDF61FA00987F24 /* Assets.xcassets */,
+				297A4B292BDF61FA00987F24 /* Info.plist */,
+			);
+			path = SolverWidget;
 			sourceTree = "<group>";
 		};
 		298D5EFA2BDD1E2B003CB0EE /* ViewModifier */ = {
@@ -489,10 +555,12 @@
 				29552FAF2BDA647300F8A33C /* Sources */,
 				29552FB02BDA647300F8A33C /* Frameworks */,
 				29552FB12BDA647300F8A33C /* Resources */,
+				297A4B2D2BDF61FA00987F24 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				297A4B2B2BDF61FA00987F24 /* PBXTargetDependency */,
 			);
 			name = Solver;
 			productName = Solver;
@@ -535,6 +603,23 @@
 			productReference = 29552FCD2BDA647500F8A33C /* SolverUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		297A4B1B2BDF61F900987F24 /* SolverWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 297A4B302BDF61FA00987F24 /* Build configuration list for PBXNativeTarget "SolverWidgetExtension" */;
+			buildPhases = (
+				297A4B182BDF61F900987F24 /* Sources */,
+				297A4B192BDF61F900987F24 /* Frameworks */,
+				297A4B1A2BDF61F900987F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SolverWidgetExtension;
+			productName = SolverWidgetExtension;
+			productReference = 297A4B1C2BDF61F900987F24 /* SolverWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -556,6 +641,9 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 29552FB22BDA647300F8A33C;
 					};
+					297A4B1B2BDF61F900987F24 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 				};
 			};
 			buildConfigurationList = 29552FAE2BDA647300F8A33C /* Build configuration list for PBXProject "Solver" */;
@@ -575,6 +663,7 @@
 				29552FB22BDA647300F8A33C /* Solver */,
 				29552FC22BDA647500F8A33C /* SolverTests */,
 				29552FCC2BDA647500F8A33C /* SolverUITests */,
+				297A4B1B2BDF61F900987F24 /* SolverWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -600,6 +689,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		297A4B1A2BDF61F900987F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297A4B282BDF61FA00987F24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +779,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		297A4B182BDF61F900987F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297A4B262BDF61F900987F24 /* SolverWidget.swift in Sources */,
+				297A4B242BDF61F900987F24 /* SolverWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -694,6 +800,11 @@
 			isa = PBXTargetDependency;
 			target = 29552FB22BDA647300F8A33C /* Solver */;
 			targetProxy = 29552FCE2BDA647500F8A33C /* PBXContainerItemProxy */;
+		};
+		297A4B2B2BDF61FA00987F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 297A4B1B2BDF61F900987F24 /* SolverWidgetExtension */;
+			targetProxy = 297A4B2A2BDF61FA00987F24 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -820,6 +931,7 @@
 		29552FD82BDA647500F8A33C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -850,6 +962,7 @@
 		29552FD92BDA647500F8A33C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -953,6 +1066,60 @@
 			};
 			name = Release;
 		};
+		297A4B2E2BDF61FA00987F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77745NX67K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolverWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SolverWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Solver.SolverWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		297A4B2F2BDF61FA00987F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77745NX67K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolverWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SolverWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Solver.SolverWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -988,6 +1155,15 @@
 			buildConfigurations = (
 				29552FDE2BDA647500F8A33C /* Debug */,
 				29552FDF2BDA647500F8A33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		297A4B302BDF61FA00987F24 /* Build configuration list for PBXNativeTarget "SolverWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				297A4B2E2BDF61FA00987F24 /* Debug */,
+				297A4B2F2BDF61FA00987F24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
