@@ -16,40 +16,13 @@ struct ProfileHeader: View {
             if let user = userStore.user, let headerFrame = frames.first {
                 let offset = headerFrame.minY
                 
-                var topPadding: CGFloat {
-                    max(min(20 + offset, 20), 5)
-                }
-                
-                var tierBadgeSize: CGFloat {
-                    max(min(140 + offset / 100 * 60, 170), 80)
-                }
-                
-                var tierFontSize: CGFloat {
-                    max(min(28 + offset / 100 * 8, 32), 20)
-                }
-                
-                var idFontSize: CGFloat {
-                    max(min(22 + offset / 100 * 2, 24), 20)
-                }
-                
-                var bodyFontSize: CGFloat {
-                    max(min(17 + offset / 100 * 2, 19), 15)
-                }
-                
-                var badgeSize: CGFloat {
-                    max(min(30 + offset / 100 * 4, 32), 26)
-                }
-                
-                var progressWidth: CGFloat {
-                    max(min(200 + offset / 80 * 50, 225), 150)
-                }
-                
                 VStack {
                     HStack {
-                        ProfileImage(data: userStore.profile?.image, size: badgeSize)
+                        ProfileImage(data: userStore.profile?.image, size: max(min(30 + offset / 100 * 4, 32), 26))
                         Text(user.id)
-                            .font(.system(size: idFontSize))
+                            .font(.system(size: max(min(22 + offset / 100 * 2, 24), 20)))
                             .fontWeight(.semibold)
+                            .padding(.horizontal, 8)
                         
                         Button {
                             Haptic.impact(style: .soft)
@@ -57,14 +30,14 @@ struct ProfileHeader: View {
                                 Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
                             }
                         } label: {
-                            BadgeImage(data: userStore.badge?.image, size: badgeSize)
+                            BadgeImage(data: userStore.badge?.image, size: max(min(30 + offset / 100 * 4, 32), 26))
                         }
                         .buttonStyle(ImageButtonStyle())
                         
                         Button {
                             Haptic.impact(style: .soft)
                         } label: {
-                            ClassBadge(userClass: user.userClass, size: badgeSize)
+                            ClassBadge(userClass: user.userClass, size: max(min(30 + offset / 100 * 4, 32), 26))
                         }
                         .buttonStyle(ImageButtonStyle())
                     }
@@ -73,14 +46,14 @@ struct ProfileHeader: View {
                         Haptic.impact(style: .soft)
                     } label: {
                         VStack(spacing: 6) {
-                            TierBadge(tier: user.tier, size: tierBadgeSize)
+                            TierBadge(tier: user.tier, size: max(min(140 + offset / 100 * 60, 170), 80))
                                 .shadow(radius: 4)
                             HStack {
                                 Text(user.tier.tierName)
                                 Text("\(user.rating)")
                             }
                             .foregroundStyle(user.tier.tierBadgeColor)
-                            .font(.system(size: tierFontSize))
+                            .font(.system(size: max(min(28 + offset / 100 * 8, 32), 20)))
                             .fontWeight(.bold)
                         }
                             .shimmerEffect()
@@ -93,12 +66,12 @@ struct ProfileHeader: View {
                                 .fontWeight(.semibold)
                             Text("(상위 \(user.rank.toPercentile(by: count))%)")
                         }
-                        .font(.system(size: bodyFontSize))
+                        .font(.system(size: max(min(17 + offset / 100 * 2, 19), 15)))
                         .padding(.top, 2)
                     }
                     
                     TierProgress(tier: user.tier, rating: user.rating)
-                        .frame(width: progressWidth)
+                        .frame(width: max(min(210 + offset / 80 * 60, 240), 150))
                         .tint(user.tier.tierBadgeColor)
                     
                     HStack(spacing: 12) {
@@ -142,10 +115,10 @@ struct ProfileHeader: View {
                         }
                         .buttonStyle(ComponentButtonStyle())
                     }
-                    .font(.system(size: bodyFontSize))
+                    .font(.system(size: max(min(17 + offset / 100 * 2, 19), 15)))
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.top, topPadding)
+                .padding(.top, max(min(20 + offset, 20), 5))
                 .background(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.systemBackground)], startPoint: .top, endPoint: .bottom))
             }
         }
