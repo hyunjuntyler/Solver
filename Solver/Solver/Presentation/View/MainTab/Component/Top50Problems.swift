@@ -1,5 +1,5 @@
 //
-//  Top50.swift
+//  Top50Problems.swift
 //  Solver
 //
 //  Created by hyunjun on 4/27/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Top50: View {
+struct Top50Problems: View {
     var store: Top100Store
     
     @State private var selectedItem: ItemEntity?
@@ -76,5 +76,5 @@ struct Top50: View {
 #Preview {
     let previewData = PreviewData()
     let store = Top100Store(top100: previewData.top100)
-    return Top50(store: store)
+    return Top50Problems(store: store)
 }

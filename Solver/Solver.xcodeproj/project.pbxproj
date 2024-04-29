@@ -12,10 +12,11 @@
 		2905B0012BDE570100B08967 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0002BDE570100B08967 /* Badge.swift */; };
 		2905B0052BDE674600B08967 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0042BDE674600B08967 /* ButtonType.swift */; };
 		2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */; };
-		2905B00B2BDE96D700B08967 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B00A2BDE96D700B08967 /* Header.swift */; };
+		2905B00B2BDE96D700B08967 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905B00A2BDE96D700B08967 /* ProfileHeader.swift */; };
 		2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945B3E62BDC4D18004BC324 /* View+Extension.swift */; };
 		294D05C62BDFA77D006F192E /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C22BDFA6C7006F192E /* SmallWidget.swift */; };
 		294D05C72BDFA77F006F192E /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05C42BDFA70C006F192E /* MediumWidget.swift */; };
+		294D05CC2BDFB414006F192E /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D05CB2BDFB414006F192E /* SummaryHeader.swift */; };
 		29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB62BDA647300F8A33C /* SolverApp.swift */; };
 		29552FB92BDA647300F8A33C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29552FB82BDA647300F8A33C /* ContentView.swift */; };
 		29552FBB2BDA647500F8A33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29552FBA2BDA647500F8A33C /* Assets.xcassets */; };
@@ -60,7 +61,7 @@
 		29F488662BDBDFDE006B0EA2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */; };
 		29F488682BDBE45C006B0EA2 /* BadgeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488672BDBE45C006B0EA2 /* BadgeImage.swift */; };
 		29F4886A2BDBEB36006B0EA2 /* ClassBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488692BDBEB36006B0EA2 /* ClassBadge.swift */; };
-		29F4886C2BDBFF20006B0EA2 /* Top50.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4886B2BDBFF20006B0EA2 /* Top50.swift */; };
+		29F4886C2BDBFF20006B0EA2 /* Top50Problems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4886B2BDBFF20006B0EA2 /* Top50Problems.swift */; };
 		29F4886E2BDC1B4E006B0EA2 /* ProblemsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4886D2BDC1B4E006B0EA2 /* ProblemsChart.swift */; };
 		29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */; };
 		29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9132BDA6D570034F600 /* Top100DTO.swift */; };
@@ -138,10 +139,11 @@
 		2905B0002BDE570100B08967 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		2905B0042BDE674600B08967 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		2905B0062BDE685B00B08967 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
-		2905B00A2BDE96D700B08967 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		2905B00A2BDE96D700B08967 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		2945B3E62BDC4D18004BC324 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		294D05C22BDFA6C7006F192E /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
 		294D05C42BDFA70C006F192E /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
+		294D05CB2BDFB414006F192E /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
 		29552FB32BDA647300F8A33C /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29552FB62BDA647300F8A33C /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		29552FB82BDA647300F8A33C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		29F488672BDBE45C006B0EA2 /* BadgeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeImage.swift; sourceTree = "<group>"; };
 		29F488692BDBEB36006B0EA2 /* ClassBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBadge.swift; sourceTree = "<group>"; };
-		29F4886B2BDBFF20006B0EA2 /* Top50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top50.swift; sourceTree = "<group>"; };
+		29F4886B2BDBFF20006B0EA2 /* Top50Problems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top50Problems.swift; sourceTree = "<group>"; };
 		29F4886D2BDC1B4E006B0EA2 /* ProblemsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsChart.swift; sourceTree = "<group>"; };
 		29F7B9112BDA6C7A0034F600 /* ProblemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDTO.swift; sourceTree = "<group>"; };
 		29F7B9132BDA6D570034F600 /* Top100DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100DTO.swift; sourceTree = "<group>"; };
@@ -435,8 +437,9 @@
 		29F4885D2BDBD0AE006B0EA2 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				2905B00A2BDE96D700B08967 /* Header.swift */,
-				29F4886B2BDBFF20006B0EA2 /* Top50.swift */,
+				2905B00A2BDE96D700B08967 /* ProfileHeader.swift */,
+				294D05CB2BDFB414006F192E /* SummaryHeader.swift */,
+				29F4886B2BDBFF20006B0EA2 /* Top50Problems.swift */,
 				29F4886D2BDC1B4E006B0EA2 /* ProblemsChart.swift */,
 				29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */,
 				29F488692BDBEB36006B0EA2 /* ClassBadge.swift */,
@@ -788,7 +791,7 @@
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
 				29F488662BDBDFDE006B0EA2 /* ProfileImage.swift in Sources */,
 				29F7B95C2BDA8FE60034F600 /* SignUpStore.swift in Sources */,
-				29F4886C2BDBFF20006B0EA2 /* Top50.swift in Sources */,
+				29F4886C2BDBFF20006B0EA2 /* Top50Problems.swift in Sources */,
 				29F7B9352BDA7C880034F600 /* NetworkClient.swift in Sources */,
 				29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
@@ -814,10 +817,11 @@
 				2905B0012BDE570100B08967 /* Badge.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
 				29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */,
-				2905B00B2BDE96D700B08967 /* Header.swift in Sources */,
+				2905B00B2BDE96D700B08967 /* ProfileHeader.swift in Sources */,
 				29F7B9162BDA6EFA0034F600 /* UserDTO.swift in Sources */,
 				29F7B9282BDA75E20034F600 /* ProblemEntity.swift in Sources */,
 				298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */,
+				294D05CC2BDFB414006F192E /* SummaryHeader.swift in Sources */,
 				29F7B9242BDA75B30034F600 /* ProfileEntity.swift in Sources */,
 				29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */,
 				29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */,

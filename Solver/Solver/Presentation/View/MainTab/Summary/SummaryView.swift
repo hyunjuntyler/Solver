@@ -13,10 +13,14 @@ struct SummaryView: View {
     var problemsStore: ProblemsStore
     var top100Store: Top100Store
     
+    private var solvedCount: Int {
+        min(problemsStore.solvedCount, 50)
+    }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                Header(userStore: userStore, frames: frames)
+                ProfileHeader(userStore: userStore, frames: frames)
                     .sticky(frames, isMainHeader: true)
                 
                 Rectangle()
@@ -25,28 +29,11 @@ struct SummaryView: View {
                     .sticky(frames, isEmptyHeader: true)
                     .padding(.bottom, -30)
                 
-                HStack {
-                    let count = min(problemsStore.solvedCount, 50)
-                    
-                    Text("🚀")
-                        .font(.tossBody)
-                    Text("상위 \(count)문제")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 40)
-                .padding(.horizontal)
-                .background {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .foregroundStyle(.ultraThinMaterial)
-                }
-                .padding(.horizontal)
-                .padding(.top)
+                SummaryHeader(emoji: "🚀", title: "상위 \(solvedCount)문제")
                 .sticky(frames)
                 .padding(.top)
                 
-                Top50(store: top100Store)
+                Top50Problems(store: top100Store)
                     .padding(.top, 20)
                     .padding()
                     .background {
@@ -56,22 +43,7 @@ struct SummaryView: View {
                     .padding(.horizontal)
                     .padding(.top, -20)
                 
-                HStack {
-                    Text("📊")
-                        .font(.tossBody)
-                    Text("난이도 분포")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 40)
-                .padding(.horizontal)
-                .background {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .foregroundStyle(.ultraThinMaterial)
-                }
-                .padding(.horizontal)
-                .padding(.top)
+                SummaryHeader(emoji: "📊", title: "난이도 분포")
                 .sticky(frames)
                 
                 ProblemsChart(store: problemsStore)

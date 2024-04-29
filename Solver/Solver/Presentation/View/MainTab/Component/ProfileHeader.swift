@@ -1,5 +1,5 @@
 //
-//  Header.swift
+//  ProfileHeader.swift
 //  Solver
 //
 //  Created by hyunjun on 4/28/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Header: View {
+struct ProfileHeader: View {
     var userStore: UserStore
     var frames: [CGRect]
     
