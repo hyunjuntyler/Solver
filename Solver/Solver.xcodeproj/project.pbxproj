@@ -204,7 +204,7 @@
 		29F7B9522BDA891D0034F600 /* OnboardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStore.swift; sourceTree = "<group>"; };
 		29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
 		29F7B9582BDA8CC20034F600 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		29F7B95A2BDA8D8C0034F600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29F7B95A2BDA8D8C0034F600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29F7B95B2BDA8FE60034F600 /* SignUpStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,10 +294,30 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		294D05C92BDFAD7C006F192E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				29552FB62BDA647300F8A33C /* SolverApp.swift */,
+				297A4B3A2BDF662000987F24 /* Solver.entitlements */,
+				29F7B95A2BDA8D8C0034F600 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		294D05CA2BDFAE29006F192E /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */,
+				297A4B252BDF61F900987F24 /* SolverWidget.swift */,
+				297A4B3B2BDF664B00987F24 /* SolverWidgetExtension.entitlements */,
+				297A4B292BDF61FA00987F24 /* Info.plist */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		29552FAA2BDA647300F8A33C = {
 			isa = PBXGroup;
 			children = (
-				297A4B3B2BDF664B00987F24 /* SolverWidgetExtension.entitlements */,
 				29552FB52BDA647300F8A33C /* Solver */,
 				297A4B222BDF61F900987F24 /* SolverWidget */,
 				29552FC62BDA647500F8A33C /* SolverTests */,
@@ -321,9 +341,7 @@
 		29552FB52BDA647300F8A33C /* Solver */ = {
 			isa = PBXGroup;
 			children = (
-				297A4B3A2BDF662000987F24 /* Solver.entitlements */,
-				29552FB62BDA647300F8A33C /* SolverApp.swift */,
-				29F7B95A2BDA8D8C0034F600 /* Info.plist */,
+				294D05C92BDFAD7C006F192E /* App */,
 				2905AFFB2BDE499100B08967 /* Persistence */,
 				29F7B9412BDA869B0034F600 /* Presentation */,
 				29F7B91D2BDA74D80034F600 /* Domain */,
@@ -363,9 +381,7 @@
 		297A4B222BDF61F900987F24 /* SolverWidget */ = {
 			isa = PBXGroup;
 			children = (
-				297A4B232BDF61F900987F24 /* SolverWidgetBundle.swift */,
-				297A4B292BDF61FA00987F24 /* Info.plist */,
-				297A4B252BDF61F900987F24 /* SolverWidget.swift */,
+				294D05CA2BDFAE29006F192E /* Widget */,
 				294D05C12BDFA6BC006F192E /* WidgetFamily */,
 				294D05C82BDFAC09006F192E /* Resource */,
 			);
@@ -1004,14 +1020,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Solver/App/Solver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Solver/Info.plist;
+				INFOPLIST_FILE = Solver/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1036,14 +1052,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Solver/App/Solver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Solver/Info.plist;
+				INFOPLIST_FILE = Solver/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1143,12 +1159,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SolverWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SolverWidget/Widget/SolverWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77745NX67K;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SolverWidget/Info.plist;
+				INFOPLIST_FILE = SolverWidget/Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SolverWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1171,12 +1187,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SolverWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SolverWidget/Widget/SolverWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77745NX67K;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SolverWidget/Info.plist;
+				INFOPLIST_FILE = SolverWidget/Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SolverWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
