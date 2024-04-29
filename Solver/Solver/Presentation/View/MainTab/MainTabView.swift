@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainTabView: View {
     @Environment(\.modelContext) private var modelContext
+    @AppStorage("manual") private var manual = true
+
     @State private var userStore = UserStore()
     @State private var problemsStore = ProblemsStore()
     @State private var top100Store = Top100Store()
@@ -29,6 +31,11 @@ struct MainTabView: View {
             userStore.modelContext = modelContext
             userStore.fetchSwiftData()
             userStore.fetch()
+        }
+        .sheet(isPresented: $manual) {
+            ManualView()
+                .interactiveDismissDisabled()
+                .presentationCornerRadius(24)
         }
     }
 }
