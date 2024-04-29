@@ -82,7 +82,7 @@ extension UserStore {
     func fetchSwiftData() {
         let fetchDescriptor = FetchDescriptor<User>()
         let persistanceUser = try? modelContext?.fetch(fetchDescriptor)
-        
+                
         if let storedUser = persistanceUser?.first {
             user = storedUser.toDomain()
             profile = storedUser.profile?.toDomain()
@@ -121,6 +121,13 @@ extension UserStore {
                 imageUrl: fetchedProfile.imageUrl,
                 image: fetchedProfile.image
             )
+        }
+        
+        let fetchDescriptor = FetchDescriptor<User>()
+        let persistanceUser = try? modelContext?.fetch(fetchDescriptor)
+                
+        if let storedUser = persistanceUser?.first {
+            modelContext?.delete(storedUser)
         }
         modelContext?.insert(user)
     }

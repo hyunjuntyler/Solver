@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 struct StickyHeader: ViewModifier {
     var stickyHeaders: [CGRect]
     var isMainHeader: Bool
