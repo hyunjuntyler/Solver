@@ -46,20 +46,21 @@ class Toast {
     static let shared = Toast()
     fileprivate var toasts: [ToastItem] = []
     
-    func present(title: String, symbol: String?, tint: Color = .primary, enabled: Bool = false, time: ToastTime = .medium) {
+    func present(symbol: String? = nil, data: Data? = nil, title: String, body: String, enabled: Bool = true, time: ToastTime = .medium) {
         withAnimation(.snappy) {
-            toasts.append(ToastItem(title: title, symbol: symbol, tint: tint, enabled: enabled, time: time))
+            toasts.append(ToastItem(symbol: symbol, data: data, title: title, body: body, enabled: enabled, time: time))
         }
     }
 }
 
 struct ToastItem: Identifiable {
     let id = UUID()
-    var title: String
     var symbol: String?
-    var tint: Color
+    var data: Data?
+    var title: String
+    var body: String
     var enabled: Bool
-    var time: ToastTime = .medium
+    var time: ToastTime
 }
 
 enum ToastTime: CGFloat {
@@ -110,22 +111,34 @@ fileprivate struct ToastView: View {
         HStack(spacing: 0) {
             if let symbol = item.symbol {
                 Text(symbol)
-                    .font(.tossBody)
+                    .font(.tossTitle2)
                     .padding(.trailing, 10)
+                VStack {
+                    Text(item.title)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    Text(item.body)
+                }
+                .padding(.horizontal, 8)
+            } else {
+                BadgeImage(data: item.data, size: 32)
+                    .shadow(radius: 2)
+                    .padding(.trailing, 10)
+                VStack {
+                    Text(item.title)
+                    Text(item.body)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.horizontal, 8)
             }
-            
-            Text(item.title)
         }
-        .foregroundStyle(item.tint)
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .padding(.horizontal, 24)
+        .padding(.vertical, 16)
         .background(
-            .background
-                .shadow(.drop(color: .primary.opacity(0.06), radius: 5, x: 5, y: 5))
-                .shadow(.drop(color: .primary.opacity(0.06), radius: 5, x: -5, y: -5)),
-            in: .capsule
+            RoundedRectangle(cornerRadius: 32, style: .continuous)
+                .foregroundStyle(.ultraThinMaterial)
         )
-        .contentShape(.capsule)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onEnded { value in
@@ -133,7 +146,8 @@ fileprivate struct ToastView: View {
                     let endY = value.translation.height
                     let velocityY = value.velocity.height
                     
-                    if endY + velocityY < 100 {
+                    if endY + velocityY < -20 {
+                        print(endY, velocityY)
                         removeToast()
                     }
                 }
@@ -146,8 +160,8 @@ fileprivate struct ToastView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + item.time.rawValue, execute: delayTask)
             }
         }
-        .frame(maxWidth: size.width * 0.7)
-        .transition(.offset(y: -150))
+        .frame(maxWidth: size.width * 0.8)
+        .transition(.offset(y: -180))
     }
     
     private func removeToast() {
@@ -166,8 +180,9 @@ struct ToastTestView: View {
         VStack {
             Button("Toast Animation") {
                 Toast.shared.present(
+                    symbol: "🤩", 
                     title: "hello",
-                    symbol: "🤩",
+                    body: "hello world", 
                     enabled: true
                 )
             }
@@ -179,4 +194,25 @@ struct ToastTestView: View {
     RootView {
         ToastTestView()
     }
+}
+
+#Preview("ToastItem") {
+    HStack(spacing: 0) {
+        Text("🤩")
+            .font(.tossTitle2)
+            .padding(.trailing, 10)
+        VStack {
+            Text("최대 연속 문제풀이")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+            Text("326일")
+        }
+        .padding(.horizontal, 8)
+    }
+    .padding(.horizontal, 24)
+    .padding(.vertical, 16)
+    .background(
+        RoundedRectangle(cornerRadius: 32, style: .continuous)
+            .foregroundStyle(.ultraThinMaterial)
+    )
 }

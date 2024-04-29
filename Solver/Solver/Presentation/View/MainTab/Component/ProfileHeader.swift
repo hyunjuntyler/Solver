@@ -53,6 +53,9 @@ struct ProfileHeader: View {
                         
                         Button {
                             Haptic.impact(style: .soft)
+                            if let badge = userStore.badge {
+                                Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
+                            }
                         } label: {
                             BadgeImage(data: userStore.badge?.image, size: badgeSize)
                         }
@@ -100,13 +103,16 @@ struct ProfileHeader: View {
                     
                     HStack(spacing: 12) {
                         if user.tier < 31 {
+                            let requiredRating = Int(userStore.required[user.tier+1]) - user.rating
+                            
                             Button {
                                 Haptic.impact(style: .soft)
+                                Toast.shared.present(symbol: "🎯", title: "\((user.tier + 1).tierName) 승급까지 남은 점수", body: "\(requiredRating)점")
                             } label: {
                                 HStack {
-                                    Text("⛳️")
+                                    Text("🎯")
                                         .font(.tossBody)
-                                    Text("\(Int(userStore.required[user.tier+1]) - user.rating)")
+                                    Text("\(requiredRating)")
                                 }
                             }
                             .buttonStyle(ComponentButtonStyle())
@@ -114,6 +120,7 @@ struct ProfileHeader: View {
                         
                         Button {
                             Haptic.impact(style: .soft)
+                            Toast.shared.present(symbol: "✍️", title: "지금까지 해결한 문제", body: "\(user.solvedCount)문제")
                         } label: {
                             HStack {
                                 Text("✍️")
@@ -125,6 +132,7 @@ struct ProfileHeader: View {
                         
                         Button {
                             Haptic.impact(style: .soft)
+                            Toast.shared.present(symbol: "🌱", title: "최대 연속 문제풀이 일수", body: "\(user.maxStreak)일")
                         } label: {
                             HStack {
                                 Text("🌱")
