@@ -17,16 +17,18 @@ struct SmallWidget: View {
                 ProfileImage(data: user.profile?.image, size: 16)
                 Text(user.id)
                     .fontWeight(.semibold)
+                    .font(.footnote)
             }
+            
             TierBadge(tier: user.tier, size: 56)
                 .shadow(radius: 0.5)
+            
             HStack {
                 Text(user.tier.tierName)
                 Text(String(user.rating))
             }
             .foregroundStyle(user.tier.tierColor)
             .fontWeight(.bold)
-            .font(.title3)
         }
         .containerBackground(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.tertiarySystemBackground)], startPoint: .top, endPoint: .bottom), for: .widget)
     }

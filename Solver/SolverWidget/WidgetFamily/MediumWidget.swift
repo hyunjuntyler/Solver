@@ -16,7 +16,6 @@ struct MediumWidget: View {
             HStack {
                 ProfileImage(data: user.profile?.image, size: 24)
                 Text(user.id)
-                    .font(.title3)
                     .fontWeight(.semibold)
                 BadgeImage(data: user.badge?.image, size: 24)
                 ClassBadge(userClass: user.userClass, size: 24)
@@ -41,10 +40,9 @@ struct MediumWidget: View {
                         
                         HStack {
                             Text("랭킹 \(user.rank)위")
-                                .fontWeight(.semibold)
                         }
                         .foregroundStyle(.secondary)
-                        .font(.caption)
+                        .font(.caption2)
                     }
                     
                     HStack(spacing: 0) {
