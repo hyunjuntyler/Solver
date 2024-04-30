@@ -72,10 +72,12 @@ struct ProblemsChart: View {
         .onChange(of: selection) {
             if let value = $1 {
                 withAnimation(.bouncy(duration: 0.8)) {
-                    Haptic.impact(style: .soft)
                     getSelectedStats(value)
                 }
             }
+        }
+        .onChange(of: selectedStats) {
+            Haptic.impact(style: .soft)
         }
         .frame(height: 260)
         .padding(.vertical)
