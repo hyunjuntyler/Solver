@@ -11,11 +11,13 @@ struct ProfileHeader: View {
     var userStore: UserStore
     var frames: [CGRect]
     
+    private var offset: CGFloat? {
+        frames.first?.minY
+    }
+    
     var body: some View {
         VStack {
-            if let user = userStore.user, let headerFrame = frames.first {
-                let offset = headerFrame.minY
-                
+            if let user = userStore.user, let offset {
                 VStack {
                     HStack {
                         ProfileImage(data: userStore.profile?.image, size: max(min(30 + offset / 100 * 4, 32), 26))
@@ -120,6 +122,10 @@ struct ProfileHeader: View {
                 .frame(maxWidth: .infinity)
                 .padding(.top, max(min(20 + offset, 20), 5))
                 .background(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.systemBackground)], startPoint: .top, endPoint: .bottom))
+            } else {
+                ProgressView()
+                    .controlSize(.large)
+                    .frame(height: 360)
             }
         }
     }
@@ -133,3 +139,8 @@ struct ProfileHeader: View {
     return RootView { SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store) }
 }
 
+#Preview("ContentUnavailable") {
+    ProgressView()
+        .controlSize(.large)
+        .frame(height: 360)
+}
