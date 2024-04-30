@@ -110,9 +110,14 @@ fileprivate struct ToastView: View {
     var body: some View {
         HStack(spacing: 0) {
             if let symbol = item.symbol {
-                Text(symbol)
-                    .font(.tossTitle2)
-                    .padding(.trailing, 10)
+                if let userClass = Int(symbol) {
+                    ClassBadge(userClass: userClass, size: 32)
+                        .padding(.trailing, 10)
+                } else {
+                    Text(symbol)
+                        .font(.tossTitle)
+                        .padding(.trailing, 10)
+                }
                 VStack {
                     Text(item.title)
                         .font(.footnote)
@@ -179,7 +184,7 @@ struct ToastTestView: View {
         VStack {
             Button("Toast Animation") {
                 Toast.shared.present(
-                    symbol: "🤩", 
+                    symbol: "🤩",
                     title: "hello",
                     body: "hello world", 
                     enabled: true

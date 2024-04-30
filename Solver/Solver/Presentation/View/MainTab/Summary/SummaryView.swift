@@ -29,14 +29,14 @@ struct SummaryView: View {
                     .stickyHeader(frames, isEmptyHeader: true)
                     .padding(.bottom, -30)
                 
-                SummaryHeader(emoji: "🚀", title: "상위 \(solvedCount)문제")
+                SummaryHeader(emoji: "🚀", title: "내가 푼 상위 \(solvedCount)문제")
                     .stickyHeader(frames)
                     .padding(.top)
                 
                 Top50Problems(store: top100Store)
                     .summaryBody()
                 
-                SummaryHeader(emoji: "📊", title: "난이도 분포")
+                SummaryHeader(emoji: "📊", title: "내가 푼 문제 난이도 분포")
                     .stickyHeader(frames)
                 
                 ProblemsChart(store: problemsStore)
