@@ -82,9 +82,10 @@ final class UserStore {
 
 extension UserStore {
     func fetchSwiftData() {
+        guard let modelContext else { return }
         let fetchDescriptor = FetchDescriptor<User>()
-        let persistanceUser = try? modelContext?.fetch(fetchDescriptor)
-                
+        let persistanceUser = try? modelContext.fetch(fetchDescriptor)
+        
         if let storedUser = persistanceUser?.first {
             user = storedUser.toDomain()
             profile = storedUser.profile?.toDomain()
@@ -125,14 +126,15 @@ extension UserStore {
             )
         }
         
-        if let context = modelContext {
-            let fetchDescriptor = FetchDescriptor<User>()
-            let persistanceUser = try? context.fetch(fetchDescriptor)
-            
-            if let storedUser = persistanceUser?.first {
-                context.delete(storedUser)
-            }
-            context.insert(user)
+        guard let modelContext else { return }
+        let fetchDescriptor = FetchDescriptor<User>()
+        let persistanceUser = try? modelContext.fetch(fetchDescriptor)
+        
+        if let storedUser = persistanceUser?.first {
+            modelContext.delete(storedUser)
         }
+        
+        modelContext.insert(user)
+        try? modelContext.save()
     }
 }
