@@ -38,8 +38,12 @@ struct ProfileHeader: View {
                         
                         Button {
                             Haptic.impact(style: .soft)
+                            Toast.shared.present(symbol: String(user.userClass), title: "Class \(user.userClass)", body: user.userClass.classToastSubTitle(user.classDecoration))
                         } label: {
-                            ClassBadge(userClass: user.userClass, size: max(min(30 + offset / 100 * 4, 32), 26))
+                            ZStack {
+                                ClassWing(decoration: user.classDecoration, size: max(min(30 + offset / 100 * 4, 32), 26))
+                                ClassBadge(userClass: user.userClass, size: max(min(30 + offset / 100 * 4, 32), 26))
+                            }
                         }
                         .buttonStyle(ImageButtonStyle())
                     }

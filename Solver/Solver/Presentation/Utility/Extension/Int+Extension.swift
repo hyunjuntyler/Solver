@@ -77,6 +77,31 @@ extension Int {
         return (Color("Class\(self)In1"), Color("Class\(self)In2"), Color("Class\(self)Out1"), Color("Class\(self)Out2"))
     }
     
+    func classToastSubTitle(_ decoration: String) -> String {
+        switch decoration {
+        case "silver": 
+            switch self {
+            case 1:
+                return "해당 클래스 에센셜 16문제 해결"
+            case 2, 3:
+                return "해당 클래스 에센셜 20문제 해결"
+            default:
+                return "해당 클래스 에센셜 24문제 해결"
+            }
+        case "gold":
+            return "해당 전체 문제 해결"
+        default: 
+            switch self {
+            case 0:
+                return "문제를 풀어 Class를 획득해 보세요"
+            case 1, 2:
+                return "해당 클래스 16문제 해결"
+            default: 
+                return "해당 클래스 20문제 해결"
+            }
+        }
+    }
+    
     func toPercentile(by: Int) -> Text {
         let percentile = Double(self) / Double(by) * 100
         return Text(percentile, format: .number.rounded(rule: .up, increment: 0.1))

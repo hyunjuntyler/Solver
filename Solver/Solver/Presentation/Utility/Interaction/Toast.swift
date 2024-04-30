@@ -113,18 +113,25 @@ fileprivate struct ToastView: View {
                 if let userClass = Int(symbol) {
                     ClassBadge(userClass: userClass, size: 32)
                         .padding(.trailing, 10)
+                    VStack {
+                        Text(item.title)
+                        Text(item.body)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 8)
                 } else {
                     Text(symbol)
-                        .font(.tossTitle)
+                        .font(.tossTitle2)
                         .padding(.trailing, 10)
+                    VStack {
+                        Text(item.title)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                        Text(item.body)
+                    }
+                    .padding(.horizontal, 8)
                 }
-                VStack {
-                    Text(item.title)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                    Text(item.body)
-                }
-                .padding(.horizontal, 8)
             } else {
                 BadgeImage(data: item.data, size: 32)
                     .shadow(radius: 2)
@@ -184,7 +191,7 @@ struct ToastTestView: View {
         VStack {
             Button("Toast Animation") {
                 Toast.shared.present(
-                    symbol: "🤩",
+                    symbol: "1",
                     title: "hello",
                     body: "hello world", 
                     enabled: true

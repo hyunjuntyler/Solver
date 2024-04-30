@@ -56,6 +56,7 @@
 		297A4B4E2BDF84C900987F24 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */; };
 		297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B532BDF8FE300987F24 /* TierProgress.swift */; };
 		297A4B552BDF937100987F24 /* TierProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A4B532BDF8FE300987F24 /* TierProgress.swift */; };
+		298069702BE0B6F9006AEBAC /* ClassWing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2980696F2BE0B6F9006AEBAC /* ClassWing.swift */; };
 		298D5EFC2BDD1E43003CB0EE /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */; };
 		298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */; };
 		298D5F012BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */; };
@@ -177,6 +178,7 @@
 		297A4B3A2BDF662000987F24 /* Solver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solver.entitlements; sourceTree = "<group>"; };
 		297A4B3B2BDF664B00987F24 /* SolverWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SolverWidgetExtension.entitlements; sourceTree = "<group>"; };
 		297A4B532BDF8FE300987F24 /* TierProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierProgress.swift; sourceTree = "<group>"; };
+		2980696F2BE0B6F9006AEBAC /* ClassWing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassWing.swift; sourceTree = "<group>"; };
 		298D5EFB2BDD1E43003CB0EE /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
 		298D5EFD2BDD1F1A003CB0EE /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
 		298D5F002BDD1FFE003CB0EE /* StickyHeaderPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderPreferenceKey.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				29F4886D2BDC1B4E006B0EA2 /* ProblemsChart.swift */,
 				29F4885E2BDBD0D5006B0EA2 /* TierBadge.swift */,
 				29F488692BDBEB36006B0EA2 /* ClassBadge.swift */,
+				2980696F2BE0B6F9006AEBAC /* ClassWing.swift */,
 				29F488652BDBDFDE006B0EA2 /* ProfileImage.swift */,
 				29F488672BDBE45C006B0EA2 /* BadgeImage.swift */,
 				297A4B532BDF8FE300987F24 /* TierProgress.swift */,
@@ -828,6 +831,7 @@
 				298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
 				2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */,
+				298069702BE0B6F9006AEBAC /* ClassWing.swift in Sources */,
 				29F7B93B2BDA81330034F600 /* FetchRepository.swift in Sources */,
 				29F7B92F2BDA7C370034F600 /* APIEndpoint.swift in Sources */,
 				29F4885F2BDBD0D5006B0EA2 /* TierBadge.swift in Sources */,
