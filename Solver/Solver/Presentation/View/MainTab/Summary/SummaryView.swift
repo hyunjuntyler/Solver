@@ -79,5 +79,5 @@ struct SummaryView: View {
     let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
     let problemsStore = ProblemsStore(problems: previewData.problems)
     let top100Store = Top100Store(top100: previewData.top100)
-    return SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store)
+    return ToastWindow { SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store) }
 }

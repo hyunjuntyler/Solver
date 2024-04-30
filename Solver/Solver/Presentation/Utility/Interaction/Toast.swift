@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RootView<Content: View>: View {
+struct ToastWindow<Content: View>: View {
     @ViewBuilder var content: Content
     @State private var overlayWindow: UIWindow?
     
@@ -190,7 +190,7 @@ struct ToastTestView: View {
 }
 
 #Preview {
-    RootView {
+    ToastWindow {
         ToastTestView()
     }
 }

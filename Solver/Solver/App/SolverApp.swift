@@ -12,7 +12,7 @@ import SwiftData
 struct SolverApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView {
+            ToastWindow {
                 ContentView()
             }
             .modelContainer(for: [User.self])
