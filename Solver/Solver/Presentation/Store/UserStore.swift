@@ -84,13 +84,16 @@ extension UserStore {
     func fetchSwiftData() {
         guard let modelContext else { return }
         let fetchDescriptor = FetchDescriptor<User>()
-        let persistanceUser = try? modelContext.fetch(fetchDescriptor)
-        
-        if let storedUser = persistanceUser?.first {
-            user = storedUser.toDomain()
-            profile = storedUser.profile?.toDomain()
-            badge = storedUser.badge?.toDomain()
-            userCount = storedUser.totalUserCount
+        do {
+            let persistanceUser = try modelContext.fetch(fetchDescriptor)
+            if let storedUser = persistanceUser.first {
+                user = storedUser.toDomain()
+                profile = storedUser.profile?.toDomain()
+                badge = storedUser.badge?.toDomain()
+                userCount = storedUser.totalUserCount
+            }
+        } catch {
+            print("Error to get persistence user")
         }
     }
     
@@ -128,13 +131,22 @@ extension UserStore {
         
         guard let modelContext else { return }
         let fetchDescriptor = FetchDescriptor<User>()
-        let persistanceUser = try? modelContext.fetch(fetchDescriptor)
         
-        if let storedUser = persistanceUser?.first {
-            modelContext.delete(storedUser)
+        do {
+            let persistanceUser = try modelContext.fetch(fetchDescriptor)
+            if let storedUser = persistanceUser.first {
+                modelContext.delete(storedUser)
+            }
+        } catch {
+            print("Error to get persistence user")
         }
         
         modelContext.insert(user)
-        try? modelContext.save()
+        
+        do {
+            try modelContext.save()
+        } catch {
+            print("Error to save persistence user")
+        }
     }
 }
