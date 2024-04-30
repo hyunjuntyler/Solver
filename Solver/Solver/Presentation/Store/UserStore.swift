@@ -92,6 +92,7 @@ extension UserStore {
                 badge = storedUser.badge?.toDomain()
                 userCount = storedUser.totalUserCount
             }
+            updateTintColor()
         } catch {
             print("Error to get persistence user")
         }

@@ -27,7 +27,7 @@ struct MainTabView: View {
                 }
         }
         .tint(userStore.tint)
-        .onAppear {
+        .task(priority: .high) {
             userStore.modelContext = modelContext
             userStore.fetchSwiftData()
             userStore.fetch()
