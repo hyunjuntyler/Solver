@@ -19,7 +19,6 @@ final class UserStore {
     var profile: ProfileEntity?
     var badge: BadgeEntity?
     var userCount: Int?
-    var isLoading = false
     var tint: Color = .accent
     
     let required: [Double] = [0, 30, 60, 90, 120, 150, 200, 300, 400, 500, 650, 800, 950, 1100, 1250, 1400, 1600, 1750, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2850, 2900, 2950, 3000, 3000.1]
@@ -41,15 +40,16 @@ final class UserStore {
         let storedBadgeId = badge?.id
         
         Task {
-            isLoading = true
-            
             do {
-                userCount = try await useCase.fetchSite()
-                user = try await useCase.fetchUser(userId: userId)
+                let fetchedUserCount = try await useCase.fetchSite()
+                let fetchedUser = try await useCase.fetchUser(userId: userId)
+                userCount = fetchedUserCount
+                user = fetchedUser
                 
                 if let url = user?.profileImageUrl {
                     if storedProfileImageUrl != url {
-                        profile = try await useCase.fetchProfile(url: url)
+                        let fetchedProfile = try await useCase.fetchProfile(url: url)
+                        profile = fetchedProfile
                     }
                 } else {
                     profile = nil
@@ -57,7 +57,8 @@ final class UserStore {
                 
                 if let badgeId = user?.badgeId {
                     if storedBadgeId != badgeId {
-                        badge = try await useCase.fetchBadge(badgeId: badgeId)
+                        let fetchedBadge = try await useCase.fetchBadge(badgeId: badgeId)
+                        badge = fetchedBadge
                     }
                 } else {
                     badge = nil
@@ -65,10 +66,9 @@ final class UserStore {
                 
                 saveSwiftData()
                 updateTintColor()
-                isLoading = false
                 WidgetCenter.shared.reloadAllTimelines()
             } catch {
-                isLoading = true
+                print("Error to fetch user")
             }
         }
     }

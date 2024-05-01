@@ -13,9 +13,7 @@ final class ProblemsStore {
     
     var solvedCount = 0
     var triedCount = 0
-    var problems: [ProblemEntity] = []
     var problemsStats: [ProblemStats] = []
-    var isLoading = false
     
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
@@ -25,20 +23,16 @@ final class ProblemsStore {
     }
     
     init(problems: [ProblemEntity]) {
-        self.problems = problems
         update(problems)
     }
     
     func fetch() {
-        isLoading = true
-        
         Task {
             do {
-                problems = try await useCase.fetchProblem(userId: userId)
+                let problems = try await useCase.fetchProblem(userId: userId)
                 update(problems)
-                isLoading = false
             } catch {
-                isLoading = true
+                print("Error to fetch problems")
             }
         }
     }

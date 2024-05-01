@@ -12,7 +12,6 @@ final class Top100Store {
     let useCase = FetchUseCase()
     
     var top100: Top100Entity?
-    var isLoading = false
     
     @ObservationIgnored
     @AppStorage("userId") var userId = ""
@@ -26,14 +25,12 @@ final class Top100Store {
     }
     
     func fetch() {
-        isLoading = true
-        
         Task {
             do {
-                top100 = try await useCase.fetchTop100(userId: userId)
-                isLoading = false
+                let fetchedTop100 = try await useCase.fetchTop100(userId: userId)
+                top100 = fetchedTop100
             } catch {
-                isLoading = true
+                print("Error to fetch top100")
             }
         }
     }
