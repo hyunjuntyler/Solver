@@ -29,8 +29,9 @@ struct MainTabView: View {
         .tint(userStore.tint)
         .task(priority: .high) {
             userStore.modelContext = modelContext
-            userStore.fetchSwiftData()
-            userStore.fetch()
+            await userStore.fetchSwiftData {
+                userStore.fetch()
+            }
         }
         .sheet(isPresented: $manual) {
             ManualView()

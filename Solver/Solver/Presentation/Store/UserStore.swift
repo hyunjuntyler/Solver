@@ -81,7 +81,7 @@ final class UserStore {
 }
 
 extension UserStore {
-    func fetchSwiftData() {
+    func fetchSwiftData(completion: @escaping () -> Void) async {
         guard let modelContext else { return }
         let fetchDescriptor = FetchDescriptor<User>()
         do {
@@ -93,6 +93,7 @@ extension UserStore {
                 userCount = storedUser.totalUserCount
             }
             updateTintColor()
+            completion()
         } catch {
             print("Error to get persistence user")
         }
