@@ -9,7 +9,8 @@
  
 [<img width = "200" src="https://github-production-user-asset-6210df.s3.amazonaws.com/120548537/251533420-0eb9b31b-8203-48b7-8dcd-3725a8c9da49.png">](https://apps.apple.com/kr/app/solver/id6499569959)
 
-<img width = "1000" src="https://github.com/hyunjuntyler/Solver/assets/120548537/1ac93f56-6171-4533-8307-5f7f8343465c">
+<img width = "1000" src="https://github.com/hyunjuntyler/Solver/assets/120548537/d55a21dd-05fa-4623-bebd-a173300d09be">
+
 </div>
 
 <br>
