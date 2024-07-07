@@ -1,5 +1,5 @@
 //
-//  MainTabView.swift
+//  MainView.swift
 //  Solver
 //
 //  Created by hyunjun on 4/25/24.
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 import WidgetKit
 
-struct MainTabView: View {
+struct MainView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var users: [User]
     private var user: User? { users.first }
@@ -54,6 +54,6 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainView()
         .modelContainer(previewContainer)
 }
