@@ -616,6 +616,7 @@
 				29F7B9442BDA87AF0034F600 /* OnboardingView.swift */,
 				29F7B9462BDA87C00034F600 /* GreetingView.swift */,
 				29F7B9482BDA87FD0034F600 /* SignUpView.swift */,
+				296DF3922BE014D100B2E7F6 /* ManualView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -624,7 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
-				296DF3922BE014D100B2E7F6 /* ManualView.swift */,
 				29F4885C2BDBD09A006B0EA2 /* Summary */,
 				2905B0092BDE76B300B08967 /* Account */,
 				29F4885D2BDBD0AE006B0EA2 /* Component */,
