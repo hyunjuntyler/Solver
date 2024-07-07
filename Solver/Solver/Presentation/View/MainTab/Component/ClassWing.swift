@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ClassWing: View {
-    var decoration: String
-    var size: CGFloat
+    let decoration: String
+    let size: CGFloat
     
     private var color: Color {
         switch decoration {

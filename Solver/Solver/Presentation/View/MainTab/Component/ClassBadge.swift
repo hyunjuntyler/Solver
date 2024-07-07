@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ClassBadge: View {
-    var userClass: Int
-    var size: CGFloat
+    let userClass: Int
+    let size: CGFloat
     
     var body: some View {
         ZStack {

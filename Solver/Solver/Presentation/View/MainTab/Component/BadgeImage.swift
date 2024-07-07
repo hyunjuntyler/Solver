@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BadgeImage: View {
-    var data: Data?
-    var size: CGFloat
+    let data: Data?
+    let size: CGFloat
     
     var body: some View {
         if let data = data, let image = UIImage(data: data) {
