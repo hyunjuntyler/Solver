@@ -9,17 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("onboarding") private var onboarding = true
+    @AppStorage("manual") private var manual = true
     
     var body: some View {
         if onboarding {
             OnboardingView()
         } else {
             MainTabView()
+                .sheet(isPresented: $manual) {
+                    ManualView()
+                        .interactiveDismissDisabled()
+                        .presentationCornerRadius(24)
+                }
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: User.self, isAutosaveEnabled: false)
+        .modelContainer(previewContainer)
 }

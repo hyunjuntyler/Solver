@@ -30,16 +30,18 @@ struct Summary: View {
                     .font(.subheadline)
             }
             
-            HStack(spacing: 0) {
-                Text("🎯  ")
-                    .font(.tossTitle3)
-                Text("\((tier + 1).tierName) ")
-                    .foregroundStyle((tier + 1).tierColor)
-                    .bold()
-                Text("승급까지 남은 점수 ")
-                Text("\(required[tier + 1] - rating)")
-                    .bold()
-                Text("점")
+            if tier <= 30 {
+                HStack(spacing: 0) {
+                    Text("🎯  ")
+                        .font(.tossTitle3)
+                    Text("\((tier + 1).tierName) ")
+                        .foregroundStyle((tier + 1).tierColor)
+                        .bold()
+                    Text("승급까지 남은 점수 ")
+                    Text("\(required[tier + 1] - rating)")
+                        .bold()
+                    Text("점")
+                }
             }
             
             HStack(spacing: 0) {

@@ -6,23 +6,21 @@
 //
 
 import SwiftUI
-import SwiftData
 import WidgetKit
 
 final class UserStore: ObservableObject {
     private let useCase = FetchUseCase()
-    
-    var modelContext: ModelContext?
-    
+        
     @Published var user: UserEntity?
     @Published var profile: ProfileEntity?
     @Published var badge: BadgeEntity?
     @Published var userCount: Int?
     @Published var tint: Color = .accent
-    
-    private var isFetching = false
+    @Published var isFetching = false
         
-    init() { }
+    init() { 
+        fetch()
+    }
     
     init(user: UserEntity, profile: ProfileEntity, badge: BadgeEntity) {
         self.user = user
@@ -83,11 +81,9 @@ final class UserStore: ObservableObject {
                     }
                 }
                 
-//                saveSwiftData()
                 DispatchQueue.main.async {
                     self.updateTintColor()
                 }
-                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 print("Error to fetch user")
             }
@@ -97,81 +93,6 @@ final class UserStore: ObservableObject {
     private func updateTintColor() {
         if let color = user?.tier.tierColor {
             tint = color
-        }
-    }
-}
-
-extension UserStore {
-    func fetchSwiftData(completion: @escaping () -> Void) async {
-        guard let modelContext else { return }
-        let fetchDescriptor = FetchDescriptor<User>()
-        do {
-            let persistanceUser = try modelContext.fetch(fetchDescriptor)
-            print(persistanceUser.count)
-            if let storedUser = persistanceUser.first {
-                user = storedUser.toDomain()
-                profile = storedUser.profile?.toDomain()
-                badge = storedUser.badge?.toDomain()
-                userCount = storedUser.totalUserCount
-            }
-            updateTintColor()
-            print("complete")
-            completion()
-        } catch {
-            print("Error to get persistence user")
-        }
-    }
-    
-    func saveSwiftData() {
-        guard let fetchedUser = user else { return }
-        let user = User(
-            id: fetchedUser.id,
-            solvedCount: fetchedUser.solvedCount,
-            tier: fetchedUser.tier,
-            rating: fetchedUser.rating,
-            userClass: fetchedUser.userClass,
-            classDecoration: fetchedUser.classDecoration,
-            maxStreak: fetchedUser.maxStreak,
-            rank: fetchedUser.rank,
-            totalUserCount: userCount
-        )
-        
-        if let fetchedBadge = badge {
-            user.badge = Badge(
-                id: fetchedBadge.id,
-                name: fetchedBadge.name,
-                tier: fetchedBadge.tier,
-                condition: fetchedBadge.description,
-                imageUrl: fetchedBadge.imageUrl,
-                image: fetchedBadge.image
-            )
-        }
-        
-        if let fetchedProfile = profile {
-            user.profile = Profile(
-                imageUrl: fetchedProfile.imageUrl,
-                image: fetchedProfile.image
-            )
-        }
-        
-        guard let modelContext else { return }
-        let fetchDescriptor = FetchDescriptor<User>()
-        
-        do {
-            let persistanceUser = try modelContext.fetch(fetchDescriptor)
-            if let storedUser = persistanceUser.first {
-                modelContext.delete(storedUser)
-            }
-        } catch {
-            print("Error to get persistence user")
-        }
-        
-        modelContext.insert(user)
-        
-        do {
-            try modelContext.save()
-        } catch {
-            print("Error to save persistence user")
         }
     }
 }
