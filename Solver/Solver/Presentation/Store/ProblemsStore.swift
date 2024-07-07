@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-@Observable
-final class ProblemsStore {
-    let useCase = FetchUseCase()
+final class ProblemsStore: ObservableObject {
+    private let useCase = FetchUseCase()
     
-    var solvedCount = 0
-    var triedCount = 0
-    var problemsStats: [ProblemStats] = []
+    @Published var solvedCount = 0
+    @Published var triedCount = 0
+    @Published var problemsStats: [ProblemStats] = []
     
-    @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { 
+    private var isFetching = false
+    
+    init() {
         fetch()
     }
     
@@ -27,10 +27,20 @@ final class ProblemsStore {
     }
     
     func fetch() {
+        guard !isFetching else { return }
+        isFetching = true
+        
         Task {
+            defer {
+                DispatchQueue.main.async {
+                    self.isFetching = false
+                }
+            }
             do {
                 let problems = try await useCase.fetchProblem(userId: userId)
-                update(problems)
+                DispatchQueue.main.async {
+                    self.update(problems)
+                }
             } catch {
                 print("Error to fetch problems")
             }
@@ -58,9 +68,9 @@ final class ProblemsStore {
             }
         }
         
-        solvedCount = newSolvedCount
-        triedCount = newTriedCount
-        problemsStats = newProblemStats
+        self.solvedCount = newSolvedCount
+        self.triedCount = newTriedCount
+        self.problemsStats = newProblemStats
     }
 }
 

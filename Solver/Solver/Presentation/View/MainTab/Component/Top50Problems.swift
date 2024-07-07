@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Top50Problems: View {
-    var store: Top100Store
+    @ObservedObject var store: Top100Store
     
     @State private var selectedItem: ItemEntity?
     

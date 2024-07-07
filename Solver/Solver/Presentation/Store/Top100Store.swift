@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-@Observable
-final class Top100Store {
-    let useCase = FetchUseCase()
+final class Top100Store: ObservableObject {
+    private let useCase = FetchUseCase()
     
-    var top100: Top100Entity?
+    @Published var top100: Top100Entity?
     
-    @ObservationIgnored
     @AppStorage("userId") var userId = ""
     
-    init() { 
+    private var isFetching = false
+    
+    init() {
         fetch()
     }
     
@@ -25,10 +25,20 @@ final class Top100Store {
     }
     
     func fetch() {
+        guard !isFetching else { return }
+        isFetching = true
+        
         Task {
+            defer {
+                DispatchQueue.main.async {
+                    self.isFetching = false
+                }
+            }
             do {
                 let fetchedTop100 = try await useCase.fetchTop100(userId: userId)
-                top100 = fetchedTop100
+                DispatchQueue.main.async {
+                    self.top100 = fetchedTop100
+                }
             } catch {
                 print("Error to fetch top100")
             }

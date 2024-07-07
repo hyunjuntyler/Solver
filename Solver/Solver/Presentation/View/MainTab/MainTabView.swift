@@ -12,8 +12,8 @@ struct MainTabView: View {
     @AppStorage("manual") private var manual = true
 
     @State private var userStore = UserStore()
-    @State private var problemsStore = ProblemsStore()
-    @State private var top100Store = Top100Store()
+    @StateObject private var problemsStore = ProblemsStore()
+    @StateObject private var top100Store = Top100Store()
     
     var body: some View {
         TabView {

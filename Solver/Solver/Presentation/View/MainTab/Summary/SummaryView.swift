@@ -10,8 +10,8 @@ import SwiftUI
 struct SummaryView: View {
     @State private var frames: [CGRect] = []
     var userStore: UserStore
-    var problemsStore: ProblemsStore
-    var top100Store: Top100Store
+    @ObservedObject var problemsStore: ProblemsStore
+    @ObservedObject var top100Store: Top100Store
     
     private var solvedCount: Int {
         min(problemsStore.solvedCount, 50)

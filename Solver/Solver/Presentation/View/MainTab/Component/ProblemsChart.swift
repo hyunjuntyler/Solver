@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct ProblemsChart: View {
-    var store: ProblemsStore
+    @ObservedObject var store: ProblemsStore
     
     @State private var selection: Int?
     @State private var selectedStats: ProblemStats?
