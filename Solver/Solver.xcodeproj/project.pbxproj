@@ -104,7 +104,6 @@
 		29F7B9492BDA87FD0034F600 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9482BDA87FD0034F600 /* SignUpView.swift */; };
 		29F7B94C2BDA881F0034F600 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94B2BDA881F0034F600 /* MainTabView.swift */; };
 		29F7B94E2BDA882B0034F600 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94D2BDA882B0034F600 /* SummaryView.swift */; };
-		29F7B9502BDA88320034F600 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B94F2BDA88320034F600 /* AccountView.swift */; };
 		29F7B9532BDA891D0034F600 /* OnboardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9522BDA891D0034F600 /* OnboardingStore.swift */; };
 		29F7B9572BDA8CAA0034F600 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */; };
 		29F7B9592BDA8CC20034F600 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7B9582BDA8CC20034F600 /* Font+Extension.swift */; };
@@ -231,7 +230,6 @@
 		29F7B9482BDA87FD0034F600 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		29F7B94B2BDA881F0034F600 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		29F7B94D2BDA882B0034F600 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		29F7B94F2BDA88320034F600 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		29F7B9522BDA891D0034F600 /* OnboardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStore.swift; sourceTree = "<group>"; };
 		29F7B9562BDA8CAA0034F600 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
 		29F7B9582BDA8CC20034F600 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
@@ -301,14 +299,6 @@
 				294D05D82BDFCF6A006F192E /* ImageButtonStyle.swift */,
 			);
 			path = ButtonStyle;
-			sourceTree = "<group>";
-		};
-		2905B0092BDE76B300B08967 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				29F7B94F2BDA88320034F600 /* AccountView.swift */,
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		294D05C12BDFA6BC006F192E /* WidgetFamily */ = {
@@ -626,7 +616,6 @@
 			children = (
 				29F7B94B2BDA881F0034F600 /* MainTabView.swift */,
 				29F4885C2BDBD09A006B0EA2 /* Summary */,
-				2905B0092BDE76B300B08967 /* Account */,
 				29F4885D2BDBD0AE006B0EA2 /* Component */,
 			);
 			path = MainTab;
@@ -839,7 +828,6 @@
 				29552FB92BDA647300F8A33C /* ContentView.swift in Sources */,
 				2905B0072BDE685B00B08967 /* CustomButtonStyle.swift in Sources */,
 				29F7B9182BDA70530034F600 /* BadgeDTO.swift in Sources */,
-				29F7B9502BDA88320034F600 /* AccountView.swift in Sources */,
 				29F7B9402BDA81F70034F600 /* FetchUseCase.swift in Sources */,
 				29F7B9392BDA811A0034F600 /* CheckRepository.swift in Sources */,
 				29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */,
