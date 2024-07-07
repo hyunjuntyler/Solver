@@ -10,9 +10,10 @@ import SwiftUI
 struct SummaryView: View {
     @State private var frames: [CGRect] = []
     @State private var showInputSheet = false
-    var userStore: UserStore
+    @ObservedObject var userStore: UserStore
     @ObservedObject var problemsStore: ProblemsStore
     @ObservedObject var top100Store: Top100Store
+    @AppStorage("userId") private var userId = ""
 
     var body: some View {
         NavigationStack {
@@ -79,6 +80,16 @@ struct SummaryView: View {
                         .frame(height: max(100 + first.minY, 100))
                 }
             }
+            .onChange(of: userId) {
+                userStore.fetch()
+                top100Store.fetch()
+                problemsStore.fetch()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    showInputSheet = false
+                    Haptic.notification(type: .success)
+                }
+            }
             .sheet(isPresented: $showInputSheet) {
                 NavigationStack {
                     SignUpView()
@@ -97,14 +108,16 @@ struct SummaryView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 4) {
-                        if let user = userStore.user, let profile = userStore.profile, let badge = userStore.badge {
-                            MainHeader(id: user.id, data: profile.image)
+                        if let user = userStore.user {
+                            MainHeader(id: user.id, data: userStore.profile?.image)
                             
-                            BadgeImage(data: badge.image, size: 24)
-                                .onTapGesture {
-                                    Haptic.impact(style: .soft)
-                                    Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
-                                }
+                            if let badge = userStore.badge {
+                                BadgeImage(data: badge.image, size: 24)
+                                    .onTapGesture {
+                                        Haptic.impact(style: .soft)
+                                        Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
+                                    }
+                            }
                             
                             ZStack {
                                 ClassWing(decoration: user.classDecoration, size: 24)

@@ -11,7 +11,7 @@ struct MainTabView: View {
     @Environment(\.modelContext) private var modelContext
     @AppStorage("manual") private var manual = true
 
-    @State private var userStore = UserStore()
+    @StateObject private var userStore = UserStore()
     @StateObject private var problemsStore = ProblemsStore()
     @StateObject private var top100Store = Top100Store()
     

@@ -9,23 +9,19 @@ import SwiftUI
 import SwiftData
 import WidgetKit
 
-@Observable
-final class UserStore {
+final class UserStore: ObservableObject {
     private let useCase = FetchUseCase()
     
     var modelContext: ModelContext?
     
-    var user: UserEntity?
-    var profile: ProfileEntity?
-    var badge: BadgeEntity?
-    var userCount: Int?
-    var tint: Color = .accent
+    @Published var user: UserEntity?
+    @Published var profile: ProfileEntity?
+    @Published var badge: BadgeEntity?
+    @Published var userCount: Int?
+    @Published var tint: Color = .accent
     
-    let required: [Double] = [0, 30, 60, 90, 120, 150, 200, 300, 400, 500, 650, 800, 950, 1100, 1250, 1400, 1600, 1750, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2850, 2900, 2950, 3000, 3000.1]
-    
-    @ObservationIgnored
-    @AppStorage("userId") var userId = ""
-    
+    private var isFetching = false
+        
     init() { }
     
     init(user: UserEntity, profile: ProfileEntity, badge: BadgeEntity) {
@@ -36,36 +32,61 @@ final class UserStore {
     }
     
     func fetch() {
+        guard !isFetching else { return }
+        guard let userId = UserDefaults.standard.string(forKey: "userId") else {
+            print("Failed to retrieve userId from UserDefaults")
+            return
+        }
         let storedProfileImageUrl = profile?.imageUrl
         let storedBadgeId = badge?.id
         
+        isFetching = true
+        
         Task {
+            defer {
+                DispatchQueue.main.async {
+                    self.isFetching = false
+                }
+            }
             do {
                 let fetchedUserCount = try await useCase.fetchSite()
                 let fetchedUser = try await useCase.fetchUser(userId: userId)
-                userCount = fetchedUserCount
-                user = fetchedUser
                 
-                if let url = user?.profileImageUrl {
+                DispatchQueue.main.async {
+                    self.userCount = fetchedUserCount
+                    self.user = fetchedUser
+                }
+                
+                if let url = fetchedUser.profileImageUrl {
                     if storedProfileImageUrl != url {
                         let fetchedProfile = try await useCase.fetchProfile(url: url)
-                        profile = fetchedProfile
+                        DispatchQueue.main.async {
+                            self.profile = fetchedProfile
+                        }
                     }
                 } else {
-                    profile = nil
+                    DispatchQueue.main.async {
+                        self.profile = nil
+                    }
                 }
                 
-                if let badgeId = user?.badgeId {
+                if let badgeId = fetchedUser.badgeId {
                     if storedBadgeId != badgeId {
                         let fetchedBadge = try await useCase.fetchBadge(badgeId: badgeId)
-                        badge = fetchedBadge
+                        DispatchQueue.main.async {
+                            self.badge = fetchedBadge
+                        }
                     }
                 } else {
-                    badge = nil
+                    DispatchQueue.main.async {
+                        self.badge = nil
+                    }
                 }
                 
-                saveSwiftData()
-                updateTintColor()
+//                saveSwiftData()
+                DispatchQueue.main.async {
+                    self.updateTintColor()
+                }
                 WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 print("Error to fetch user")
@@ -86,6 +107,7 @@ extension UserStore {
         let fetchDescriptor = FetchDescriptor<User>()
         do {
             let persistanceUser = try modelContext.fetch(fetchDescriptor)
+            print(persistanceUser.count)
             if let storedUser = persistanceUser.first {
                 user = storedUser.toDomain()
                 profile = storedUser.profile?.toDomain()
@@ -93,6 +115,7 @@ extension UserStore {
                 userCount = storedUser.totalUserCount
             }
             updateTintColor()
+            print("complete")
             completion()
         } catch {
             print("Error to get persistence user")
