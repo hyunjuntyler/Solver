@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SummaryView: View {
     @State private var frames: [CGRect] = []
@@ -14,12 +15,15 @@ struct SummaryView: View {
     @ObservedObject var problemsStore: ProblemsStore
     @ObservedObject var top100Store: Top100Store
     @AppStorage("userId") private var userId = ""
+    
+    @Query private var users: [User]
+    private var user: User? { users.first }
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
-                    if let user = userStore.user {
+                    if let user = user {
                         ProfileHeader(tier: user.tier, rating: user.rating, frames: frames)
                             .stickyHeader(frames, isMainHeader: true)
                     }
@@ -33,7 +37,7 @@ struct SummaryView: View {
                     SummaryHeader(emoji: "🧑🏻‍💻", title: "요약")
                         .stickyHeader(frames)
                     
-                    if let user = userStore.user {
+                    if let user = user {
                         Summary(rank: user.rank, rating: user.rating, tier: user.tier, solvedCount: user.solvedCount, maxStreak: user.maxStreak)
                             .summaryBody()
                     }
@@ -68,14 +72,14 @@ struct SummaryView: View {
                 problemsStore.fetch()
             }
             .overlay(alignment: .top) {
-                if let user = userStore.user {
+                if let user = user {
                     user.tier.tierBackgroundColor
                         .ignoresSafeArea()
                         .frame(height: 0)
                 }
             }
             .background(alignment: .top) {
-                if let user = userStore.user, let first = frames.first {
+                if let user = user, let first = frames.first {
                     user.tier.tierBackgroundColor
                         .frame(height: max(100 + first.minY, 100))
                 }
@@ -108,14 +112,14 @@ struct SummaryView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 4) {
-                        if let user = userStore.user {
-                            MainHeader(id: user.id, data: userStore.profile?.image)
+                        if let user = user {
+                            MainHeader(id: user.id, data: user.profile?.image)
                             
-                            if let badge = userStore.badge {
+                            if let badge = user.badge {
                                 BadgeImage(data: badge.image, size: 24)
                                     .onTapGesture {
                                         Haptic.impact(style: .soft)
-                                        Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
+                                        Toast.shared.present(data: badge.image, title: badge.name, body: badge.condition)
                                     }
                             }
                             
