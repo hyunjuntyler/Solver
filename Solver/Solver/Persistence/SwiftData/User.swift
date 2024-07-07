@@ -41,6 +41,21 @@ final class User {
         self.totalUserCount = totalUserCount
     }
     
+    convenience init(from entity: UserEntity) {
+        self.init(
+            id: entity.id,
+            badgeId: entity.badgeId,
+            profileImageUrl: entity.profileImageUrl,
+            solvedCount: entity.solvedCount,
+            tier: entity.tier,
+            rating: entity.rating,
+            userClass: entity.userClass,
+            classDecoration: entity.classDecoration,
+            maxStreak: entity.maxStreak,
+            rank: entity.rank
+        )
+    }
+    
     func toDomain() -> UserEntity {
         UserEntity(
             id: id,

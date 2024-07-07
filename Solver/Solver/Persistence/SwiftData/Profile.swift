@@ -20,6 +20,13 @@ final class Profile {
         self.image = image
     }
     
+    convenience init(from entity: ProfileEntity) {
+        self.init(
+            imageUrl: entity.imageUrl,
+            image: entity.image
+        )
+    }
+    
     func toDomain() -> ProfileEntity {
         ProfileEntity(
             imageUrl: imageUrl,

@@ -28,6 +28,17 @@ final class Badge {
         self.image = image
     }
     
+    convenience init(from entity: BadgeEntity) {
+        self.init(
+            id: entity.id,
+            name: entity.name,
+            tier: entity.tier,
+            condition: entity.description,
+            imageUrl: entity.imageUrl,
+            image: entity.image
+        )
+    }
+    
     func toDomain() -> BadgeEntity {
         BadgeEntity(
             id: id,
