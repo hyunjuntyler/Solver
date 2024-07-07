@@ -11,10 +11,7 @@ final class Top100Store: ObservableObject {
     private let useCase = FetchUseCase()
     
     @Published var top100: Top100Entity?
-    
-    @AppStorage("userId") var userId = ""
-    
-    private var isFetching = false
+    @Published var isFetching = false
     
     init() {
         fetch()
@@ -26,6 +23,11 @@ final class Top100Store: ObservableObject {
     
     func fetch() {
         guard !isFetching else { return }
+        guard let userId = UserDefaults.standard.string(forKey: "userId") else {
+            print("Failed to retrieve userId from UserDefaults")
+            return
+        }
+        
         isFetching = true
         
         Task {

@@ -40,7 +40,7 @@ struct Top50Problems: View {
                         }
                 }
             }
-            .onChange(of: store.userId) {
+            .onChange(of: store.isFetching) {
                 selectedItem = nil
             }
             .overlay {

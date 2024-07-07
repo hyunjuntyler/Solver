@@ -13,9 +13,7 @@ final class ProblemsStore: ObservableObject {
     @Published var solvedCount = 0
     @Published var triedCount = 0
     @Published var problemsStats: [ProblemStats] = []
-    
-    @AppStorage("userId") var userId = ""
-    
+        
     private var isFetching = false
     
     init() {
@@ -28,6 +26,11 @@ final class ProblemsStore: ObservableObject {
     
     func fetch() {
         guard !isFetching else { return }
+        guard let userId = UserDefaults.standard.string(forKey: "userId") else {
+            print("Failed to retrieve userId from UserDefaults")
+            return
+        }
+        
         isFetching = true
         
         Task {
