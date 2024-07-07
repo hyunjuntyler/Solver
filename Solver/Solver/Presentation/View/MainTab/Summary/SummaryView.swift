@@ -9,67 +9,126 @@ import SwiftUI
 
 struct SummaryView: View {
     @State private var frames: [CGRect] = []
+    @State private var showInputSheet = false
     var userStore: UserStore
     @ObservedObject var problemsStore: ProblemsStore
     @ObservedObject var top100Store: Top100Store
-    
-    private var solvedCount: Int {
-        min(problemsStore.solvedCount, 50)
-    }
-    
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ProfileHeader(userStore: userStore, frames: frames)
-                    .stickyHeader(frames, isMainHeader: true)
-                
-                Rectangle()
-                    .frame(height: 30)
-                    .foregroundStyle(.background)
-                    .stickyHeader(frames, isEmptyHeader: true)
-                    .padding(.bottom, -30)
-                
-                SummaryHeader(emoji: "🚀", title: "내가 푼 상위 \(solvedCount)문제")
-                    .stickyHeader(frames)
-                    .padding(.top)
-                
-                Top50Problems(store: top100Store)
-                    .summaryBody()
-                
-                SummaryHeader(emoji: "📊", title: "내가 푼 문제 난이도 분포")
-                    .stickyHeader(frames)
-                
-                ProblemsChart(store: problemsStore)
-                    .summaryBody()
-                
-                Rectangle()
-                    .frame(height: 40)
-                    .foregroundStyle(.clear)
-                    .stickyHeader(frames)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 0) {
+                    if let user = userStore.user {
+                        ProfileHeader(tier: user.tier, rating: user.rating, frames: frames)
+                            .stickyHeader(frames, isMainHeader: true)
+                    }
+                    
+                    Rectangle()
+                        .frame(height: 30)
+                        .foregroundStyle(.background)
+                        .stickyHeader(frames, isEmptyHeader: true)
+                        .padding(.bottom, -30)
+                    
+                    SummaryHeader(emoji: "🧑🏻‍💻", title: "요약")
+                        .stickyHeader(frames)
+                    
+                    if let user = userStore.user {
+                        Summary(rank: user.rank, rating: user.rating, tier: user.tier, solvedCount: user.solvedCount, maxStreak: user.maxStreak)
+                            .summaryBody()
+                    }
+                    
+                    SummaryHeader(emoji: "🚀", title: "내가 푼 상위 \(min(problemsStore.solvedCount, 100))문제")
+                        .stickyHeader(frames)
+                        .padding(.top)
+                    
+                    Top100Problems(store: top100Store)
+                        .summaryBody()
+                    
+                    SummaryHeader(emoji: "📊", title: "내가 푼 문제 난이도 분포")
+                        .stickyHeader(frames)
+                    
+                    ProblemsChart(store: problemsStore)
+                        .summaryBody()
+                    
+                    Rectangle()
+                        .frame(height: 40)
+                        .foregroundStyle(.clear)
+                        .stickyHeader(frames)
+                }
             }
-        }
-        .scrollIndicators(.hidden)
-        .coordinateSpace(name: "container")
-        .onPreferenceChange(StickyHeaderPreferenceKey.self) {
-            frames = $0.sorted(by: { $0.minY < $1.minY })
-        }
-        .refreshable {
-            userStore.fetch()
-            top100Store.fetch()
-            problemsStore.fetch()
-        }
-        .overlay(alignment: .top) {
-            if let user = userStore.user {
-                user.tier.tierBackgroundColor
-                    .ignoresSafeArea()
-                    .frame(height: 0)
+            .scrollIndicators(.hidden)
+            .coordinateSpace(name: "container")
+            .onPreferenceChange(StickyHeaderPreferenceKey.self) {
+                frames = $0.sorted(by: { $0.minY < $1.minY })
             }
-        }
-        .background(alignment: .top) {
-            if let user = userStore.user, let first = frames.first {
-                user.tier.tierBackgroundColor
-                    .frame(height: max(100 + first.minY, 100))
+            .refreshable {
+                userStore.fetch()
+                top100Store.fetch()
+                problemsStore.fetch()
             }
+            .overlay(alignment: .top) {
+                if let user = userStore.user {
+                    user.tier.tierBackgroundColor
+                        .ignoresSafeArea()
+                        .frame(height: 0)
+                }
+            }
+            .background(alignment: .top) {
+                if let user = userStore.user, let first = frames.first {
+                    user.tier.tierBackgroundColor
+                        .frame(height: max(100 + first.minY, 100))
+                }
+            }
+            .sheet(isPresented: $showInputSheet) {
+                NavigationStack {
+                    SignUpView()
+                        .toolbar {
+                            Button {
+                                showInputSheet = false
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color(.systemGray4))
+                            }
+                        }
+                }
+                .presentationCornerRadius(24)
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack(spacing: 4) {
+                        if let user = userStore.user, let profile = userStore.profile, let badge = userStore.badge {
+                            MainHeader(id: user.id, data: profile.image)
+                            
+                            BadgeImage(data: badge.image, size: 24)
+                                .onTapGesture {
+                                    Haptic.impact(style: .soft)
+                                    Toast.shared.present(data: badge.image, title: badge.name, body: badge.description)
+                                }
+                            
+                            ZStack {
+                                ClassWing(decoration: user.classDecoration, size: 24)
+                                ClassBadge(userClass: user.userClass, size: 24)
+                            }
+                            .onTapGesture {
+                                Haptic.impact(style: .soft)
+                                Toast.shared.present(symbol: String(user.userClass), title: "Class \(user.userClass)", body: user.userClass.classToastSubTitle(user.classDecoration))
+                            }
+                        }
+                    }
+                }
+                
+                ToolbarItem {
+                    Button {
+                        showInputSheet = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundStyle(Color(.systemGray3))
+                    }
+                }
+            }
+            .toolbarTitleDisplayMode(.inline)
+            .toolbarBackground(.hidden, for: .navigationBar)
         }
     }
 }
@@ -79,5 +138,5 @@ struct SummaryView: View {
     let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
     let problemsStore = ProblemsStore(problems: previewData.problems)
     let top100Store = Top100Store(top100: previewData.top100)
-    return ToastWindow { SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store) }
+    return ToastWindow { SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store).modelContainer(previewContainer) }
 }

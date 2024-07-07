@@ -1,5 +1,5 @@
 //
-//  Top50Problems.swift
+//  Top100Problems.swift
 //  Solver
 //
 //  Created by hyunjun on 4/27/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Top50Problems: View {
+struct Top100Problems: View {
     @ObservedObject var store: Top100Store
     
     @State private var selectedItem: ItemEntity?
@@ -19,7 +19,7 @@ struct Top50Problems: View {
     var body: some View {
         if let top100 = store.top100 {
             LazyVGrid(columns: columns, spacing: spacing) {
-                ForEach(top100.items.prefix(50), id: \.id) { item in
+                ForEach(top100.items, id: \.id) { item in
                     TierBadge(tier: item.level, size: size)
                         .onTapGesture {
                             withAnimation {
@@ -82,7 +82,7 @@ struct Top50Problems: View {
 #Preview {
     let previewData = PreviewData()
     let store = Top100Store(top100: previewData.top100)
-    return Top50Problems(store: store)
+    return Top100Problems(store: store)
         .padding()
         .background {
             UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
@@ -93,7 +93,7 @@ struct Top50Problems: View {
 
 #Preview("ContentUnavailable") {
     let store = Top100Store()
-    return Top50Problems(store: store)
+    return Top100Problems(store: store)
         .padding()
         .background {
             UnevenRoundedRectangle(bottomLeadingRadius: 16, bottomTrailingRadius: 16, style: .continuous)
