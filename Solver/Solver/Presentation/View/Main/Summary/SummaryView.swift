@@ -44,7 +44,6 @@ struct SummaryView: View {
                     
                     SummaryHeader(emoji: "🚀", title: "내가 푼 상위 \(min(problemsStore.solvedCount, 100))문제")
                         .stickyHeader(frames)
-                        .padding(.top)
                     
                     Top100Problems(store: top100Store)
                         .summaryBody()
