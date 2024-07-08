@@ -15,7 +15,7 @@ struct ContentView: View {
         if onboarding {
             OnboardingView()
         } else {
-            MainView()
+            SummaryView()
                 .sheet(isPresented: $manual) {
                     ManualView()
                         .interactiveDismissDisabled()

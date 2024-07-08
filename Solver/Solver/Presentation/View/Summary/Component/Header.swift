@@ -1,5 +1,5 @@
 //
-//  SummaryHeader.swift
+//  Header.swift
 //  Solver
 //
 //  Created by Hyunjun Kim on 4/29/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SummaryHeader: View {
+struct Header: View {
     var emoji: String
     var title: String
     
@@ -32,5 +32,5 @@ struct SummaryHeader: View {
 }
 
 #Preview {
-    SummaryHeader(emoji: "🚀", title: "상위 50문제")
+    Header(emoji: "🚀", title: "상위 50문제")
 }

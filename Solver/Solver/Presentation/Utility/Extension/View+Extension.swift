@@ -12,8 +12,8 @@ extension View {
         modifier(ShimmerEffect(color: color, opacity: opacity, duration: duration))
     }
     
-    func stickyHeader(_ stickyHeaders: [CGRect], isMainHeader: Bool = false, isEmptyHeader: Bool = false) -> some View {
-        modifier(StickyHeader(stickyHeaders: stickyHeaders, isMainHeader: isMainHeader, isEmptyHeader: isEmptyHeader))
+    func stickyHeader(_ stickyHeaders: [CGRect], isTearHeader: Bool = false, isEmptyHeader: Bool = false) -> some View {
+        modifier(StickyHeader(stickyHeaders: stickyHeaders, isTearHeader: isTearHeader, isEmptyHeader: isEmptyHeader))
     }
     
     func summaryBody() -> some View {

@@ -7,13 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct SummaryView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var frames: [CGRect] = []
     @State private var showInputSheet = false
-    @ObservedObject var userStore: UserStore
-    @ObservedObject var problemsStore: ProblemsStore
-    @ObservedObject var top100Store: Top100Store
+    @StateObject private var userStore = UserStore()
+    @StateObject private var problemsStore = ProblemsStore()
+    @StateObject private var top100Store = Top100Store()
     @AppStorage("userId") private var userId = ""
     
     @Query private var users: [User]
@@ -24,8 +26,8 @@ struct SummaryView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     if let user = user {
-                        ProfileHeader(tier: user.tier, rating: user.rating, frames: frames)
-                            .stickyHeader(frames, isMainHeader: true)
+                        TierHeader(tier: user.tier, rating: user.rating, frames: frames)
+                            .stickyHeader(frames, isTearHeader: true)
                     }
                     
                     Rectangle()
@@ -34,7 +36,7 @@ struct SummaryView: View {
                         .padding(.bottom, -30)
                         .stickyHeader(frames, isEmptyHeader: true)
                     
-                    SummaryHeader(emoji: "🧑🏻‍💻", title: "요약")
+                    Header(emoji: "🧑🏻‍💻", title: "요약")
                         .stickyHeader(frames)
                     
                     if let user = user {
@@ -42,13 +44,13 @@ struct SummaryView: View {
                             .summaryBody()
                     }
                     
-                    SummaryHeader(emoji: "🚀", title: "내가 푼 상위 \(min(problemsStore.solvedCount, 100))문제")
+                    Header(emoji: "🚀", title: "내가 푼 상위 \(min(problemsStore.solvedCount, 100))문제")
                         .stickyHeader(frames)
                     
                     Top100Problems(store: top100Store)
                         .summaryBody()
                     
-                    SummaryHeader(emoji: "📊", title: "내가 푼 문제 난이도 분포")
+                    Header(emoji: "📊", title: "내가 푼 문제 난이도 분포")
                         .stickyHeader(frames)
                     
                     ProblemsChart(store: problemsStore)
@@ -150,14 +152,43 @@ struct SummaryView: View {
             }
             .toolbarTitleDisplayMode(.inline)
             .toolbarBackground(.hidden, for: .navigationBar)
+            .tint(userStore.tint)
+            .onChange(of: userStore.isFetching) { oldValue, newValue in
+                if oldValue && !newValue {
+                    updateSwiftData()
+                }
+            }
+        }
+    }
+    
+    private func updateSwiftData() {
+        if let userEntity = userStore.user {
+            if let user = user {
+                modelContext.delete(user)
+            }
+            
+            let newUser = User(from: userEntity)
+            newUser.totalUserCount = userStore.userCount
+            
+            if let profileEntity = userStore.profile {
+                let newProfile = Profile(from: profileEntity)
+                newUser.profile = newProfile
+            }
+            
+            if let badgeEntity = userStore.badge {
+                let newBadge = Badge(from: badgeEntity)
+                newUser.badge = newBadge
+            }
+            
+            modelContext.insert(newUser)
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 }
 
 #Preview {
-    let previewData = PreviewData()
-    let userStore = UserStore(user: previewData.users[1], profile: previewData.profile, badge: previewData.badge)
-    let problemsStore = ProblemsStore(problems: previewData.problems)
-    let top100Store = Top100Store(top100: previewData.top100)
-    return ToastWindow { SummaryView(userStore: userStore, problemsStore: problemsStore, top100Store: top100Store).modelContainer(previewContainer) }
+    return ToastWindow {
+        SummaryView()
+            .modelContainer(previewContainer)
+    }
 }

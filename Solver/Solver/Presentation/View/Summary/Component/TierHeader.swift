@@ -1,5 +1,5 @@
 //
-//  ProfileHeader.swift
+//  TierHeader.swift
 //  Solver
 //
 //  Created by hyunjun on 4/28/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileHeader: View {
+struct TierHeader: View {
     let tier: Int
     let rating: Int
     var frames: [CGRect]
@@ -48,5 +48,5 @@ struct ProfileHeader: View {
 }
 
 #Preview {
-    ProfileHeader(tier: 16, rating: 1650, frames: [])
+    TierHeader(tier: 16, rating: 1650, frames: [])
 }

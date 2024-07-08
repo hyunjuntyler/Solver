@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StickyHeader: ViewModifier {
     var stickyHeaders: [CGRect]
-    var isMainHeader: Bool
+    var isTearHeader: Bool
     var isEmptyHeader: Bool
     
     @State private var frame: CGRect = .zero
@@ -43,8 +43,8 @@ struct StickyHeader: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .offset(y: isMainHeader ? mainHeaderOffset : subHeaderOffset)
-            .zIndex(isMainHeader ? .infinity : isEmptyHeader ? 2 : 100)
+            .offset(y: isTearHeader ? mainHeaderOffset : subHeaderOffset)
+            .zIndex(isTearHeader ? .infinity : isEmptyHeader ? 2 : 100)
             .overlay(
                 GeometryReader { proxy in
                     let frame = proxy.frame(in: .named("container"))
@@ -54,7 +54,7 @@ struct StickyHeader: ViewModifier {
                         .preference(key: StickyHeaderPreferenceKey.self, value: [self.frame])
                 }
             )
-            .scaleEffect(isMainHeader || isEmptyHeader ?  1 : scale, anchor: .top)
-            .opacity(isMainHeader || isEmptyHeader ? 1 : opacity)
+            .scaleEffect(isTearHeader || isEmptyHeader ?  1 : scale, anchor: .top)
+            .opacity(isTearHeader || isEmptyHeader ? 1 : opacity)
     }
 }
