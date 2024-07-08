@@ -11,8 +11,9 @@ final class Top100Store: ObservableObject {
     private let useCase = FetchUseCase()
     
     @Published var top100: Top100Entity?
+    @Published var selectedItem: ItemEntity?
     @Published var isFetching = false
-    
+
     init() {
         fetch()
     }
@@ -29,6 +30,7 @@ final class Top100Store: ObservableObject {
         }
         
         isFetching = true
+        selectedItem = nil
         
         Task {
             defer {

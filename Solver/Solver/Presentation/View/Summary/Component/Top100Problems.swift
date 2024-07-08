@@ -9,42 +9,35 @@ import SwiftUI
 
 struct Top100Problems: View {
     @ObservedObject var store: Top100Store
-    
-    @State private var selectedItem: ItemEntity?
-    
+        
     private let columns = Array(repeating: GridItem(.flexible()), count: 10)
-    private let spacing: CGFloat = 16
-    private let size: CGFloat = 24
     
     var body: some View {
         if let top100 = store.top100 {
-            LazyVGrid(columns: columns, spacing: spacing) {
+            LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(top100.items, id: \.id) { item in
-                    TierBadge(tier: item.level, size: size)
+                    TierBadge(tier: item.level, size: 24)
                         .onTapGesture {
                             withAnimation {
-                                if selectedItem?.id == item.id {
-                                    selectedItem = nil
+                                if store.selectedItem?.id == item.id {
+                                    store.selectedItem = nil
                                 } else {
                                     Haptic.impact(style: .soft)
-                                    selectedItem = item
+                                    store.selectedItem = item
                                 }
                             }
                         }
                         .padding(5)
                         .background {
-                            if selectedItem?.id == item.id {
+                            if store.selectedItem?.id == item.id {
                                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                                     .foregroundStyle(item.level.tierColor.opacity(0.2))
                             }
                         }
                 }
             }
-            .onChange(of: store.isFetching) {
-                selectedItem = nil
-            }
             .overlay {
-                if let item = selectedItem {
+                if let item = store.selectedItem {
                     VStack {
                         HStack {
                             TierBadge(tier: item.level, size: 18)
@@ -65,7 +58,7 @@ struct Top100Problems: View {
                     .transition(.opacity)
                     .onTapGesture {
                         withAnimation(.smooth) {
-                            selectedItem = nil
+                            store.selectedItem = nil
                         }
                     }
                 }

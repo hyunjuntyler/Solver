@@ -13,6 +13,8 @@ final class ProblemsStore: ObservableObject {
     @Published var solvedCount = 0
     @Published var triedCount = 0
     @Published var problemsStats: [ProblemStats] = []
+    @Published var selection: Int?
+    @Published var selectedStats: ProblemStats?
         
     private var isFetching = false
     
@@ -74,6 +76,17 @@ final class ProblemsStore: ObservableObject {
         self.solvedCount = newSolvedCount
         self.triedCount = newTriedCount
         self.problemsStats = newProblemStats
+    }
+    
+    func getSelectedStats(_ value: Int) {
+        var total = 0
+        for stats in problemsStats {
+            total += stats.count
+            if value <= total {
+                selectedStats = stats
+                break
+            }
+        }
     }
 }
 

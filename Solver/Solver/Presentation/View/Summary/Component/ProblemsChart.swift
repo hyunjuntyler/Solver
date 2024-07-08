@@ -11,9 +11,6 @@ import Charts
 struct ProblemsChart: View {
     @ObservedObject var store: ProblemsStore
     
-    @State private var selection: Int?
-    @State private var selectedStats: ProblemStats?
-    
     var body: some View {
         if !store.problemsStats.isEmpty {
             VStack(alignment: .leading) {
@@ -23,7 +20,7 @@ struct ProblemsChart: View {
                 }
                 .onTapGesture {
                     withAnimation(.bouncy(duration: 0.8)) {
-                        selectedStats = nil
+                        store.selectedStats = nil
                     }
                 }
             }
@@ -40,15 +37,15 @@ struct ProblemsChart: View {
             SectorMark(
                 angle: .value("Solved count", stats.count),
                 innerRadius: .ratio(0.6),
-                outerRadius: selectedStats?.tier == stats.tier ? 150 : 120,
+                outerRadius: store.selectedStats?.tier == stats.tier ? 150 : 120,
                 angularInset: 1
             )
             .foregroundStyle(stats.color)
             .cornerRadius(6)
         }
-        .chartAngleSelection(value: $selection)
+        .chartAngleSelection(value: $store.selection)
         .chartBackground { proxy in
-            if let stats = selectedStats {
+            if let stats = store.selectedStats {
                 VStack {
                     Text(stats.tier)
                         .foregroundStyle(stats.color)
@@ -69,14 +66,14 @@ struct ProblemsChart: View {
                 }
             }
         }
-        .onChange(of: selection) {
+        .onChange(of: store.selection) {
             if let value = $1 {
                 withAnimation(.bouncy(duration: 0.8)) {
-                    getSelectedStats(value)
+                    store.getSelectedStats(value)
                 }
             }
         }
-        .onChange(of: selectedStats) {
+        .onChange(of: store.selectedStats) {
             Haptic.impact(style: .soft)
         }
         .frame(height: 260)
@@ -101,17 +98,6 @@ struct ProblemsChart: View {
             }
         }
         .padding(.horizontal)
-    }
-    
-    private func getSelectedStats(_ value: Int) {
-        var total = 0
-        for stats in store.problemsStats {
-            total += stats.count
-            if value <= total {
-                selectedStats = stats
-                break
-            }
-        }
     }
 }
 
