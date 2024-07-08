@@ -134,7 +134,7 @@ struct SummaryView: View {
                         showChangeIdSheet = true
                     } label: {
                         Image(systemName: "gearshape.fill")
-                            .foregroundStyle(Color(.systemGray3))
+                            .foregroundStyle(Color(.lightGray))
                     }
                 }
             }
@@ -144,6 +144,15 @@ struct SummaryView: View {
             .onChange(of: userStore.isFetching) { oldValue, newValue in
                 if oldValue && !newValue {
                     updateSwiftData()
+                }
+            }
+            .overlay {
+                if let item = top100Store.selectedItem {
+                    ItemInformation(item: item) {
+                        withAnimation {
+                            top100Store.selectedItem = nil
+                        }
+                    }
                 }
             }
         }

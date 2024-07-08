@@ -68,6 +68,10 @@
 		29B077BB2C28665900D725DE /* MockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B077BA2C28665900D725DE /* MockUser.swift */; };
 		29B077BD2C28667600D725DE /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B077BC2C28667600D725DE /* MockClient.swift */; };
 		29DDD4262C3B842B003AC335 /* ChangeIdSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDD4252C3B842B003AC335 /* ChangeIdSheet.swift */; };
+		29DDD4282C3B891A003AC335 /* ItemInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDD4272C3B891A003AC335 /* ItemInformation.swift */; };
+		29DDD42A2C3B970C003AC335 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDD4292C3B970C003AC335 /* CloseButton.swift */; };
+		29DDD42C2C3B9947003AC335 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDD42B2C3B9947003AC335 /* WebView.swift */; };
+		29DDD42E2C3BA01F003AC335 /* PressButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDD42D2C3BA01F003AC335 /* PressButtonStyle.swift */; };
 		29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4884F2BDB4F1E006B0EA2 /* UserStore.swift */; };
 		29F488522BDB540B006B0EA2 /* ProblemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488512BDB540B006B0EA2 /* ProblemsStore.swift */; };
 		29F488542BDB5537006B0EA2 /* Top100Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F488532BDB5537006B0EA2 /* Top100Store.swift */; };
@@ -193,6 +197,10 @@
 		29B077BA2C28665900D725DE /* MockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUser.swift; sourceTree = "<group>"; };
 		29B077BC2C28667600D725DE /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		29DDD4252C3B842B003AC335 /* ChangeIdSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIdSheet.swift; sourceTree = "<group>"; };
+		29DDD4272C3B891A003AC335 /* ItemInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInformation.swift; sourceTree = "<group>"; };
+		29DDD4292C3B970C003AC335 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		29DDD42B2C3B9947003AC335 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		29DDD42D2C3BA01F003AC335 /* PressButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonStyle.swift; sourceTree = "<group>"; };
 		29F4884F2BDB4F1E006B0EA2 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		29F488512BDB540B006B0EA2 /* ProblemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsStore.swift; sourceTree = "<group>"; };
 		29F488532BDB5537006B0EA2 /* Top100Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100Store.swift; sourceTree = "<group>"; };
@@ -293,6 +301,7 @@
 				294D05D42BDFC379006F192E /* ProfileButtonStyle.swift */,
 				294D05D62BDFCC3C006F192E /* ComponentButtonStyle.swift */,
 				294D05D82BDFCF6A006F192E /* ImageButtonStyle.swift */,
+				29DDD42D2C3BA01F003AC335 /* PressButtonStyle.swift */,
 			);
 			path = ButtonStyle;
 			sourceTree = "<group>";
@@ -500,6 +509,9 @@
 				29F488692BDBEB36006B0EA2 /* ClassBadge.swift */,
 				2980696F2BE0B6F9006AEBAC /* ClassWing.swift */,
 				29DDD4252C3B842B003AC335 /* ChangeIdSheet.swift */,
+				29DDD4272C3B891A003AC335 /* ItemInformation.swift */,
+				29DDD4292C3B970C003AC335 /* CloseButton.swift */,
+				29DDD42B2C3B9947003AC335 /* WebView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -830,6 +842,7 @@
 				29F488622BDBD9FD006B0EA2 /* Int+Extension.swift in Sources */,
 				29DDD4262C3B842B003AC335 /* ChangeIdSheet.swift in Sources */,
 				29F7B9142BDA6D570034F600 /* Top100DTO.swift in Sources */,
+				29DDD4282C3B891A003AC335 /* ItemInformation.swift in Sources */,
 				294D05D92BDFCF6A006F192E /* ImageButtonStyle.swift in Sources */,
 				29F488682BDBE45C006B0EA2 /* BadgeImage.swift in Sources */,
 				29F7B9222BDA75250034F600 /* UserEntity.swift in Sources */,
@@ -840,6 +853,7 @@
 				29F7B9352BDA7C880034F600 /* NetworkClient.swift in Sources */,
 				29F488502BDB4F1E006B0EA2 /* UserStore.swift in Sources */,
 				29F7B9262BDA75CB0034F600 /* BadgeEntity.swift in Sources */,
+				29DDD42C2C3B9947003AC335 /* WebView.swift in Sources */,
 				298D5EFE2BDD1F1B003CB0EE /* StickyHeader.swift in Sources */,
 				29F7B91C2BDA74190034F600 /* DTO.swift in Sources */,
 				2945B3E72BDC4D18004BC324 /* View+Extension.swift in Sources */,
@@ -864,6 +878,7 @@
 				297A4B542BDF8FE300987F24 /* TierProgress.swift in Sources */,
 				29F4886A2BDBEB36006B0EA2 /* ClassBadge.swift in Sources */,
 				2905B0012BDE570100B08967 /* Badge.swift in Sources */,
+				29DDD42A2C3B970C003AC335 /* CloseButton.swift in Sources */,
 				29F7B9122BDA6C7A0034F600 /* ProblemDTO.swift in Sources */,
 				29F4885A2BDB8295006B0EA2 /* PreviewData.swift in Sources */,
 				2905B00B2BDE96D700B08967 /* TierHeader.swift in Sources */,
@@ -880,6 +895,7 @@
 				2905AFFD2BDE49AB00B08967 /* User.swift in Sources */,
 				29552FB72BDA647300F8A33C /* SolverApp.swift in Sources */,
 				29F488522BDB540B006B0EA2 /* ProblemsStore.swift in Sources */,
+				29DDD42E2C3BA01F003AC335 /* PressButtonStyle.swift in Sources */,
 				29F7B9452BDA87AF0034F600 /* OnboardingView.swift in Sources */,
 				29F7B93E2BDA81E70034F600 /* CheckUseCase.swift in Sources */,
 				296DF3932BE014D100B2E7F6 /* ManualView.swift in Sources */,

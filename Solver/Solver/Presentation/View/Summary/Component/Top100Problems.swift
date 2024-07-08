@@ -36,33 +36,6 @@ struct Top100Problems: View {
                         }
                 }
             }
-            .overlay {
-                if let item = store.selectedItem {
-                    VStack {
-                        HStack {
-                            TierBadge(tier: item.level, size: 18)
-                                .offset(y: 1)
-                            Text(String(item.id))
-                                .fontWeight(.semibold)
-                                .fontDesign(.monospaced)
-                                .contentTransition(.numericText())
-                        }
-                        Text("\(item.title)")
-                            .font(.caption)
-                    }
-                    .padding(12)
-                    .background {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .foregroundStyle(.ultraThinMaterial)
-                    }
-                    .transition(.opacity)
-                    .onTapGesture {
-                        withAnimation(.smooth) {
-                            store.selectedItem = nil
-                        }
-                    }
-                }
-            }
         } else {
             ProgressView()
                 .controlSize(.large)
