@@ -12,7 +12,7 @@ import WidgetKit
 struct SummaryView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var frames: [CGRect] = []
-    @State private var showInputSheet = false
+    @State private var showChangeIdSheet = false
     @StateObject private var userStore = UserStore()
     @StateObject private var problemsStore = ProblemsStore()
     @StateObject private var top100Store = Top100Store()
@@ -57,7 +57,7 @@ struct SummaryView: View {
                         .summaryBody()
                     
                     Rectangle()
-                        .frame(height: 40)
+                        .frame(height: 100)
                         .foregroundStyle(.clear)
                         .stickyHeader(frames)
                 }
@@ -91,24 +91,12 @@ struct SummaryView: View {
                 problemsStore.fetch()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    showInputSheet = false
+                    showChangeIdSheet = false
                     Haptic.notification(type: .success)
                 }
             }
-            .sheet(isPresented: $showInputSheet) {
-                NavigationStack {
-                    SignUpView()
-                        .toolbar {
-                            Button {
-                                showInputSheet = false
-                            } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(Color(.systemGray4))
-                            }
-                        }
-                }
-                .presentationCornerRadius(24)
+            .sheet(isPresented: $showChangeIdSheet) {
+                ChangeIdSheet()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -143,7 +131,7 @@ struct SummaryView: View {
                 
                 ToolbarItem {
                     Button {
-                        showInputSheet = true
+                        showChangeIdSheet = true
                     } label: {
                         Image(systemName: "gearshape.fill")
                             .foregroundStyle(Color(.systemGray3))
