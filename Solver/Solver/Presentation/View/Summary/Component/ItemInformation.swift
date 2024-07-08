@@ -45,24 +45,10 @@ struct ItemInformation: View {
             .padding(8)
             .background {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .foregroundStyle(Color(.systemGray4))
-                    .opacity(0.4)
+                    .foregroundStyle(Color(.systemGray2))
+                    .opacity(0.3)
             }
             .padding(.bottom)
-            
-            Button {
-                showWebView = true
-            } label: {
-                Text("문제 보러 가기")
-                    .foregroundStyle(.white)
-                    .fontWeight(.semibold)
-                    .padding(8)
-                    .background {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .foregroundStyle(item.level.tierColor)
-                    }
-            }
-            .buttonStyle(PressButtonStyle())
         }
         .padding(.horizontal, 24)
         .padding(.top, 24)
@@ -93,6 +79,7 @@ struct ItemInformation: View {
                                     .contentTransition(.numericText())
                                 Text("\(item.title)")
                             }
+                            .foregroundStyle(item.level.tierColor)
                         }
                         ToolbarItem {
                             CloseButton {

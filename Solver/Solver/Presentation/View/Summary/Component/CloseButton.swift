@@ -12,11 +12,13 @@ struct CloseButton: View {
     
     var body: some View {
         Button {
+            Haptic.impact(style: .soft)
             action()
         } label: {
             Image(systemName: "xmark.circle.fill")
+                .font(.title3)
                 .fontWeight(.bold)
-                .foregroundStyle(Color(.systemGray3))
+                .foregroundStyle(Color(.systemGray2))
         }
         .buttonStyle(PressButtonStyle())
     }

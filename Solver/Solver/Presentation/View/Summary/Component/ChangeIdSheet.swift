@@ -14,12 +14,8 @@ struct ChangeIdSheet: View {
         NavigationStack {
             SignUpView()
                 .toolbar {
-                    Button {
+                    CloseButton {
                         dismiss()
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color(.systemGray4))
                     }
                 }
         }
