@@ -31,8 +31,8 @@ struct SummaryView: View {
                     Rectangle()
                         .frame(height: 30)
                         .foregroundStyle(.background)
-                        .stickyHeader(frames, isEmptyHeader: true)
                         .padding(.bottom, -30)
+                        .stickyHeader(frames, isEmptyHeader: true)
                     
                     SummaryHeader(emoji: "🧑🏻‍💻", title: "요약")
                         .stickyHeader(frames)
@@ -110,9 +110,14 @@ struct SummaryView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    HStack(spacing: 4) {
+                    HStack(spacing: 6) {
                         if let user = user {
-                            MainHeader(id: user.id, data: user.profile?.image)
+                            HStack {
+                                ProfileImage(data: user.profile?.image, size: 24)
+                                Text(user.id)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                            }
                             
                             if let badge = user.badge {
                                 BadgeImage(data: badge.image, size: 24)
