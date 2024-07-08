@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-@Observable
-final class SignUpStore {
+final class SignUpStore: ObservableObject {
     private let useCase = CheckUseCase()
     
-    var userId = ""
-    var showAlert = false
-    var isValid = true
-    var isLoading = false
+    @Published var userId = ""
+    @Published var showAlert = false
+    @Published var isValid = true
+    @Published var isLoading = false
     
     func validateUserId() {
         let pattern = "^[a-zA-Z0-9_]*$"

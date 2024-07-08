@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     @AppStorage("userId") private var userId = ""
-    @State private var store = SignUpStore()
+    @StateObject private var store = SignUpStore()
     @State private var animate = false
     
     private var disable: Bool {

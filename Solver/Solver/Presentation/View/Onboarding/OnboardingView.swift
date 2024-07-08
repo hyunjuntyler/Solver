@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State private var store = OnboardingStore()
+    @StateObject private var store = OnboardingStore()
     
     var body: some View {
         switch store.viewPhase {

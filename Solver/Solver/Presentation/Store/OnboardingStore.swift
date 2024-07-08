@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-@Observable
-final class OnboardingStore {
-    var viewPhase: ViewPhase = .greeting
+final class OnboardingStore: ObservableObject {
+    @Published var viewPhase: ViewPhase = .greeting
     
     enum ViewPhase {
         case greeting
