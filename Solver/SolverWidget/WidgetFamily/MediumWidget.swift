@@ -75,3 +75,10 @@ struct MediumWidget: View {
         .containerBackground(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.tertiarySystemBackground)], startPoint: .top, endPoint: .bottom), for: .widget)
     }
 }
+
+
+#Preview(as: .systemMedium) {
+    SolverWidget()
+} timeline: {
+    SimpleEntry(date: .now)
+}

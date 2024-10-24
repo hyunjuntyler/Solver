@@ -75,15 +75,3 @@ struct SolverWidget: Widget {
         .description("내 프로필 정보를 한눈에 확인할 수 있어요")
     }
 }
-
-#Preview(as: .systemSmall) {
-    SolverWidget()
-} timeline: {
-    SimpleEntry(date: .now)
-}
-
-#Preview(as: .systemMedium) {
-    SolverWidget()
-} timeline: {
-    SimpleEntry(date: .now)
-}

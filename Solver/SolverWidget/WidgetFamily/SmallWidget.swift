@@ -20,16 +20,23 @@ struct SmallWidget: View {
                     .font(.footnote)
             }
             
-            TierBadge(tier: user.tier, size: 56)
+            TierBadge(tier: user.tier, size: 44)
                 .shadow(radius: 0.5)
             
-            HStack {
+            Group {
                 Text(user.tier.tierName)
                 Text(String(user.rating))
             }
+            .font(.footnote)
             .foregroundStyle(user.tier.tierColor)
             .fontWeight(.bold)
         }
         .containerBackground(LinearGradient(colors: [user.tier.tierBackgroundColor, Color(.tertiarySystemBackground)], startPoint: .top, endPoint: .bottom), for: .widget)
     }
+}
+
+#Preview(as: .systemSmall) {
+    SolverWidget()
+} timeline: {
+    SimpleEntry(date: .now)
 }
