@@ -30,6 +30,20 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
+struct SolverWidget: Widget {
+    let kind: String = "SolverWidget"
+    
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            SolverWidgetEntryView(entry: entry)
+                .modelContainer(for: User.self)
+        }
+        .supportedFamilies([.systemSmall, .systemMedium])
+        .configurationDisplayName("내 프로필")
+        .description("내 프로필 정보를 한눈에 확인할 수 있어요")
+    }
+}
+
 struct SolverWidgetEntryView : View {
     @Environment(\.widgetFamily) private var family
     var entry: Provider.Entry
@@ -59,19 +73,5 @@ struct SolverWidgetEntryView : View {
                 .font(.caption)
         }
         .containerBackground(.fill.tertiary, for: .widget)
-    }
-}
-
-struct SolverWidget: Widget {
-    let kind: String = "SolverWidget"
-    
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            SolverWidgetEntryView(entry: entry)
-                .modelContainer(for: User.self)
-        }
-        .supportedFamilies([.systemSmall, .systemMedium])
-        .configurationDisplayName("내 프로필")
-        .description("내 프로필 정보를 한눈에 확인할 수 있어요")
     }
 }

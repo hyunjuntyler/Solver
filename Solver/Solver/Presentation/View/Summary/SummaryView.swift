@@ -11,11 +11,15 @@ import WidgetKit
 
 struct SummaryView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
+    
     @State private var frames: [CGRect] = []
     @State private var showChangeIdSheet = false
+    
     @StateObject private var userStore = UserStore()
     @StateObject private var problemsStore = ProblemsStore()
     @StateObject private var top100Store = Top100Store()
+    
     @AppStorage("userId") private var userId = ""
     
     @Query private var users: [User]
@@ -67,10 +71,13 @@ struct SummaryView: View {
             .onPreferenceChange(StickyHeaderPreferenceKey.self) {
                 frames = $0.sorted(by: { $0.minY < $1.minY })
             }
+            .onChange(of: scenePhase) {
+                if scenePhase == .active {
+                    fetchAllData()
+                }
+            }
             .refreshable {
-                userStore.fetch()
-                top100Store.fetch()
-                problemsStore.fetch()
+                fetchAllData()
             }
             .overlay(alignment: .top) {
                 if let user = user {
@@ -86,9 +93,7 @@ struct SummaryView: View {
                 }
             }
             .onChange(of: userId) {
-                userStore.fetch()
-                top100Store.fetch()
-                problemsStore.fetch()
+                fetchAllData()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     showChangeIdSheet = false
@@ -156,6 +161,12 @@ struct SummaryView: View {
                 }
             }
         }
+    }
+    
+    private func fetchAllData() {
+        userStore.fetch()
+        top100Store.fetch()
+        problemsStore.fetch()
     }
     
     private func updateSwiftData() {
